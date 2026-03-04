@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class Bank {
     @JsonProperty("code")
-    private BankNameEnum code;
+    private String code;
     @JsonProperty("name")
     private String name;
     @JsonProperty("shortName")
@@ -24,7 +24,7 @@ public class Bank {
     public Bank() {
     }
 
-    public BankNameEnum getCode() {
+    public String getCode() {
 
         return code;
 
@@ -60,7 +60,7 @@ public class Bank {
 
     }
 
-    public void setCode(BankNameEnum code) {
+    public void setCode(String code) {
 
         this.code = code;
 

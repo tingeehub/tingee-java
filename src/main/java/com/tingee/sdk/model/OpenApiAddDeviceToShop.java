@@ -14,7 +14,7 @@ public class OpenApiAddDeviceToShop {
     @JsonProperty("securityCode")
     private String securitycode;
     @JsonProperty("appType")
-    private AppTypeEnum apptype;
+    private String apptype;
     @JsonProperty("masterMerchantId")
     private Double mastermerchantid;
     @JsonProperty("merchantId")
@@ -39,7 +39,7 @@ public class OpenApiAddDeviceToShop {
 
     }
 
-    public AppTypeEnum getApptype() {
+    public String getApptype() {
 
         return apptype;
 
@@ -81,7 +81,7 @@ public class OpenApiAddDeviceToShop {
 
     }
 
-    public void setApptype(AppTypeEnum apptype) {
+    public void setApptype(String apptype) {
 
         this.apptype = apptype;
 

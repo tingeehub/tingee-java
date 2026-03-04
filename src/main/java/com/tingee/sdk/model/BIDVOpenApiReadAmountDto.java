@@ -16,8 +16,6 @@ public class BIDVOpenApiReadAmountDto {
     private Double amount;
     @JsonProperty("bankBin")
     private String bankbin;
-    @JsonProperty("bankName")
-    private BankNameEnum bankname;
     @JsonProperty("firstDisplayText")
     private String firstdisplaytext;
     @JsonProperty("secondDisplayText")
@@ -51,12 +49,6 @@ public class BIDVOpenApiReadAmountDto {
     public String getBankbin() {
 
         return bankbin;
-
-    }
-
-    public BankNameEnum getBankname() {
-
-        return bankname;
 
     }
 
@@ -105,12 +97,6 @@ public class BIDVOpenApiReadAmountDto {
     public void setBankbin(String bankbin) {
 
         this.bankbin = bankbin;
-
-    }
-
-    public void setBankname(BankNameEnum bankname) {
-
-        this.bankname = bankname;
 
     }
 

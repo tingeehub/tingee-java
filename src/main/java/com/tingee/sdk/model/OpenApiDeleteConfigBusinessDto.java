@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class OpenApiDeleteConfigBusinessDto {
     @JsonProperty("accountType")
-    private BankAccountTypeEnum accounttype;
+    private String accounttype;
     @JsonProperty("configRemove")
     private ACBConfigBusinessDto configremove;
     @JsonProperty("merchantId")
@@ -17,12 +17,12 @@ public class OpenApiDeleteConfigBusinessDto {
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
 
     public OpenApiDeleteConfigBusinessDto() {
     }
 
-    public BankAccountTypeEnum getAccounttype() {
+    public String getAccounttype() {
 
         return accounttype;
 
@@ -46,13 +46,13 @@ public class OpenApiDeleteConfigBusinessDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
     }
 
-    public void setAccounttype(BankAccountTypeEnum accounttype) {
+    public void setAccounttype(String accounttype) {
 
         this.accounttype = accounttype;
 
@@ -76,7 +76,7 @@ public class OpenApiDeleteConfigBusinessDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 

@@ -15,7 +15,7 @@ public class OpenApiRegisterNotifyDto {
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
 
     public OpenApiRegisterNotifyDto() {
     }
@@ -38,7 +38,7 @@ public class OpenApiRegisterNotifyDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
@@ -62,7 +62,7 @@ public class OpenApiRegisterNotifyDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class OpenApiConfigAccountBusinessDto {
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
     @JsonProperty("accountNumber")
     private String accountnumber;
     @JsonProperty("accountName")
@@ -28,7 +28,7 @@ public class OpenApiConfigAccountBusinessDto {
     public OpenApiConfigAccountBusinessDto() {
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
@@ -76,7 +76,7 @@ public class OpenApiConfigAccountBusinessDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 

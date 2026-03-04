@@ -9,14 +9,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class SendNotifyTingeeBoxDto {
     @JsonProperty("type")
-    private DeviceTypeEnum type;
+    private String type;
     @JsonProperty("uuid")
     private String uuid;
 
     public SendNotifyTingeeBoxDto() {
     }
 
-    public DeviceTypeEnum getType() {
+    public String getType() {
 
         return type;
 
@@ -28,7 +28,7 @@ public class SendNotifyTingeeBoxDto {
 
     }
 
-    public void setType(DeviceTypeEnum type) {
+    public void setType(String type) {
 
         this.type = type;
 

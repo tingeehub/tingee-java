@@ -17,13 +17,13 @@ public class OpenApiMerchantBankConfigPagedInputDto {
     @JsonProperty("maxResultCount")
     private Double maxresultcount;
     @JsonProperty("accountType")
-    private BankAccountTypeEnum accounttype;
+    private String accounttype;
     @JsonProperty("merchantId")
     private Double merchantid;
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
 
     public OpenApiMerchantBankConfigPagedInputDto() {
     }
@@ -52,7 +52,7 @@ public class OpenApiMerchantBankConfigPagedInputDto {
 
     }
 
-    public BankAccountTypeEnum getAccounttype() {
+    public String getAccounttype() {
 
         return accounttype;
 
@@ -70,7 +70,7 @@ public class OpenApiMerchantBankConfigPagedInputDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
@@ -100,7 +100,7 @@ public class OpenApiMerchantBankConfigPagedInputDto {
 
     }
 
-    public void setAccounttype(BankAccountTypeEnum accounttype) {
+    public void setAccounttype(String accounttype) {
 
         this.accounttype = accounttype;
 
@@ -118,7 +118,7 @@ public class OpenApiMerchantBankConfigPagedInputDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 

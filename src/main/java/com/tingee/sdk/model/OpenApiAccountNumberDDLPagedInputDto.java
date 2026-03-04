@@ -30,7 +30,7 @@ public class OpenApiAccountNumberDDLPagedInputDto {
     @JsonProperty("bankBins")
     private List<String> bankbins;
     @JsonProperty("bankNames")
-    private List<BankNameEnum> banknames;
+    private List<String> banknames;
 
     public OpenApiAccountNumberDDLPagedInputDto() {
     }
@@ -95,7 +95,7 @@ public class OpenApiAccountNumberDDLPagedInputDto {
 
     }
 
-    public List<BankNameEnum> getBanknames() {
+    public List<String> getBanknames() {
 
         return banknames;
 
@@ -161,7 +161,7 @@ public class OpenApiAccountNumberDDLPagedInputDto {
 
     }
 
-    public void setBanknames(List<BankNameEnum> banknames) {
+    public void setBanknames(List<String> banknames) {
 
         this.banknames = banknames;
 

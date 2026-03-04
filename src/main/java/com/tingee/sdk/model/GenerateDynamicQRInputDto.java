@@ -13,11 +13,11 @@ public class GenerateDynamicQRInputDto {
     @JsonProperty("vaAccountNumber")
     private String vaaccountnumber;
     @JsonProperty("qrCodeType")
-    private QRCodeTypeEnum qrcodetype;
+    private String qrcodetype;
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
     @JsonProperty("amount")
     private Double amount;
     @JsonProperty("purpose")
@@ -40,7 +40,7 @@ public class GenerateDynamicQRInputDto {
 
     }
 
-    public QRCodeTypeEnum getQrcodetype() {
+    public String getQrcodetype() {
 
         return qrcodetype;
 
@@ -52,7 +52,7 @@ public class GenerateDynamicQRInputDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
@@ -88,7 +88,7 @@ public class GenerateDynamicQRInputDto {
 
     }
 
-    public void setQrcodetype(QRCodeTypeEnum qrcodetype) {
+    public void setQrcodetype(String qrcodetype) {
 
         this.qrcodetype = qrcodetype;
 
@@ -100,7 +100,7 @@ public class GenerateDynamicQRInputDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 

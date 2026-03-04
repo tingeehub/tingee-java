@@ -15,7 +15,7 @@ public class OpenApiBankConfirmVAInputDto {
     @JsonProperty("otpNumber")
     private String otpnumber;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
     @JsonProperty("bankBin")
     private String bankbin;
 
@@ -40,7 +40,7 @@ public class OpenApiBankConfirmVAInputDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
@@ -70,7 +70,7 @@ public class OpenApiBankConfirmVAInputDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 

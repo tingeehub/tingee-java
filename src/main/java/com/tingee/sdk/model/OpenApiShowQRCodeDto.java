@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class OpenApiShowQRCodeDto {
     @JsonProperty("merchantId")
     private Double merchantid;
+    @JsonProperty("uuid")
+    private String uuid;
     @JsonProperty("vaAccountNumber")
     private String vaaccountnumber;
     @JsonProperty("amount")
@@ -19,11 +21,9 @@ public class OpenApiShowQRCodeDto {
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
-    @JsonProperty("uuid")
-    private String uuid;
+    private String bankname;
     @JsonProperty("deviceType")
-    private DeviceTypeEnum devicetype;
+    private String devicetype;
     @JsonProperty("firstText")
     private String firsttext;
     @JsonProperty("secondText")
@@ -43,6 +43,12 @@ public class OpenApiShowQRCodeDto {
     public Double getMerchantid() {
 
         return merchantid;
+
+    }
+
+    public String getUuid() {
+
+        return uuid;
 
     }
 
@@ -70,19 +76,13 @@ public class OpenApiShowQRCodeDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
     }
 
-    public String getUuid() {
-
-        return uuid;
-
-    }
-
-    public DeviceTypeEnum getDevicetype() {
+    public String getDevicetype() {
 
         return devicetype;
 
@@ -130,6 +130,12 @@ public class OpenApiShowQRCodeDto {
 
     }
 
+    public void setUuid(String uuid) {
+
+        this.uuid = uuid;
+
+    }
+
     public void setVaaccountnumber(String vaaccountnumber) {
 
         this.vaaccountnumber = vaaccountnumber;
@@ -154,19 +160,13 @@ public class OpenApiShowQRCodeDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 
     }
 
-    public void setUuid(String uuid) {
-
-        this.uuid = uuid;
-
-    }
-
-    public void setDevicetype(DeviceTypeEnum devicetype) {
+    public void setDevicetype(String devicetype) {
 
         this.devicetype = devicetype;
 

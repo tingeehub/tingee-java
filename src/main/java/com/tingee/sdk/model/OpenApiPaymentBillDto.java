@@ -29,7 +29,7 @@ public class OpenApiPaymentBillDto {
     @JsonProperty("tokenRef")
     private String tokenref;
     @JsonProperty("partnerCode")
-    private DirectDebitPartnerEnum partnercode;
+    private String partnercode;
     @JsonProperty("accountNumber")
     private String accountnumber;
     @JsonProperty("serviceProviderName")
@@ -100,7 +100,7 @@ public class OpenApiPaymentBillDto {
 
     }
 
-    public DirectDebitPartnerEnum getPartnercode() {
+    public String getPartnercode() {
 
         return partnercode;
 
@@ -184,7 +184,7 @@ public class OpenApiPaymentBillDto {
 
     }
 
-    public void setPartnercode(DirectDebitPartnerEnum partnercode) {
+    public void setPartnercode(String partnercode) {
 
         this.partnercode = partnercode;
 

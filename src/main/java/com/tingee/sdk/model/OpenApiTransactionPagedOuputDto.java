@@ -17,7 +17,7 @@ public class OpenApiTransactionPagedOuputDto {
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("cashFlowSource")
-    private CashFlowSourceEnum cashflowsource;
+    private String cashflowsource;
     @JsonProperty("code")
     private String code;
     @JsonProperty("amount")
@@ -64,7 +64,7 @@ public class OpenApiTransactionPagedOuputDto {
 
     }
 
-    public CashFlowSourceEnum getCashflowsource() {
+    public String getCashflowsource() {
 
         return cashflowsource;
 
@@ -148,7 +148,7 @@ public class OpenApiTransactionPagedOuputDto {
 
     }
 
-    public void setCashflowsource(CashFlowSourceEnum cashflowsource) {
+    public void setCashflowsource(String cashflowsource) {
 
         this.cashflowsource = cashflowsource;
 

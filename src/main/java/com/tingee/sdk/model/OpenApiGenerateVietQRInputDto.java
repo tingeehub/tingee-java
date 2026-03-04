@@ -11,7 +11,7 @@ public class OpenApiGenerateVietQRInputDto {
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
     @JsonProperty("accountNumber")
     private String accountnumber;
     @JsonProperty("amount")
@@ -28,7 +28,7 @@ public class OpenApiGenerateVietQRInputDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
@@ -58,7 +58,7 @@ public class OpenApiGenerateVietQRInputDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 

@@ -12,7 +12,7 @@ public class EventUrlItemDto {
     @JsonProperty("url")
     private String url;
     @JsonProperty("type")
-    private EventUrlItemType type;
+    private String type;
     @JsonProperty("ids")
     private List<String> ids;
 
@@ -25,7 +25,7 @@ public class EventUrlItemDto {
 
     }
 
-    public EventUrlItemType getType() {
+    public String getType() {
 
         return type;
 
@@ -43,7 +43,7 @@ public class EventUrlItemDto {
 
     }
 
-    public void setType(EventUrlItemType type) {
+    public void setType(String type) {
 
         this.type = type;
 

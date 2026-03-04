@@ -2,7 +2,6 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -12,16 +11,6 @@ import java.util.List;
 public class OpenApiCreateMerchantDto {
     @JsonProperty("id")
     private Double id;
-    @JsonProperty("creationTime")
-    private LocalDateTime creationtime;
-    @JsonProperty("creatorUserId")
-    private Double creatoruserid;
-    @JsonProperty("lastModificationTime")
-    private LocalDateTime lastmodificationtime;
-    @JsonProperty("lastModifierUserId")
-    private Double lastmodifieruserid;
-    @JsonProperty("deleterUserId")
-    private Double deleteruserid;
     @JsonProperty("code")
     private String code;
     @JsonProperty("name")
@@ -44,24 +33,12 @@ public class OpenApiCreateMerchantDto {
     private String address;
     @JsonProperty("fullAddress")
     private String fulladdress;
-    @JsonProperty("clientId")
-    private String clientid;
-    @JsonProperty("secretToken")
-    private String secrettoken;
     @JsonProperty("eventUrl")
     private String eventurl;
     @JsonProperty("eventUrls")
     private List<EventUrlItemDto> eventurls;
     @JsonProperty("isLockEvent")
     private Boolean islockevent;
-    @JsonProperty("bankConfigDto")
-    private BankConfigDto bankconfigdto;
-    @JsonProperty("bnplConfigDto")
-    private BNPLConfigDto bnplconfigdto;
-    @JsonProperty("directDebitConfigDto")
-    private DirectDebitConfigDto directdebitconfigdto;
-    @JsonProperty("sendNotifyPlatformDto")
-    private SendNotifyPlatformDto sendnotifyplatformdto;
     @JsonProperty("isOrganizationUnit")
     private Boolean isorganizationunit;
     @JsonProperty("referralCode")
@@ -77,7 +54,7 @@ public class OpenApiCreateMerchantDto {
     @JsonProperty("password")
     private String password;
     @JsonProperty("appType")
-    private AppTypeEnum apptype;
+    private String apptype;
     @JsonProperty("isMultipleRole")
     private Boolean ismultiplerole;
     @JsonProperty("userReferrerId")
@@ -89,36 +66,6 @@ public class OpenApiCreateMerchantDto {
     public Double getId() {
 
         return id;
-
-    }
-
-    public LocalDateTime getCreationtime() {
-
-        return creationtime;
-
-    }
-
-    public Double getCreatoruserid() {
-
-        return creatoruserid;
-
-    }
-
-    public LocalDateTime getLastmodificationtime() {
-
-        return lastmodificationtime;
-
-    }
-
-    public Double getLastmodifieruserid() {
-
-        return lastmodifieruserid;
-
-    }
-
-    public Double getDeleteruserid() {
-
-        return deleteruserid;
 
     }
 
@@ -188,18 +135,6 @@ public class OpenApiCreateMerchantDto {
 
     }
 
-    public String getClientid() {
-
-        return clientid;
-
-    }
-
-    public String getSecrettoken() {
-
-        return secrettoken;
-
-    }
-
     public String getEventurl() {
 
         return eventurl;
@@ -215,30 +150,6 @@ public class OpenApiCreateMerchantDto {
     public Boolean getIslockevent() {
 
         return islockevent;
-
-    }
-
-    public BankConfigDto getBankconfigdto() {
-
-        return bankconfigdto;
-
-    }
-
-    public BNPLConfigDto getBnplconfigdto() {
-
-        return bnplconfigdto;
-
-    }
-
-    public DirectDebitConfigDto getDirectdebitconfigdto() {
-
-        return directdebitconfigdto;
-
-    }
-
-    public SendNotifyPlatformDto getSendnotifyplatformdto() {
-
-        return sendnotifyplatformdto;
 
     }
 
@@ -284,7 +195,7 @@ public class OpenApiCreateMerchantDto {
 
     }
 
-    public AppTypeEnum getApptype() {
+    public String getApptype() {
 
         return apptype;
 
@@ -305,36 +216,6 @@ public class OpenApiCreateMerchantDto {
     public void setId(Double id) {
 
         this.id = id;
-
-    }
-
-    public void setCreationtime(LocalDateTime creationtime) {
-
-        this.creationtime = creationtime;
-
-    }
-
-    public void setCreatoruserid(Double creatoruserid) {
-
-        this.creatoruserid = creatoruserid;
-
-    }
-
-    public void setLastmodificationtime(LocalDateTime lastmodificationtime) {
-
-        this.lastmodificationtime = lastmodificationtime;
-
-    }
-
-    public void setLastmodifieruserid(Double lastmodifieruserid) {
-
-        this.lastmodifieruserid = lastmodifieruserid;
-
-    }
-
-    public void setDeleteruserid(Double deleteruserid) {
-
-        this.deleteruserid = deleteruserid;
 
     }
 
@@ -404,18 +285,6 @@ public class OpenApiCreateMerchantDto {
 
     }
 
-    public void setClientid(String clientid) {
-
-        this.clientid = clientid;
-
-    }
-
-    public void setSecrettoken(String secrettoken) {
-
-        this.secrettoken = secrettoken;
-
-    }
-
     public void setEventurl(String eventurl) {
 
         this.eventurl = eventurl;
@@ -431,30 +300,6 @@ public class OpenApiCreateMerchantDto {
     public void setIslockevent(Boolean islockevent) {
 
         this.islockevent = islockevent;
-
-    }
-
-    public void setBankconfigdto(BankConfigDto bankconfigdto) {
-
-        this.bankconfigdto = bankconfigdto;
-
-    }
-
-    public void setBnplconfigdto(BNPLConfigDto bnplconfigdto) {
-
-        this.bnplconfigdto = bnplconfigdto;
-
-    }
-
-    public void setDirectdebitconfigdto(DirectDebitConfigDto directdebitconfigdto) {
-
-        this.directdebitconfigdto = directdebitconfigdto;
-
-    }
-
-    public void setSendnotifyplatformdto(SendNotifyPlatformDto sendnotifyplatformdto) {
-
-        this.sendnotifyplatformdto = sendnotifyplatformdto;
 
     }
 
@@ -500,7 +345,7 @@ public class OpenApiCreateMerchantDto {
 
     }
 
-    public void setApptype(AppTypeEnum apptype) {
+    public void setApptype(String apptype) {
 
         this.apptype = apptype;
 

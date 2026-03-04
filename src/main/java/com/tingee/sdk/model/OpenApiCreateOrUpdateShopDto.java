@@ -2,7 +2,6 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDateTime;
 
 /**
  * Auto-generated from OpenAPI spec
@@ -11,16 +10,6 @@ import java.time.LocalDateTime;
 public class OpenApiCreateOrUpdateShopDto {
     @JsonProperty("id")
     private Double id;
-    @JsonProperty("creationTime")
-    private LocalDateTime creationtime;
-    @JsonProperty("creatorUserId")
-    private Double creatoruserid;
-    @JsonProperty("lastModificationTime")
-    private LocalDateTime lastmodificationtime;
-    @JsonProperty("lastModifierUserId")
-    private Double lastmodifieruserid;
-    @JsonProperty("deleterUserId")
-    private Double deleteruserid;
     @JsonProperty("name")
     private String name;
     @JsonProperty("email")
@@ -58,36 +47,6 @@ public class OpenApiCreateOrUpdateShopDto {
     public Double getId() {
 
         return id;
-
-    }
-
-    public LocalDateTime getCreationtime() {
-
-        return creationtime;
-
-    }
-
-    public Double getCreatoruserid() {
-
-        return creatoruserid;
-
-    }
-
-    public LocalDateTime getLastmodificationtime() {
-
-        return lastmodificationtime;
-
-    }
-
-    public Double getLastmodifieruserid() {
-
-        return lastmodifieruserid;
-
-    }
-
-    public Double getDeleteruserid() {
-
-        return deleteruserid;
 
     }
 
@@ -184,36 +143,6 @@ public class OpenApiCreateOrUpdateShopDto {
     public void setId(Double id) {
 
         this.id = id;
-
-    }
-
-    public void setCreationtime(LocalDateTime creationtime) {
-
-        this.creationtime = creationtime;
-
-    }
-
-    public void setCreatoruserid(Double creatoruserid) {
-
-        this.creatoruserid = creatoruserid;
-
-    }
-
-    public void setLastmodificationtime(LocalDateTime lastmodificationtime) {
-
-        this.lastmodificationtime = lastmodificationtime;
-
-    }
-
-    public void setLastmodifieruserid(Double lastmodifieruserid) {
-
-        this.lastmodifieruserid = lastmodifieruserid;
-
-    }
-
-    public void setDeleteruserid(Double deleteruserid) {
-
-        this.deleteruserid = deleteruserid;
 
     }
 

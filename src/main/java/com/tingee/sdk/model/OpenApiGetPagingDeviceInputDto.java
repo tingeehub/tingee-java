@@ -19,7 +19,7 @@ public class OpenApiGetPagingDeviceInputDto {
     @JsonProperty("merchantId")
     private Double merchantid;
     @JsonProperty("type")
-    private DeviceTypeEnum type;
+    private String type;
 
     public OpenApiGetPagingDeviceInputDto() {
     }
@@ -54,7 +54,7 @@ public class OpenApiGetPagingDeviceInputDto {
 
     }
 
-    public DeviceTypeEnum getType() {
+    public String getType() {
 
         return type;
 
@@ -90,7 +90,7 @@ public class OpenApiGetPagingDeviceInputDto {
 
     }
 
-    public void setType(DeviceTypeEnum type) {
+    public void setType(String type) {
 
         this.type = type;
 

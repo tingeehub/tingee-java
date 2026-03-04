@@ -11,9 +11,9 @@ public class OpenApiCreateVAInpuDto {
     @JsonProperty("name")
     private String name;
     @JsonProperty("cashFlowSource")
-    private CashFlowSourceEnum cashflowsource;
+    private String cashflowsource;
     @JsonProperty("accountType")
-    private BankAccountTypeEnum accounttype;
+    private String accounttype;
     @JsonProperty("accountNumber")
     private String accountnumber;
     @JsonProperty("accountName")
@@ -22,12 +22,18 @@ public class OpenApiCreateVAInpuDto {
     private String identity;
     @JsonProperty("mobile")
     private String mobile;
+    @JsonProperty("masterMerchantId")
+    private Double mastermerchantid;
     @JsonProperty("shopId")
     private Double shopid;
     @JsonProperty("vaPrefix")
     private String vaprefix;
     @JsonProperty("vaSuffix")
     private String vasuffix;
+    @JsonProperty("merchantName")
+    private String merchantname;
+    @JsonProperty("merchantAddress")
+    private String merchantaddress;
     @JsonProperty("serviceId")
     private Double serviceid;
     @JsonProperty("isCreateNonOtp")
@@ -51,9 +57,9 @@ public class OpenApiCreateVAInpuDto {
     @JsonProperty("isNotifyAccountNumber")
     private Boolean isnotifyaccountnumber;
     @JsonProperty("appType")
-    private AppTypeEnum apptype;
+    private String apptype;
     @JsonProperty("linkType")
-    private LinkTypeEnum linktype;
+    private String linktype;
     @JsonProperty("vaAccountNumber")
     private String vaaccountnumber;
     @JsonProperty("acbUserId")
@@ -61,13 +67,13 @@ public class OpenApiCreateVAInpuDto {
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
-    @JsonProperty("merchantName")
-    private String merchantname;
-    @JsonProperty("merchantAddress")
-    private String merchantaddress;
+    private String bankname;
     @JsonProperty("merchantId")
     private Double merchantid;
+    @JsonProperty("redirectUrl")
+    private String redirecturl;
+    @JsonProperty("webhookUrl")
+    private String webhookurl;
 
     public OpenApiCreateVAInpuDto() {
     }
@@ -78,13 +84,13 @@ public class OpenApiCreateVAInpuDto {
 
     }
 
-    public CashFlowSourceEnum getCashflowsource() {
+    public String getCashflowsource() {
 
         return cashflowsource;
 
     }
 
-    public BankAccountTypeEnum getAccounttype() {
+    public String getAccounttype() {
 
         return accounttype;
 
@@ -114,6 +120,12 @@ public class OpenApiCreateVAInpuDto {
 
     }
 
+    public Double getMastermerchantid() {
+
+        return mastermerchantid;
+
+    }
+
     public Double getShopid() {
 
         return shopid;
@@ -129,6 +141,18 @@ public class OpenApiCreateVAInpuDto {
     public String getVasuffix() {
 
         return vasuffix;
+
+    }
+
+    public String getMerchantname() {
+
+        return merchantname;
+
+    }
+
+    public String getMerchantaddress() {
+
+        return merchantaddress;
 
     }
 
@@ -198,13 +222,13 @@ public class OpenApiCreateVAInpuDto {
 
     }
 
-    public AppTypeEnum getApptype() {
+    public String getApptype() {
 
         return apptype;
 
     }
 
-    public LinkTypeEnum getLinktype() {
+    public String getLinktype() {
 
         return linktype;
 
@@ -228,21 +252,9 @@ public class OpenApiCreateVAInpuDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
-
-    }
-
-    public String getMerchantname() {
-
-        return merchantname;
-
-    }
-
-    public String getMerchantaddress() {
-
-        return merchantaddress;
 
     }
 
@@ -252,19 +264,31 @@ public class OpenApiCreateVAInpuDto {
 
     }
 
+    public String getRedirecturl() {
+
+        return redirecturl;
+
+    }
+
+    public String getWebhookurl() {
+
+        return webhookurl;
+
+    }
+
     public void setName(String name) {
 
         this.name = name;
 
     }
 
-    public void setCashflowsource(CashFlowSourceEnum cashflowsource) {
+    public void setCashflowsource(String cashflowsource) {
 
         this.cashflowsource = cashflowsource;
 
     }
 
-    public void setAccounttype(BankAccountTypeEnum accounttype) {
+    public void setAccounttype(String accounttype) {
 
         this.accounttype = accounttype;
 
@@ -294,6 +318,12 @@ public class OpenApiCreateVAInpuDto {
 
     }
 
+    public void setMastermerchantid(Double mastermerchantid) {
+
+        this.mastermerchantid = mastermerchantid;
+
+    }
+
     public void setShopid(Double shopid) {
 
         this.shopid = shopid;
@@ -309,6 +339,18 @@ public class OpenApiCreateVAInpuDto {
     public void setVasuffix(String vasuffix) {
 
         this.vasuffix = vasuffix;
+
+    }
+
+    public void setMerchantname(String merchantname) {
+
+        this.merchantname = merchantname;
+
+    }
+
+    public void setMerchantaddress(String merchantaddress) {
+
+        this.merchantaddress = merchantaddress;
 
     }
 
@@ -378,13 +420,13 @@ public class OpenApiCreateVAInpuDto {
 
     }
 
-    public void setApptype(AppTypeEnum apptype) {
+    public void setApptype(String apptype) {
 
         this.apptype = apptype;
 
     }
 
-    public void setLinktype(LinkTypeEnum linktype) {
+    public void setLinktype(String linktype) {
 
         this.linktype = linktype;
 
@@ -408,27 +450,27 @@ public class OpenApiCreateVAInpuDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
-
-    }
-
-    public void setMerchantname(String merchantname) {
-
-        this.merchantname = merchantname;
-
-    }
-
-    public void setMerchantaddress(String merchantaddress) {
-
-        this.merchantaddress = merchantaddress;
 
     }
 
     public void setMerchantid(Double merchantid) {
 
         this.merchantid = merchantid;
+
+    }
+
+    public void setRedirecturl(String redirecturl) {
+
+        this.redirecturl = redirecturl;
+
+    }
+
+    public void setWebhookurl(String webhookurl) {
+
+        this.webhookurl = webhookurl;
 
     }
 }

@@ -12,9 +12,9 @@ public class OpenApiUpdateShopDeviceLinkDto {
     @JsonProperty("uuid")
     private String uuid;
     @JsonProperty("type")
-    private DeviceTypeEnum type;
+    private String type;
     @JsonProperty("appType")
-    private AppTypeEnum apptype;
+    private String apptype;
     @JsonProperty("shopsLinkToDeviceDtos")
     private List<OpenApiShopLinkToDeviceDto> shopslinktodevicedtos;
     @JsonProperty("merchantId")
@@ -29,13 +29,13 @@ public class OpenApiUpdateShopDeviceLinkDto {
 
     }
 
-    public DeviceTypeEnum getType() {
+    public String getType() {
 
         return type;
 
     }
 
-    public AppTypeEnum getApptype() {
+    public String getApptype() {
 
         return apptype;
 
@@ -59,13 +59,13 @@ public class OpenApiUpdateShopDeviceLinkDto {
 
     }
 
-    public void setType(DeviceTypeEnum type) {
+    public void setType(String type) {
 
         this.type = type;
 
     }
 
-    public void setApptype(AppTypeEnum apptype) {
+    public void setApptype(String apptype) {
 
         this.apptype = apptype;
 

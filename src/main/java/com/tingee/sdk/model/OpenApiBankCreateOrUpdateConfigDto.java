@@ -10,18 +10,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class OpenApiBankCreateOrUpdateConfigDto {
     @JsonProperty("bidvConfigDto")
     private BIDVConfigDto bidvconfigdto;
-    @JsonProperty("vibConfigDto")
-    private VIBConfigDto vibconfigdto;
     @JsonProperty("ctgConfigDto")
     private CTGConfigDto ctgconfigdto;
     @JsonProperty("acbConfigDto")
     private ACBConfigBusinessDto acbconfigdto;
-    @JsonProperty("vcbConfigDto")
-    private VCBConfigBusinessDto vcbconfigdto;
-    @JsonProperty("msbConfigDto")
-    private MSBConfigBusinessDto msbconfigdto;
     @JsonProperty("accountType")
-    private BankAccountTypeEnum accounttype;
+    private String accounttype;
     @JsonProperty("id")
     private Double id;
     @JsonProperty("otpNumber")
@@ -31,7 +25,7 @@ public class OpenApiBankCreateOrUpdateConfigDto {
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
     @JsonProperty("merchantId")
     private Double merchantid;
 
@@ -41,12 +35,6 @@ public class OpenApiBankCreateOrUpdateConfigDto {
     public BIDVConfigDto getBidvconfigdto() {
 
         return bidvconfigdto;
-
-    }
-
-    public VIBConfigDto getVibconfigdto() {
-
-        return vibconfigdto;
 
     }
 
@@ -62,19 +50,7 @@ public class OpenApiBankCreateOrUpdateConfigDto {
 
     }
 
-    public VCBConfigBusinessDto getVcbconfigdto() {
-
-        return vcbconfigdto;
-
-    }
-
-    public MSBConfigBusinessDto getMsbconfigdto() {
-
-        return msbconfigdto;
-
-    }
-
-    public BankAccountTypeEnum getAccounttype() {
+    public String getAccounttype() {
 
         return accounttype;
 
@@ -104,7 +80,7 @@ public class OpenApiBankCreateOrUpdateConfigDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
@@ -122,12 +98,6 @@ public class OpenApiBankCreateOrUpdateConfigDto {
 
     }
 
-    public void setVibconfigdto(VIBConfigDto vibconfigdto) {
-
-        this.vibconfigdto = vibconfigdto;
-
-    }
-
     public void setCtgconfigdto(CTGConfigDto ctgconfigdto) {
 
         this.ctgconfigdto = ctgconfigdto;
@@ -140,19 +110,7 @@ public class OpenApiBankCreateOrUpdateConfigDto {
 
     }
 
-    public void setVcbconfigdto(VCBConfigBusinessDto vcbconfigdto) {
-
-        this.vcbconfigdto = vcbconfigdto;
-
-    }
-
-    public void setMsbconfigdto(MSBConfigBusinessDto msbconfigdto) {
-
-        this.msbconfigdto = msbconfigdto;
-
-    }
-
-    public void setAccounttype(BankAccountTypeEnum accounttype) {
+    public void setAccounttype(String accounttype) {
 
         this.accounttype = accounttype;
 
@@ -182,7 +140,7 @@ public class OpenApiBankCreateOrUpdateConfigDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 

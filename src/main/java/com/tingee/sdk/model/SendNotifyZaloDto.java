@@ -9,14 +9,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class SendNotifyZaloDto {
     @JsonProperty("type")
-    private ZaloTypeEnum type;
+    private String type;
     @JsonProperty("name")
     private String name;
 
     public SendNotifyZaloDto() {
     }
 
-    public ZaloTypeEnum getType() {
+    public String getType() {
 
         return type;
 
@@ -28,7 +28,7 @@ public class SendNotifyZaloDto {
 
     }
 
-    public void setType(ZaloTypeEnum type) {
+    public void setType(String type) {
 
         this.type = type;
 

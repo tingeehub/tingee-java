@@ -26,15 +26,15 @@ public class OpenApiGetVAPagedInputDto {
     @JsonProperty("shopId")
     private Double shopid;
     @JsonProperty("accountType")
-    private BankAccountTypeEnum accounttype;
+    private String accounttype;
     @JsonProperty("agentId")
     private Double agentid;
     @JsonProperty("dataAccess")
-    private DataAccessFilterEnum dataaccess;
+    private String dataaccess;
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
 
     public OpenApiGetVAPagedInputDto() {
     }
@@ -87,7 +87,7 @@ public class OpenApiGetVAPagedInputDto {
 
     }
 
-    public BankAccountTypeEnum getAccounttype() {
+    public String getAccounttype() {
 
         return accounttype;
 
@@ -99,7 +99,7 @@ public class OpenApiGetVAPagedInputDto {
 
     }
 
-    public DataAccessFilterEnum getDataaccess() {
+    public String getDataaccess() {
 
         return dataaccess;
 
@@ -111,7 +111,7 @@ public class OpenApiGetVAPagedInputDto {
 
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
@@ -165,7 +165,7 @@ public class OpenApiGetVAPagedInputDto {
 
     }
 
-    public void setAccounttype(BankAccountTypeEnum accounttype) {
+    public void setAccounttype(String accounttype) {
 
         this.accounttype = accounttype;
 
@@ -177,7 +177,7 @@ public class OpenApiGetVAPagedInputDto {
 
     }
 
-    public void setDataaccess(DataAccessFilterEnum dataaccess) {
+    public void setDataaccess(String dataaccess) {
 
         this.dataaccess = dataaccess;
 
@@ -189,7 +189,7 @@ public class OpenApiGetVAPagedInputDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 

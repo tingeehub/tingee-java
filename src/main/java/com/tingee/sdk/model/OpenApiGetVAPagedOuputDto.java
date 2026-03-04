@@ -10,11 +10,11 @@ import java.time.LocalDateTime;
  */
 public class OpenApiGetVAPagedOuputDto {
     @JsonProperty("bankName")
-    private BankNameEnum bankname;
+    private String bankname;
     @JsonProperty("bankBin")
     private String bankbin;
     @JsonProperty("accountType")
-    private BankAccountTypeEnum accounttype;
+    private String accounttype;
     @JsonProperty("accountName")
     private String accountname;
     @JsonProperty("accountNumber")
@@ -24,14 +24,14 @@ public class OpenApiGetVAPagedOuputDto {
     @JsonProperty("shopId")
     private Double shopid;
     @JsonProperty("status")
-    private StatusMerchantAccountNumberEnum status;
+    private String status;
     @JsonProperty("creationTime")
     private LocalDateTime creationtime;
 
     public OpenApiGetVAPagedOuputDto() {
     }
 
-    public BankNameEnum getBankname() {
+    public String getBankname() {
 
         return bankname;
 
@@ -43,7 +43,7 @@ public class OpenApiGetVAPagedOuputDto {
 
     }
 
-    public BankAccountTypeEnum getAccounttype() {
+    public String getAccounttype() {
 
         return accounttype;
 
@@ -73,7 +73,7 @@ public class OpenApiGetVAPagedOuputDto {
 
     }
 
-    public StatusMerchantAccountNumberEnum getStatus() {
+    public String getStatus() {
 
         return status;
 
@@ -85,7 +85,7 @@ public class OpenApiGetVAPagedOuputDto {
 
     }
 
-    public void setBankname(BankNameEnum bankname) {
+    public void setBankname(String bankname) {
 
         this.bankname = bankname;
 
@@ -97,7 +97,7 @@ public class OpenApiGetVAPagedOuputDto {
 
     }
 
-    public void setAccounttype(BankAccountTypeEnum accounttype) {
+    public void setAccounttype(String accounttype) {
 
         this.accounttype = accounttype;
 
@@ -127,7 +127,7 @@ public class OpenApiGetVAPagedOuputDto {
 
     }
 
-    public void setStatus(StatusMerchantAccountNumberEnum status) {
+    public void setStatus(String status) {
 
         this.status = status;
 
