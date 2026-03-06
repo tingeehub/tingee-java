@@ -2,22 +2,25 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class BIDVInfoDto {
     @JsonProperty("vaPrefix")
-    private String vaprefix;
+    private String vaPrefix;
     @JsonProperty("merchantName")
-    private String merchantname;
+    private String merchantName;
     @JsonProperty("merchantAddress")
-    private String merchantaddress;
+    private String merchantAddress;
     @JsonProperty("accountNo")
-    private String accountno;
+    private String accountNo;
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
     @JsonProperty("identity")
     private String identity;
     @JsonProperty("mobile")
@@ -25,102 +28,4 @@ public class BIDVInfoDto {
     @JsonProperty("email")
     private String email;
 
-    public BIDVInfoDto() {
-    }
-
-    public String getVaprefix() {
-
-        return vaprefix;
-
-    }
-
-    public String getMerchantname() {
-
-        return merchantname;
-
-    }
-
-    public String getMerchantaddress() {
-
-        return merchantaddress;
-
-    }
-
-    public String getAccountno() {
-
-        return accountno;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getIdentity() {
-
-        return identity;
-
-    }
-
-    public String getMobile() {
-
-        return mobile;
-
-    }
-
-    public String getEmail() {
-
-        return email;
-
-    }
-
-    public void setVaprefix(String vaprefix) {
-
-        this.vaprefix = vaprefix;
-
-    }
-
-    public void setMerchantname(String merchantname) {
-
-        this.merchantname = merchantname;
-
-    }
-
-    public void setMerchantaddress(String merchantaddress) {
-
-        this.merchantaddress = merchantaddress;
-
-    }
-
-    public void setAccountno(String accountno) {
-
-        this.accountno = accountno;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setIdentity(String identity) {
-
-        this.identity = identity;
-
-    }
-
-    public void setMobile(String mobile) {
-
-        this.mobile = mobile;
-
-    }
-
-    public void setEmail(String email) {
-
-        this.email = email;
-
-    }
 }

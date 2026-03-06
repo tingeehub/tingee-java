@@ -2,55 +2,20 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class ShinhanInfoDto {
     @JsonProperty("vaPrefix")
-    private String vaprefix;
+    private String vaPrefix;
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
     @JsonProperty("merchantName")
-    private String merchantname;
+    private String merchantName;
 
-    public ShinhanInfoDto() {
-    }
-
-    public String getVaprefix() {
-
-        return vaprefix;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getMerchantname() {
-
-        return merchantname;
-
-    }
-
-    public void setVaprefix(String vaprefix) {
-
-        this.vaprefix = vaprefix;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setMerchantname(String merchantname) {
-
-        this.merchantname = merchantname;
-
-    }
 }

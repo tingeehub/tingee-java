@@ -8,162 +8,38 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiTransactionPagedInputDto {
     @JsonProperty("filter")
     private String filter;
     @JsonProperty("sorting")
     private String sorting;
+    @lombok.NonNull
     @JsonProperty("skipCount")
-    private Double skipcount;
+    private Integer skipCount;
+    @lombok.NonNull
     @JsonProperty("maxResultCount")
-    private Double maxresultcount;
+    private Integer maxResultCount;
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
     @JsonProperty("shopIds")
-    private List<Double> shopids;
+    private List<Double> shopIds;
     @JsonProperty("vaAccountNumbers")
-    private List<String> vaaccountnumbers;
+    private List<String> vaAccountNumbers;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("billId")
-    private String billid;
+    private String billId;
     @JsonProperty("startTime")
-    private String starttime;
+    private String startTime;
     @JsonProperty("endTime")
-    private String endtime;
-
-    public OpenApiTransactionPagedInputDto() {
-    }
-
-    public String getFilter() {
-
-        return filter;
-
-    }
-
-    public String getSorting() {
-
-        return sorting;
-
-    }
-
-    public Double getSkipcount() {
-
-        return skipcount;
-
-    }
-
-    public Double getMaxresultcount() {
-
-        return maxresultcount;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public List<Double> getShopids() {
-
-        return shopids;
-
-    }
-
-    public List<String> getVaaccountnumbers() {
-
-        return vaaccountnumbers;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getBillid() {
-
-        return billid;
-
-    }
-
-    public String getStarttime() {
-
-        return starttime;
-
-    }
-
-    public String getEndtime() {
-
-        return endtime;
-
-    }
-
-    public void setFilter(String filter) {
-
-        this.filter = filter;
-
-    }
-
-    public void setSorting(String sorting) {
-
-        this.sorting = sorting;
-
-    }
-
-    public void setSkipcount(Double skipcount) {
-
-        this.skipcount = skipcount;
-
-    }
-
-    public void setMaxresultcount(Double maxresultcount) {
-
-        this.maxresultcount = maxresultcount;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setShopids(List<Double> shopids) {
-
-        this.shopids = shopids;
-
-    }
-
-    public void setVaaccountnumbers(List<String> vaaccountnumbers) {
-
-        this.vaaccountnumbers = vaaccountnumbers;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setBillid(String billid) {
-
-        this.billid = billid;
-
-    }
-
-    public void setStarttime(String starttime) {
-
-        this.starttime = starttime;
-
-    }
-
-    public void setEndtime(String endtime) {
-
-        this.endtime = endtime;
-
+    private String endTime;
+
+    /** Use this constructor to set all required fields. */
+    public OpenApiTransactionPagedInputDto(Integer skipCount, Integer maxResultCount) {
+        this.skipCount = skipCount;
+        this.maxResultCount = maxResultCount;
     }
 }

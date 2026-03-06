@@ -2,209 +2,56 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiPaymentBillDto {
+    @lombok.NonNull
     @JsonProperty("requestId")
-    private String requestid;
+    private String requestId;
     @JsonProperty("clientId")
-    private String clientid;
+    private String clientId;
+    @lombok.NonNull
     @JsonProperty("subscriptionId")
-    private String subscriptionid;
+    private String subscriptionId;
+    @lombok.NonNull
     @JsonProperty("amount")
     private String amount;
+    @lombok.NonNull
     @JsonProperty("description")
     private String description;
     @JsonProperty("expirationTime")
-    private String expirationtime;
+    private String expirationTime;
     @JsonProperty("signature")
     private String signature;
     @JsonProperty("token")
     private String token;
     @JsonProperty("additionalData")
-    private Object additionaldata;
+    private Object additionalData;
     @JsonProperty("tokenRef")
-    private String tokenref;
+    private String tokenRef;
+    @lombok.NonNull
     @JsonProperty("partnerCode")
-    private String partnercode;
+    private DirectDebitPartnerEnum partnerCode;
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
+    @lombok.NonNull
     @JsonProperty("serviceProviderName")
-    private String serviceprovidername;
+    private String serviceProviderName;
     @JsonProperty("returnUrl")
-    private String returnurl;
+    private String returnUrl;
 
-    public OpenApiPaymentBillDto() {
-    }
-
-    public String getRequestid() {
-
-        return requestid;
-
-    }
-
-    public String getClientid() {
-
-        return clientid;
-
-    }
-
-    public String getSubscriptionid() {
-
-        return subscriptionid;
-
-    }
-
-    public String getAmount() {
-
-        return amount;
-
-    }
-
-    public String getDescription() {
-
-        return description;
-
-    }
-
-    public String getExpirationtime() {
-
-        return expirationtime;
-
-    }
-
-    public String getSignature() {
-
-        return signature;
-
-    }
-
-    public String getToken() {
-
-        return token;
-
-    }
-
-    public Object getAdditionaldata() {
-
-        return additionaldata;
-
-    }
-
-    public String getTokenref() {
-
-        return tokenref;
-
-    }
-
-    public String getPartnercode() {
-
-        return partnercode;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getServiceprovidername() {
-
-        return serviceprovidername;
-
-    }
-
-    public String getReturnurl() {
-
-        return returnurl;
-
-    }
-
-    public void setRequestid(String requestid) {
-
-        this.requestid = requestid;
-
-    }
-
-    public void setClientid(String clientid) {
-
-        this.clientid = clientid;
-
-    }
-
-    public void setSubscriptionid(String subscriptionid) {
-
-        this.subscriptionid = subscriptionid;
-
-    }
-
-    public void setAmount(String amount) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiPaymentBillDto(String requestId, String subscriptionId, String amount, String description, DirectDebitPartnerEnum partnerCode, String serviceProviderName) {
+        this.requestId = requestId;
+        this.subscriptionId = subscriptionId;
         this.amount = amount;
-
-    }
-
-    public void setDescription(String description) {
-
         this.description = description;
-
-    }
-
-    public void setExpirationtime(String expirationtime) {
-
-        this.expirationtime = expirationtime;
-
-    }
-
-    public void setSignature(String signature) {
-
-        this.signature = signature;
-
-    }
-
-    public void setToken(String token) {
-
-        this.token = token;
-
-    }
-
-    public void setAdditionaldata(Object additionaldata) {
-
-        this.additionaldata = additionaldata;
-
-    }
-
-    public void setTokenref(String tokenref) {
-
-        this.tokenref = tokenref;
-
-    }
-
-    public void setPartnercode(String partnercode) {
-
-        this.partnercode = partnercode;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setServiceprovidername(String serviceprovidername) {
-
-        this.serviceprovidername = serviceprovidername;
-
-    }
-
-    public void setReturnurl(String returnurl) {
-
-        this.returnurl = returnurl;
-
+        this.partnerCode = partnerCode;
+        this.serviceProviderName = serviceProviderName;
     }
 }

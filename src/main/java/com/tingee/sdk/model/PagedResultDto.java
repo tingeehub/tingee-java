@@ -7,9 +7,10 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.ToString
 public class PagedResultDto<T> {
     @JsonProperty("totalCount")
-    private Double totalcount;
+    private Integer totalCount;
 
     @JsonProperty("items")
     private List<T> items;
@@ -17,12 +18,12 @@ public class PagedResultDto<T> {
     public PagedResultDto() {
     }
 
-    public Double getTotalcount() {
-        return totalcount;
+    public Integer getTotalCount() {
+        return totalCount;
     }
 
-    public void setTotalcount(Double totalcount) {
-        this.totalcount = totalcount;
+    public void setTotalCount(Integer totalCount) {
+        this.totalCount = totalCount;
     }
 
     public List<T> getItems() {

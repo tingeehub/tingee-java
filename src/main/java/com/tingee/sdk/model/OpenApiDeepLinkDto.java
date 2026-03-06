@@ -2,181 +2,58 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiDeepLinkDto {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("type")
     private String type;
+    @lombok.NonNull
     @JsonProperty("qrCode")
-    private String qrcode;
+    private String qrCode;
+    @lombok.NonNull
     @JsonProperty("redirectUrl")
-    private String redirecturl;
+    private String redirectUrl;
+    @lombok.NonNull
     @JsonProperty("callbackUrl")
-    private String callbackurl;
+    private String callbackUrl;
+    @lombok.NonNull
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
+    @lombok.NonNull
     @JsonProperty("destinationBankBin")
-    private String destinationbankbin;
+    private String destinationBankBin;
+    @lombok.NonNull
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
     @JsonProperty("amount")
-    private Double amount;
+    private Long amount;
     @JsonProperty("content")
     private String content;
+    @lombok.NonNull
     @JsonProperty("billNumber")
-    private String billnumber;
+    private String billNumber;
 
-    public OpenApiDeepLinkDto() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getType() {
-
-        return type;
-
-    }
-
-    public String getQrcode() {
-
-        return qrcode;
-
-    }
-
-    public String getRedirecturl() {
-
-        return redirecturl;
-
-    }
-
-    public String getCallbackurl() {
-
-        return callbackurl;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getDestinationbankbin() {
-
-        return destinationbankbin;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public Double getAmount() {
-
-        return amount;
-
-    }
-
-    public String getContent() {
-
-        return content;
-
-    }
-
-    public String getBillnumber() {
-
-        return billnumber;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setType(String type) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiDeepLinkDto(String type, String qrCode, String redirectUrl, String callbackUrl, String bankBin, String destinationBankBin, String accountName, String accountNumber, String billNumber) {
         this.type = type;
-
-    }
-
-    public void setQrcode(String qrcode) {
-
-        this.qrcode = qrcode;
-
-    }
-
-    public void setRedirecturl(String redirecturl) {
-
-        this.redirecturl = redirecturl;
-
-    }
-
-    public void setCallbackurl(String callbackurl) {
-
-        this.callbackurl = callbackurl;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setDestinationbankbin(String destinationbankbin) {
-
-        this.destinationbankbin = destinationbankbin;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setAmount(Double amount) {
-
-        this.amount = amount;
-
-    }
-
-    public void setContent(String content) {
-
-        this.content = content;
-
-    }
-
-    public void setBillnumber(String billnumber) {
-
-        this.billnumber = billnumber;
-
+        this.qrCode = qrCode;
+        this.redirectUrl = redirectUrl;
+        this.callbackUrl = callbackUrl;
+        this.bankBin = bankBin;
+        this.destinationBankBin = destinationBankBin;
+        this.accountName = accountName;
+        this.accountNumber = accountNumber;
+        this.billNumber = billNumber;
     }
 }

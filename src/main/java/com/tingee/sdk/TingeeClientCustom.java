@@ -2,11 +2,11 @@ package com.tingee.sdk;
 
 import com.tingee.sdk.client.TingeeHttpClient;
 
-public class TingeeClientCustomV1 {
+public class TingeeClientCustom {
 
     private final TingeeHttpClient httpClient;
 
-    public TingeeClientCustomV1(TingeeHttpClient httpClient) {
+    public TingeeClientCustom(TingeeHttpClient httpClient) {
         this.httpClient = httpClient;
     }
 }

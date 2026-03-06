@@ -2,167 +2,55 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class V2AccountNumberDDLDto {
+    @lombok.NonNull
     @JsonProperty("id")
-    private Double id;
+    private Integer id;
+    @lombok.NonNull
     @JsonProperty("name")
     private String name;
+    @lombok.NonNull
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
+    @lombok.NonNull
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
     @JsonProperty("realVANumber")
-    private String realvanumber;
+    private String realVANumber;
     @JsonProperty("bankInfoDto")
-    private BankInfoDto bankinfodto;
+    private BankInfoDto bankInfoDto;
+    @lombok.NonNull
     @JsonProperty("shopId")
-    private Double shopid;
+    private Integer shopId;
+    @lombok.NonNull
     @JsonProperty("shopName")
-    private String shopname;
+    private String shopName;
 
-    public V2AccountNumberDDLDto() {
-    }
-
-    public Double getId() {
-
-        return id;
-
-    }
-
-    public String getName() {
-
-        return name;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public String getRealvanumber() {
-
-        return realvanumber;
-
-    }
-
-    public BankInfoDto getBankinfodto() {
-
-        return bankinfodto;
-
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public String getShopname() {
-
-        return shopname;
-
-    }
-
-    public void setId(Double id) {
-
+    /** Use this constructor to set all required fields. */
+    public V2AccountNumberDDLDto(Integer id, String name, Integer merchantId, String bankBin, BankNameEnum bankName, String accountNumber, Integer shopId, String shopName) {
         this.id = id;
-
-    }
-
-    public void setName(String name) {
-
         this.name = name;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
-    }
-
-    public void setRealvanumber(String realvanumber) {
-
-        this.realvanumber = realvanumber;
-
-    }
-
-    public void setBankinfodto(BankInfoDto bankinfodto) {
-
-        this.bankinfodto = bankinfodto;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
-    }
-
-    public void setShopname(String shopname) {
-
-        this.shopname = shopname;
-
+        this.merchantId = merchantId;
+        this.bankBin = bankBin;
+        this.bankName = bankName;
+        this.accountNumber = accountNumber;
+        this.shopId = shopId;
+        this.shopName = shopName;
     }
 }

@@ -8,218 +8,65 @@ import java.time.LocalDateTime;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiSubscriptionStatusResponseDto {
+    @lombok.NonNull
     @JsonProperty("lastModificationTime")
-    private LocalDateTime lastmodificationtime;
+    private LocalDateTime lastModificationTime;
     @JsonProperty("lastModifierUserId")
-    private Double lastmodifieruserid;
+    private Double lastModifierUserId;
     @JsonProperty("email")
     private String email;
+    @lombok.NonNull
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
+    @lombok.NonNull
     @JsonProperty("phone")
     private String phone;
+    @lombok.NonNull
     @JsonProperty("confirmPaymentByEmail")
-    private Boolean confirmpaymentbyemail;
+    private Boolean confirmPaymentByEmail;
     @JsonProperty("confirmEmail")
-    private String confirmemail;
+    private String confirmEmail;
+    @lombok.NonNull
     @JsonProperty("confirmPaymentByZalo")
-    private Boolean confirmpaymentbyzalo;
+    private Boolean confirmPaymentByZalo;
+    @lombok.NonNull
     @JsonProperty("confirmPhoneNumber")
-    private String confirmphonenumber;
+    private String confirmPhoneNumber;
+    @lombok.NonNull
     @JsonProperty("tokenRef")
-    private String tokenref;
+    private String tokenRef;
+    @lombok.NonNull
     @JsonProperty("status")
-    private String status;
+    private DirectDebitStatusEnum status;
+    @lombok.NonNull
     @JsonProperty("subscriptionId")
-    private String subscriptionid;
+    private String subscriptionId;
+    @lombok.NonNull
     @JsonProperty("bankBin")
-    private String bankbin;
-
-    public OpenApiSubscriptionStatusResponseDto() {
-    }
-
-    public LocalDateTime getLastmodificationtime() {
-
-        return lastmodificationtime;
-
-    }
-
-    public Double getLastmodifieruserid() {
-
-        return lastmodifieruserid;
-
-    }
-
-    public String getEmail() {
-
-        return email;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getPhone() {
-
-        return phone;
-
-    }
-
-    public Boolean getConfirmpaymentbyemail() {
-
-        return confirmpaymentbyemail;
-
-    }
-
-    public String getConfirmemail() {
-
-        return confirmemail;
-
-    }
-
-    public Boolean getConfirmpaymentbyzalo() {
-
-        return confirmpaymentbyzalo;
-
-    }
-
-    public String getConfirmphonenumber() {
-
-        return confirmphonenumber;
-
-    }
-
-    public String getTokenref() {
-
-        return tokenref;
-
-    }
-
-    public String getStatus() {
-
-        return status;
-
-    }
-
-    public String getSubscriptionid() {
-
-        return subscriptionid;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public void setLastmodificationtime(LocalDateTime lastmodificationtime) {
-
-        this.lastmodificationtime = lastmodificationtime;
-
-    }
-
-    public void setLastmodifieruserid(Double lastmodifieruserid) {
-
-        this.lastmodifieruserid = lastmodifieruserid;
-
-    }
-
-    public void setEmail(String email) {
-
-        this.email = email;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setPhone(String phone) {
-
+    private String bankBin;
+
+    /** Use this constructor to set all required fields. */
+    public OpenApiSubscriptionStatusResponseDto(LocalDateTime lastModificationTime, BankNameEnum bankName, String accountNumber, String phone, Boolean confirmPaymentByEmail, Boolean confirmPaymentByZalo, String confirmPhoneNumber, String tokenRef, DirectDebitStatusEnum status, String subscriptionId, String bankBin) {
+        this.lastModificationTime = lastModificationTime;
+        this.bankName = bankName;
+        this.accountNumber = accountNumber;
         this.phone = phone;
-
-    }
-
-    public void setConfirmpaymentbyemail(Boolean confirmpaymentbyemail) {
-
-        this.confirmpaymentbyemail = confirmpaymentbyemail;
-
-    }
-
-    public void setConfirmemail(String confirmemail) {
-
-        this.confirmemail = confirmemail;
-
-    }
-
-    public void setConfirmpaymentbyzalo(Boolean confirmpaymentbyzalo) {
-
-        this.confirmpaymentbyzalo = confirmpaymentbyzalo;
-
-    }
-
-    public void setConfirmphonenumber(String confirmphonenumber) {
-
-        this.confirmphonenumber = confirmphonenumber;
-
-    }
-
-    public void setTokenref(String tokenref) {
-
-        this.tokenref = tokenref;
-
-    }
-
-    public void setStatus(String status) {
-
+        this.confirmPaymentByEmail = confirmPaymentByEmail;
+        this.confirmPaymentByZalo = confirmPaymentByZalo;
+        this.confirmPhoneNumber = confirmPhoneNumber;
+        this.tokenRef = tokenRef;
         this.status = status;
-
-    }
-
-    public void setSubscriptionid(String subscriptionid) {
-
-        this.subscriptionid = subscriptionid;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
+        this.subscriptionId = subscriptionId;
+        this.bankBin = bankBin;
     }
 }

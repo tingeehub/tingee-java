@@ -2,55 +2,26 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiGetStatusDynamicQRInputDto {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("qrAccount")
-    private String qraccount;
+    private String qrAccount;
+    @lombok.NonNull
     @JsonProperty("billId")
-    private String billid;
+    private String billId;
 
-    public OpenApiGetStatusDynamicQRInputDto() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getQraccount() {
-
-        return qraccount;
-
-    }
-
-    public String getBillid() {
-
-        return billid;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setQraccount(String qraccount) {
-
-        this.qraccount = qraccount;
-
-    }
-
-    public void setBillid(String billid) {
-
-        this.billid = billid;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiGetStatusDynamicQRInputDto(String qrAccount, String billId) {
+        this.qrAccount = qrAccount;
+        this.billId = billId;
     }
 }

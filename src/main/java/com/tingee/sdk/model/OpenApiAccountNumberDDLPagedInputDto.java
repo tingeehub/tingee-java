@@ -8,162 +8,38 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiAccountNumberDDLPagedInputDto {
     @JsonProperty("filter")
     private String filter;
     @JsonProperty("sorting")
     private String sorting;
+    @lombok.NonNull
     @JsonProperty("skipCount")
-    private Double skipcount;
+    private Integer skipCount;
+    @lombok.NonNull
     @JsonProperty("maxResultCount")
-    private Double maxresultcount;
+    private Integer maxResultCount;
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
     @JsonProperty("merchantAccountNumberIds")
-    private List<Double> merchantaccountnumberids;
+    private List<Integer> merchantAccountNumberIds;
     @JsonProperty("shopIds")
-    private List<Double> shopids;
+    private List<Integer> shopIds;
     @JsonProperty("realVANumbers")
-    private List<String> realvanumbers;
+    private List<String> realVANumbers;
     @JsonProperty("isGetMerchantCashAccountsNumber")
-    private Boolean isgetmerchantcashaccountsnumber;
+    private Boolean isGetMerchantCashAccountsNumber;
     @JsonProperty("bankBins")
-    private List<String> bankbins;
+    private List<String> bankBins;
     @JsonProperty("bankNames")
-    private List<String> banknames;
-
-    public OpenApiAccountNumberDDLPagedInputDto() {
-    }
-
-    public String getFilter() {
-
-        return filter;
-
-    }
-
-    public String getSorting() {
-
-        return sorting;
-
-    }
-
-    public Double getSkipcount() {
-
-        return skipcount;
-
-    }
-
-    public Double getMaxresultcount() {
-
-        return maxresultcount;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public List<Double> getMerchantaccountnumberids() {
-
-        return merchantaccountnumberids;
-
-    }
-
-    public List<Double> getShopids() {
-
-        return shopids;
-
-    }
-
-    public List<String> getRealvanumbers() {
-
-        return realvanumbers;
-
-    }
-
-    public Boolean getIsgetmerchantcashaccountsnumber() {
-
-        return isgetmerchantcashaccountsnumber;
-
-    }
-
-    public List<String> getBankbins() {
-
-        return bankbins;
-
-    }
-
-    public List<String> getBanknames() {
-
-        return banknames;
-
-    }
-
-    public void setFilter(String filter) {
-
-        this.filter = filter;
-
-    }
-
-    public void setSorting(String sorting) {
-
-        this.sorting = sorting;
-
-    }
-
-    public void setSkipcount(Double skipcount) {
-
-        this.skipcount = skipcount;
-
-    }
-
-    public void setMaxresultcount(Double maxresultcount) {
-
-        this.maxresultcount = maxresultcount;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setMerchantaccountnumberids(List<Double> merchantaccountnumberids) {
-
-        this.merchantaccountnumberids = merchantaccountnumberids;
-
-    }
-
-    public void setShopids(List<Double> shopids) {
-
-        this.shopids = shopids;
-
-    }
-
-    public void setRealvanumbers(List<String> realvanumbers) {
-
-        this.realvanumbers = realvanumbers;
-
-    }
-
-    public void setIsgetmerchantcashaccountsnumber(Boolean isgetmerchantcashaccountsnumber) {
-
-        this.isgetmerchantcashaccountsnumber = isgetmerchantcashaccountsnumber;
-
-    }
-
-    public void setBankbins(List<String> bankbins) {
-
-        this.bankbins = bankbins;
-
-    }
-
-    public void setBanknames(List<String> banknames) {
-
-        this.banknames = banknames;
-
+    private List<BankNameEnum> bankNames;
+
+    /** Use this constructor to set all required fields. */
+    public OpenApiAccountNumberDDLPagedInputDto(Integer skipCount, Integer maxResultCount) {
+        this.skipCount = skipCount;
+        this.maxResultCount = maxResultCount;
     }
 }

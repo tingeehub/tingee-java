@@ -2,69 +2,31 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiLinkOrUnlinkNfcShopDto {
+    @lombok.NonNull
     @JsonProperty("nfcId")
-    private String nfcid;
+    private String nfcId;
+    @lombok.NonNull
     @JsonProperty("shopId")
-    private Double shopid;
+    private Double shopId;
+    @lombok.NonNull
     @JsonProperty("isLink")
-    private Boolean islink;
+    private Boolean isLink;
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
 
-    public OpenApiLinkOrUnlinkNfcShopDto() {
-    }
-
-    public String getNfcid() {
-
-        return nfcid;
-
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public Boolean getIslink() {
-
-        return islink;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public void setNfcid(String nfcid) {
-
-        this.nfcid = nfcid;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
-    }
-
-    public void setIslink(Boolean islink) {
-
-        this.islink = islink;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiLinkOrUnlinkNfcShopDto(String nfcId, Double shopId, Boolean isLink) {
+        this.nfcId = nfcId;
+        this.shopId = shopId;
+        this.isLink = isLink;
     }
 }

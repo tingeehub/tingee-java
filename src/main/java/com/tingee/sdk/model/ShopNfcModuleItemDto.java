@@ -2,111 +2,28 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class ShopNfcModuleItemDto {
     @JsonProperty("googleConfig")
-    private GoogleModuleConfigDto googleconfig;
+    private GoogleModuleConfigDto googleConfig;
     @JsonProperty("hotlineConfig")
-    private HotlineModuleConfigDto hotlineconfig;
+    private HotlineModuleConfigDto hotlineConfig;
     @JsonProperty("emailConfig")
-    private EmailModuleConfigDto emailconfig;
+    private EmailModuleConfigDto emailConfig;
     @JsonProperty("zaloConfig")
-    private ZaloModuleConfigDto zaloconfig;
+    private ZaloModuleConfigDto zaloConfig;
     @JsonProperty("messengerConfig")
-    private MessengerModuleConfigDto messengerconfig;
+    private MessengerModuleConfigDto messengerConfig;
     @JsonProperty("paymentConfig")
-    private PaymentModuleConfigDto paymentconfig;
+    private PaymentModuleConfigDto paymentConfig;
     @JsonProperty("invoiceConfig")
-    private InvoiceModuleConfigDto invoiceconfig;
+    private InvoiceModuleConfigDto invoiceConfig;
 
-    public ShopNfcModuleItemDto() {
-    }
-
-    public GoogleModuleConfigDto getGoogleconfig() {
-
-        return googleconfig;
-
-    }
-
-    public HotlineModuleConfigDto getHotlineconfig() {
-
-        return hotlineconfig;
-
-    }
-
-    public EmailModuleConfigDto getEmailconfig() {
-
-        return emailconfig;
-
-    }
-
-    public ZaloModuleConfigDto getZaloconfig() {
-
-        return zaloconfig;
-
-    }
-
-    public MessengerModuleConfigDto getMessengerconfig() {
-
-        return messengerconfig;
-
-    }
-
-    public PaymentModuleConfigDto getPaymentconfig() {
-
-        return paymentconfig;
-
-    }
-
-    public InvoiceModuleConfigDto getInvoiceconfig() {
-
-        return invoiceconfig;
-
-    }
-
-    public void setGoogleconfig(GoogleModuleConfigDto googleconfig) {
-
-        this.googleconfig = googleconfig;
-
-    }
-
-    public void setHotlineconfig(HotlineModuleConfigDto hotlineconfig) {
-
-        this.hotlineconfig = hotlineconfig;
-
-    }
-
-    public void setEmailconfig(EmailModuleConfigDto emailconfig) {
-
-        this.emailconfig = emailconfig;
-
-    }
-
-    public void setZaloconfig(ZaloModuleConfigDto zaloconfig) {
-
-        this.zaloconfig = zaloconfig;
-
-    }
-
-    public void setMessengerconfig(MessengerModuleConfigDto messengerconfig) {
-
-        this.messengerconfig = messengerconfig;
-
-    }
-
-    public void setPaymentconfig(PaymentModuleConfigDto paymentconfig) {
-
-        this.paymentconfig = paymentconfig;
-
-    }
-
-    public void setInvoiceconfig(InvoiceModuleConfigDto invoiceconfig) {
-
-        this.invoiceconfig = invoiceconfig;
-
-    }
 }

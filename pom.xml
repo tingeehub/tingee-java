@@ -7,7 +7,7 @@
 
     <groupId>com.tingee</groupId>
     <artifactId>sdk-java</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.0-beta</version>
     <packaging>jar</packaging>
 
     <name>Tingee SDK for Java</name>
@@ -46,12 +46,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.16.1</version>
+            <version>2.21.1</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>2.16.1</version>
+            <version>2.21.1</version>
         </dependency>
 
         <!-- Test Dependencies -->
@@ -60,6 +60,14 @@
             <artifactId>junit-jupiter</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- Lombok: compile-time only, not bundled into SDK jar -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

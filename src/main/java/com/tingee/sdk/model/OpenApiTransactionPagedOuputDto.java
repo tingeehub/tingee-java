@@ -2,209 +2,57 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiTransactionPagedOuputDto {
+    @lombok.NonNull
     @JsonProperty("transactionId")
-    private String transactionid;
+    private String transactionId;
+    @lombok.NonNull
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("shopId")
-    private Double shopid;
+    private Integer shopId;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("cashFlowSource")
-    private String cashflowsource;
+    private CashFlowSourceEnum cashFlowSource;
+    @lombok.NonNull
     @JsonProperty("code")
     private String code;
+    @lombok.NonNull
     @JsonProperty("amount")
-    private Double amount;
+    private Long amount;
     @JsonProperty("type")
     private String type;
     @JsonProperty("content")
     private String content;
     @JsonProperty("currency")
     private String currency;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
     @JsonProperty("transactionDate")
-    private String transactiondate;
+    private String transactionDate;
     @JsonProperty("billId")
-    private String billid;
+    private String billId;
 
-    public OpenApiTransactionPagedOuputDto() {
-    }
-
-    public String getTransactionid() {
-
-        return transactionid;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getCashflowsource() {
-
-        return cashflowsource;
-
-    }
-
-    public String getCode() {
-
-        return code;
-
-    }
-
-    public Double getAmount() {
-
-        return amount;
-
-    }
-
-    public String getType() {
-
-        return type;
-
-    }
-
-    public String getContent() {
-
-        return content;
-
-    }
-
-    public String getCurrency() {
-
-        return currency;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public String getTransactiondate() {
-
-        return transactiondate;
-
-    }
-
-    public String getBillid() {
-
-        return billid;
-
-    }
-
-    public void setTransactionid(String transactionid) {
-
-        this.transactionid = transactionid;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setCashflowsource(String cashflowsource) {
-
-        this.cashflowsource = cashflowsource;
-
-    }
-
-    public void setCode(String code) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiTransactionPagedOuputDto(String transactionId, Integer merchantId, Integer shopId, String code, Long amount, String accountNumber) {
+        this.transactionId = transactionId;
+        this.merchantId = merchantId;
+        this.shopId = shopId;
         this.code = code;
-
-    }
-
-    public void setAmount(Double amount) {
-
         this.amount = amount;
-
-    }
-
-    public void setType(String type) {
-
-        this.type = type;
-
-    }
-
-    public void setContent(String content) {
-
-        this.content = content;
-
-    }
-
-    public void setCurrency(String currency) {
-
-        this.currency = currency;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
-    }
-
-    public void setTransactiondate(String transactiondate) {
-
-        this.transactiondate = transactiondate;
-
-    }
-
-    public void setBillid(String billid) {
-
-        this.billid = billid;
-
+        this.accountNumber = accountNumber;
     }
 }

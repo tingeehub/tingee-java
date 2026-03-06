@@ -2,97 +2,37 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiGenerateVietQROuputDto {
+    @lombok.NonNull
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
     @JsonProperty("amount")
     private String amount;
     @JsonProperty("purpose")
     private String purpose;
+    @lombok.NonNull
     @JsonProperty("vaPrefix")
-    private String vaprefix;
+    private String vaPrefix;
+    @lombok.NonNull
     @JsonProperty("vaSuffix")
-    private String vasuffix;
+    private String vaSuffix;
 
-    public OpenApiGenerateVietQROuputDto() {
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getAmount() {
-
-        return amount;
-
-    }
-
-    public String getPurpose() {
-
-        return purpose;
-
-    }
-
-    public String getVaprefix() {
-
-        return vaprefix;
-
-    }
-
-    public String getVasuffix() {
-
-        return vasuffix;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setAmount(String amount) {
-
-        this.amount = amount;
-
-    }
-
-    public void setPurpose(String purpose) {
-
-        this.purpose = purpose;
-
-    }
-
-    public void setVaprefix(String vaprefix) {
-
-        this.vaprefix = vaprefix;
-
-    }
-
-    public void setVasuffix(String vasuffix) {
-
-        this.vasuffix = vasuffix;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiGenerateVietQROuputDto(String bankBin, String accountNumber, String vaPrefix, String vaSuffix) {
+        this.bankBin = bankBin;
+        this.accountNumber = accountNumber;
+        this.vaPrefix = vaPrefix;
+        this.vaSuffix = vaSuffix;
     }
 }

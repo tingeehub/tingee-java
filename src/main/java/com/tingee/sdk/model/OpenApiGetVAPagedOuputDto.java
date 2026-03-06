@@ -8,134 +8,41 @@ import java.time.LocalDateTime;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiGetVAPagedOuputDto {
+    @lombok.NonNull
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
+    @lombok.NonNull
     @JsonProperty("accountType")
-    private String accounttype;
+    private BankAccountTypeEnum accountType;
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
+    @lombok.NonNull
     @JsonProperty("shopId")
-    private Double shopid;
+    private Integer shopId;
+    @lombok.NonNull
     @JsonProperty("status")
-    private String status;
+    private StatusMerchantAccountNumberEnum status;
     @JsonProperty("creationTime")
-    private LocalDateTime creationtime;
+    private LocalDateTime creationTime;
 
-    public OpenApiGetVAPagedOuputDto() {
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getAccounttype() {
-
-        return accounttype;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public String getStatus() {
-
-        return status;
-
-    }
-
-    public LocalDateTime getCreationtime() {
-
-        return creationtime;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setAccounttype(String accounttype) {
-
-        this.accounttype = accounttype;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
-    }
-
-    public void setStatus(String status) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiGetVAPagedOuputDto(BankNameEnum bankName, BankAccountTypeEnum accountType, String accountNumber, Integer shopId, StatusMerchantAccountNumberEnum status) {
+        this.bankName = bankName;
+        this.accountType = accountType;
+        this.accountNumber = accountNumber;
+        this.shopId = shopId;
         this.status = status;
-
-    }
-
-    public void setCreationtime(LocalDateTime creationtime) {
-
-        this.creationtime = creationtime;
-
     }
 }

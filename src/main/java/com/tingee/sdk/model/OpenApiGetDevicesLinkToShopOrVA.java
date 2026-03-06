@@ -2,55 +2,19 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiGetDevicesLinkToShopOrVA {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
     @JsonProperty("shopId")
-    private Double shopid;
+    private Integer shopId;
 
-    public OpenApiGetDevicesLinkToShopOrVA() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
-    }
 }

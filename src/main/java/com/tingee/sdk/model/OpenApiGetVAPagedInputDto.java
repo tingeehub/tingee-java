@@ -8,190 +8,48 @@ import java.time.LocalDateTime;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiGetVAPagedInputDto {
     @JsonProperty("filter")
     private String filter;
     @JsonProperty("sorting")
     private String sorting;
+    @lombok.NonNull
     @JsonProperty("skipCount")
-    private Double skipcount;
+    private Integer skipCount;
+    @lombok.NonNull
     @JsonProperty("maxResultCount")
-    private Double maxresultcount;
+    private Integer maxResultCount;
     @JsonProperty("startTime")
-    private LocalDateTime starttime;
+    private LocalDateTime startTime;
     @JsonProperty("endTime")
-    private LocalDateTime endtime;
+    private LocalDateTime endTime;
+    @lombok.NonNull
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
     @JsonProperty("shopId")
-    private Double shopid;
+    private Integer shopId;
+    @lombok.NonNull
     @JsonProperty("accountType")
-    private String accounttype;
+    private BankAccountTypeEnum accountType;
     @JsonProperty("agentId")
-    private Double agentid;
+    private Integer agentId;
+    @lombok.NonNull
     @JsonProperty("dataAccess")
-    private String dataaccess;
+    private DataAccessFilterEnum dataAccess;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("bankName")
-    private String bankname;
-
-    public OpenApiGetVAPagedInputDto() {
-    }
-
-    public String getFilter() {
-
-        return filter;
-
-    }
-
-    public String getSorting() {
-
-        return sorting;
-
-    }
-
-    public Double getSkipcount() {
-
-        return skipcount;
-
-    }
-
-    public Double getMaxresultcount() {
-
-        return maxresultcount;
-
-    }
-
-    public LocalDateTime getStarttime() {
-
-        return starttime;
-
-    }
-
-    public LocalDateTime getEndtime() {
-
-        return endtime;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public String getAccounttype() {
-
-        return accounttype;
-
-    }
-
-    public Double getAgentid() {
-
-        return agentid;
-
-    }
-
-    public String getDataaccess() {
-
-        return dataaccess;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public void setFilter(String filter) {
-
-        this.filter = filter;
-
-    }
-
-    public void setSorting(String sorting) {
-
-        this.sorting = sorting;
-
-    }
-
-    public void setSkipcount(Double skipcount) {
-
-        this.skipcount = skipcount;
-
-    }
-
-    public void setMaxresultcount(Double maxresultcount) {
-
-        this.maxresultcount = maxresultcount;
-
-    }
-
-    public void setStarttime(LocalDateTime starttime) {
-
-        this.starttime = starttime;
-
-    }
-
-    public void setEndtime(LocalDateTime endtime) {
-
-        this.endtime = endtime;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
-    }
-
-    public void setAccounttype(String accounttype) {
-
-        this.accounttype = accounttype;
-
-    }
-
-    public void setAgentid(Double agentid) {
-
-        this.agentid = agentid;
-
-    }
-
-    public void setDataaccess(String dataaccess) {
-
-        this.dataaccess = dataaccess;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
+    private BankNameEnum bankName;
+
+    /** Use this constructor to set all required fields. */
+    public OpenApiGetVAPagedInputDto(Integer skipCount, Integer maxResultCount, Integer merchantId, BankAccountTypeEnum accountType, DataAccessFilterEnum dataAccess) {
+        this.skipCount = skipCount;
+        this.maxResultCount = maxResultCount;
+        this.merchantId = merchantId;
+        this.accountType = accountType;
+        this.dataAccess = dataAccess;
     }
 }

@@ -2,69 +2,26 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiDeleteConfigDto {
     @JsonProperty("otpNumber")
-    private String otpnumber;
+    private String otpNumber;
     @JsonProperty("confirmId")
-    private String confirmid;
+    private String confirmId;
+    @lombok.NonNull
     @JsonProperty("id")
     private Double id;
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
 
-    public OpenApiDeleteConfigDto() {
-    }
-
-    public String getOtpnumber() {
-
-        return otpnumber;
-
-    }
-
-    public String getConfirmid() {
-
-        return confirmid;
-
-    }
-
-    public Double getId() {
-
-        return id;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public void setOtpnumber(String otpnumber) {
-
-        this.otpnumber = otpnumber;
-
-    }
-
-    public void setConfirmid(String confirmid) {
-
-        this.confirmid = confirmid;
-
-    }
-
-    public void setId(Double id) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiDeleteConfigDto(Double id) {
         this.id = id;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
     }
 }

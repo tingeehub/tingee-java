@@ -2,125 +2,40 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiConfigAccountBusinessDto {
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
+    @lombok.NonNull
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
+    @lombok.NonNull
     @JsonProperty("mobile")
     private String mobile;
     @JsonProperty("vaPrefix")
-    private String vaprefix;
+    private String vaPrefix;
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("acbUserId")
-    private String acbuserid;
+    private String acbUserId;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
 
-    public OpenApiConfigAccountBusinessDto() {
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getMobile() {
-
-        return mobile;
-
-    }
-
-    public String getVaprefix() {
-
-        return vaprefix;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getAcbuserid() {
-
-        return acbuserid;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setMobile(String mobile) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiConfigAccountBusinessDto(String accountNumber, String accountName, String mobile, String acbUserId) {
+        this.accountNumber = accountNumber;
+        this.accountName = accountName;
         this.mobile = mobile;
-
-    }
-
-    public void setVaprefix(String vaprefix) {
-
-        this.vaprefix = vaprefix;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setAcbuserid(String acbuserid) {
-
-        this.acbuserid = acbuserid;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
+        this.acbUserId = acbUserId;
     }
 }

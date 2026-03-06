@@ -8,78 +8,30 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiUpdateShopDeviceLinkDto {
+    @lombok.NonNull
     @JsonProperty("uuid")
     private String uuid;
+    @lombok.NonNull
     @JsonProperty("type")
-    private String type;
+    private DeviceTypeEnum type;
+    @lombok.NonNull
     @JsonProperty("appType")
-    private String apptype;
+    private AppTypeEnum appType;
+    @lombok.NonNull
     @JsonProperty("shopsLinkToDeviceDtos")
-    private List<OpenApiShopLinkToDeviceDto> shopslinktodevicedtos;
+    private List<OpenApiShopLinkToDeviceDto> shopsLinkToDeviceDtos;
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
 
-    public OpenApiUpdateShopDeviceLinkDto() {
-    }
-
-    public String getUuid() {
-
-        return uuid;
-
-    }
-
-    public String getType() {
-
-        return type;
-
-    }
-
-    public String getApptype() {
-
-        return apptype;
-
-    }
-
-    public List<OpenApiShopLinkToDeviceDto> getShopslinktodevicedtos() {
-
-        return shopslinktodevicedtos;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public void setUuid(String uuid) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiUpdateShopDeviceLinkDto(String uuid, DeviceTypeEnum type, AppTypeEnum appType, List<OpenApiShopLinkToDeviceDto> shopsLinkToDeviceDtos) {
         this.uuid = uuid;
-
-    }
-
-    public void setType(String type) {
-
         this.type = type;
-
-    }
-
-    public void setApptype(String apptype) {
-
-        this.apptype = apptype;
-
-    }
-
-    public void setShopslinktodevicedtos(List<OpenApiShopLinkToDeviceDto> shopslinktodevicedtos) {
-
-        this.shopslinktodevicedtos = shopslinktodevicedtos;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
+        this.appType = appType;
+        this.shopsLinkToDeviceDtos = shopsLinkToDeviceDtos;
     }
 }

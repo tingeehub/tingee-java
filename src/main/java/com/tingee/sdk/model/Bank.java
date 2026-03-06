@@ -2,97 +2,26 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class Bank {
     @JsonProperty("code")
-    private String code;
+    private BankNameEnum code;
     @JsonProperty("name")
     private String name;
     @JsonProperty("shortName")
-    private String shortname;
+    private String shortName;
     @JsonProperty("bin")
     private String bin;
     @JsonProperty("urlLogo")
-    private String urllogo;
+    private String urlLogo;
     @JsonProperty("termsAndConditions")
-    private Object termsandconditions;
+    private Object termsAndConditions;
 
-    public Bank() {
-    }
-
-    public String getCode() {
-
-        return code;
-
-    }
-
-    public String getName() {
-
-        return name;
-
-    }
-
-    public String getShortname() {
-
-        return shortname;
-
-    }
-
-    public String getBin() {
-
-        return bin;
-
-    }
-
-    public String getUrllogo() {
-
-        return urllogo;
-
-    }
-
-    public Object getTermsandconditions() {
-
-        return termsandconditions;
-
-    }
-
-    public void setCode(String code) {
-
-        this.code = code;
-
-    }
-
-    public void setName(String name) {
-
-        this.name = name;
-
-    }
-
-    public void setShortname(String shortname) {
-
-        this.shortname = shortname;
-
-    }
-
-    public void setBin(String bin) {
-
-        this.bin = bin;
-
-    }
-
-    public void setUrllogo(String urllogo) {
-
-        this.urllogo = urllogo;
-
-    }
-
-    public void setTermsandconditions(Object termsandconditions) {
-
-        this.termsandconditions = termsandconditions;
-
-    }
 }

@@ -2,139 +2,42 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiReadAmountDto {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("uuid")
     private String uuid;
+    @lombok.NonNull
     @JsonProperty("transactionId")
-    private String transactionid;
+    private String transactionId;
+    @lombok.NonNull
     @JsonProperty("amount")
-    private Double amount;
+    private Long amount;
+    @lombok.NonNull
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("firstDisplayText")
-    private String firstdisplaytext;
+    private String firstDisplayText;
     @JsonProperty("secondDisplayText")
-    private String seconddisplaytext;
+    private String secondDisplayText;
     @JsonProperty("thirdDisplayText")
-    private String thirddisplaytext;
+    private String thirdDisplayText;
     @JsonProperty("playSound")
-    private Boolean playsound;
+    private Boolean playSound;
 
-    public OpenApiReadAmountDto() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getUuid() {
-
-        return uuid;
-
-    }
-
-    public String getTransactionid() {
-
-        return transactionid;
-
-    }
-
-    public Double getAmount() {
-
-        return amount;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getFirstdisplaytext() {
-
-        return firstdisplaytext;
-
-    }
-
-    public String getSeconddisplaytext() {
-
-        return seconddisplaytext;
-
-    }
-
-    public String getThirddisplaytext() {
-
-        return thirddisplaytext;
-
-    }
-
-    public Boolean getPlaysound() {
-
-        return playsound;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setUuid(String uuid) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiReadAmountDto(String uuid, String transactionId, Long amount, String bankBin) {
         this.uuid = uuid;
-
-    }
-
-    public void setTransactionid(String transactionid) {
-
-        this.transactionid = transactionid;
-
-    }
-
-    public void setAmount(Double amount) {
-
+        this.transactionId = transactionId;
         this.amount = amount;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setFirstdisplaytext(String firstdisplaytext) {
-
-        this.firstdisplaytext = firstdisplaytext;
-
-    }
-
-    public void setSeconddisplaytext(String seconddisplaytext) {
-
-        this.seconddisplaytext = seconddisplaytext;
-
-    }
-
-    public void setThirddisplaytext(String thirddisplaytext) {
-
-        this.thirddisplaytext = thirddisplaytext;
-
-    }
-
-    public void setPlaysound(Boolean playsound) {
-
-        this.playsound = playsound;
-
+        this.bankBin = bankBin;
     }
 }

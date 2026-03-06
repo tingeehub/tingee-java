@@ -16,14 +16,14 @@
 <dependency>
   <groupId>com.tingee</groupId>
   <artifactId>sdk-java</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.0-beta</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation 'com.tingee:sdk-java:0.1.0'
+implementation 'com.tingee:sdk-java:0.1.0-beta'
 ```
 
 ---
@@ -34,20 +34,19 @@ implementation 'com.tingee:sdk-java:0.1.0'
 import com.tingee.sdk.TingeeClient;
 import com.tingee.sdk.client.TingeeEnvironment;
 
-TingeeClient client = TingeeClient.builder()
-    .secretKey(System.getenv("TINGEE_SECRET_KEY"))
-    .clientId(System.getenv("TINGEE_CLIENT_ID"))
-    .environment(TingeeEnvironment.UAT)  // UAT | PRODUCTION, default UAT
-    .timeout(90000)                      // ms, default 90000
+TingeeClient client = TingeeClient.builder(
+        System.getenv("TINGEE_SECRET_KEY"),
+        System.getenv("TINGEE_CLIENT_ID"))
+    .environment(TingeeEnvironment.UAT)  // UAT | PRODUCTION, mặc định PRODUCTION
+    .timeout(90000)                      // ms, mặc định 90000
     .baseUrl("https://uat-open-api.tingee.vn") // tùy chọn, ghi đè environment
     .build();
 
-var req = new OpenApiGetMerchantPagedInputDto();
-req.setMaxResultCount(10); req.setSkipCount(0);
-var result = client.v1.merchantGetPaging(req);
+var req = new OpenApiGetPagingMerchantsDto(0, 10); // required fields qua constructor
+var result = client.merchant.getPaging(req);
 
-if ("00".equals(result.getCode())) {
-    System.out.println(result.getData());
+if (result.isSuccess()) {
+    result.getData().getItems().forEach(m -> System.out.println(m));
 } else {
     System.err.println("Lỗi " + result.getCode() + ": " + result.getMessage());
 }
@@ -72,9 +71,7 @@ if ("00".equals(result.getCode())) {
 public TingeeClient tingeeClient(
         @Value("${tingee.secret-key}") String secretKey,
         @Value("${tingee.client-id}")  String clientId) {
-    return TingeeClient.builder()
-        .secretKey(secretKey)
-        .clientId(clientId)
+    return TingeeClient.builder(secretKey, clientId)
         .environment(TingeeEnvironment.UAT)
         .build();
 }
@@ -84,25 +81,31 @@ public TingeeClient tingeeClient(
 
 ## Gọi API
 
-Tất cả phương thức nằm trong `client.v1.*`:
+Các phương thức được nhóm theo tính năng (`client.<group>.<method>()`):
 
 ```java
-// Lấy danh sách shop (có phân trang)
-var pageReq = new OpenApiGetShopPagedInputDto();
-pageReq.setMaxResultCount(10); pageReq.setSkipCount(0);
-var result = client.v1.shopGetPaging(pageReq);
+// Merchant — lấy danh sách (required fields qua constructor)
+var req = new OpenApiGetPagingMerchantsDto(0, 10);
+var result = client.merchant.getPaging(req);
 if (result.isSuccess()) {
-    result.getData().getItems().forEach(s -> System.out.println(s.getName()));
+    result.getData().getItems().forEach(m -> System.out.println(m));
 }
 
+// Shop — lấy danh sách
+var shopReq = new OpenApiGetShopPagedInputDto(0, 10);
+var shopResult = client.shop.getPaging(shopReq);
+
 // Direct Debit
-var subReq = new DirectDebitGetSubscriptionStatusInputDto();
-subReq.setRequestId("uuid-here");
-subReq.setSubscriptionId("uuid-here");
-subReq.setTokenRef("token-ref");
-var sub = client.v1.directDebitGetSubscriptionStatus(subReq);
+var sub = client.directDebit.getSubscriptionStatus(
+    "request-id", "subscription-id", "token-ref");
 ```
 
+> **Input DTO:** Required fields được bắt buộc qua constructor. Optional fields set thêm qua setter.
+>
+> **Output DTO:** Tự động deserialize từ JSON response.
+>
+> **`toString()`:** Tất cả DTO đều implement `toString()` — in trực tiếp để debug.
+>
 > **Lưu ý:** SDK trả về `TingeeApiResponse<T>` với `code` và `message`. Kiểm tra `result.isSuccess()` để xác định thành công — SDK **không tự throw** khi `code != "00"`.
 
 ---

@@ -2,55 +2,20 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class GenerateDynamicQROuputDto {
     @JsonProperty("qrCode")
-    private String qrcode;
+    private String qrCode;
     @JsonProperty("qrAccount")
-    private String qraccount;
+    private String qrAccount;
     @JsonProperty("billId")
-    private String billid;
+    private String billId;
 
-    public GenerateDynamicQROuputDto() {
-    }
-
-    public String getQrcode() {
-
-        return qrcode;
-
-    }
-
-    public String getQraccount() {
-
-        return qraccount;
-
-    }
-
-    public String getBillid() {
-
-        return billid;
-
-    }
-
-    public void setQrcode(String qrcode) {
-
-        this.qrcode = qrcode;
-
-    }
-
-    public void setQraccount(String qraccount) {
-
-        this.qraccount = qraccount;
-
-    }
-
-    public void setBillid(String billid) {
-
-        this.billid = billid;
-
-    }
 }

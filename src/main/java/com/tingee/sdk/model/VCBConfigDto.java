@@ -8,36 +8,14 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class VCBConfigDto {
     @JsonProperty("businessAccounts")
-    private List<VCBConfigBusinessDto> businessaccounts;
+    private List<VCBConfigBusinessDto> businessAccounts;
     @JsonProperty("businessHouseholdAccounts")
-    private List<VCBConfigBusinessDto> businesshouseholdaccounts;
+    private List<VCBConfigBusinessDto> businessHouseholdAccounts;
 
-    public VCBConfigDto() {
-    }
-
-    public List<VCBConfigBusinessDto> getBusinessaccounts() {
-
-        return businessaccounts;
-
-    }
-
-    public List<VCBConfigBusinessDto> getBusinesshouseholdaccounts() {
-
-        return businesshouseholdaccounts;
-
-    }
-
-    public void setBusinessaccounts(List<VCBConfigBusinessDto> businessaccounts) {
-
-        this.businessaccounts = businessaccounts;
-
-    }
-
-    public void setBusinesshouseholdaccounts(List<VCBConfigBusinessDto> businesshouseholdaccounts) {
-
-        this.businesshouseholdaccounts = businesshouseholdaccounts;
-
-    }
 }

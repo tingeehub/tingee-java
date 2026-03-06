@@ -2,83 +2,32 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiRegisterDto {
+    @lombok.NonNull
     @JsonProperty("requestId")
-    private String requestid;
+    private String requestId;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
+    @lombok.NonNull
     @JsonProperty("phone")
     private String phone;
+    @lombok.NonNull
     @JsonProperty("returnUrl")
-    private String returnurl;
+    private String returnUrl;
 
-    public OpenApiRegisterDto() {
-    }
-
-    public String getRequestid() {
-
-        return requestid;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getPhone() {
-
-        return phone;
-
-    }
-
-    public String getReturnurl() {
-
-        return returnurl;
-
-    }
-
-    public void setRequestid(String requestid) {
-
-        this.requestid = requestid;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setPhone(String phone) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiRegisterDto(String requestId, String phone, String returnUrl) {
+        this.requestId = requestId;
         this.phone = phone;
-
-    }
-
-    public void setReturnurl(String returnurl) {
-
-        this.returnurl = returnurl;
-
+        this.returnUrl = returnUrl;
     }
 }

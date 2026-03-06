@@ -2,111 +2,39 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class ShinhanConfigDto {
+    @lombok.NonNull
     @JsonProperty("vaPrefix")
-    private String vaprefix;
+    private String vaPrefix;
+    @lombok.NonNull
     @JsonProperty("clientId")
-    private String clientid;
+    private String clientId;
     @JsonProperty("clientSecret")
-    private String clientsecret;
+    private String clientSecret;
     @JsonProperty("pathPublicKey")
-    private FileUploadDto pathpublickey;
+    private FileUploadDto pathPublicKey;
     @JsonProperty("pathPrivateKey")
-    private FileUploadDto pathprivatekey;
+    private FileUploadDto pathPrivateKey;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
+    @lombok.NonNull
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
 
-    public ShinhanConfigDto() {
-    }
-
-    public String getVaprefix() {
-
-        return vaprefix;
-
-    }
-
-    public String getClientid() {
-
-        return clientid;
-
-    }
-
-    public String getClientsecret() {
-
-        return clientsecret;
-
-    }
-
-    public FileUploadDto getPathpublickey() {
-
-        return pathpublickey;
-
-    }
-
-    public FileUploadDto getPathprivatekey() {
-
-        return pathprivatekey;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public void setVaprefix(String vaprefix) {
-
-        this.vaprefix = vaprefix;
-
-    }
-
-    public void setClientid(String clientid) {
-
-        this.clientid = clientid;
-
-    }
-
-    public void setClientsecret(String clientsecret) {
-
-        this.clientsecret = clientsecret;
-
-    }
-
-    public void setPathpublickey(FileUploadDto pathpublickey) {
-
-        this.pathpublickey = pathpublickey;
-
-    }
-
-    public void setPathprivatekey(FileUploadDto pathprivatekey) {
-
-        this.pathprivatekey = pathprivatekey;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
+    /** Use this constructor to set all required fields. */
+    public ShinhanConfigDto(String vaPrefix, String clientId, String accountNumber, String accountName) {
+        this.vaPrefix = vaPrefix;
+        this.clientId = clientId;
+        this.accountNumber = accountNumber;
+        this.accountName = accountName;
     }
 }

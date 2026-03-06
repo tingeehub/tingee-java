@@ -8,358 +8,70 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiCreateMerchantDto {
     @JsonProperty("id")
-    private Double id;
+    private Integer id;
     @JsonProperty("code")
     private String code;
+    @lombok.NonNull
     @JsonProperty("name")
     private String name;
     @JsonProperty("email")
     private String email;
+    @lombok.NonNull
     @JsonProperty("phoneNumber")
-    private String phonenumber;
+    private String phoneNumber;
     @JsonProperty("website")
     private String website;
     @JsonProperty("businessSectorIds")
-    private List<Double> businesssectorids;
+    private List<Double> businessSectorIds;
     @JsonProperty("provinceId")
-    private String provinceid;
+    private String provinceId;
     @JsonProperty("districtId")
-    private String districtid;
+    private String districtId;
     @JsonProperty("communeId")
-    private String communeid;
+    private String communeId;
     @JsonProperty("address")
     private String address;
     @JsonProperty("fullAddress")
-    private String fulladdress;
+    private String fullAddress;
     @JsonProperty("eventUrl")
-    private String eventurl;
+    private String eventUrl;
     @JsonProperty("eventUrls")
-    private List<EventUrlItemDto> eventurls;
+    private List<EventUrlItemDto> eventUrls;
     @JsonProperty("isLockEvent")
-    private Boolean islockevent;
+    private Boolean isLockEvent;
     @JsonProperty("isOrganizationUnit")
-    private Boolean isorganizationunit;
+    private Boolean isOrganizationUnit;
     @JsonProperty("referralCode")
-    private String referralcode;
+    private String referralCode;
     @JsonProperty("userReferralAncestorIds")
-    private String userreferralancestorids;
+    private String userReferralAncestorIds;
     @JsonProperty("userReferralLevel")
-    private Double userreferrallevel;
+    private Double userReferralLevel;
     @JsonProperty("deviceDistributorAncestorMap")
-    private String devicedistributorancestormap;
+    private String deviceDistributorAncestorMap;
     @JsonProperty("isMasterMerchant")
-    private Boolean ismastermerchant;
+    private Boolean isMasterMerchant;
+    @lombok.NonNull
     @JsonProperty("password")
     private String password;
+    @lombok.NonNull
     @JsonProperty("appType")
-    private String apptype;
+    private AppTypeEnum appType;
     @JsonProperty("isMultipleRole")
-    private Boolean ismultiplerole;
+    private Boolean isMultipleRole;
     @JsonProperty("userReferrerId")
-    private Double userreferrerid;
+    private Double userReferrerId;
 
-    public OpenApiCreateMerchantDto() {
-    }
-
-    public Double getId() {
-
-        return id;
-
-    }
-
-    public String getCode() {
-
-        return code;
-
-    }
-
-    public String getName() {
-
-        return name;
-
-    }
-
-    public String getEmail() {
-
-        return email;
-
-    }
-
-    public String getPhonenumber() {
-
-        return phonenumber;
-
-    }
-
-    public String getWebsite() {
-
-        return website;
-
-    }
-
-    public List<Double> getBusinesssectorids() {
-
-        return businesssectorids;
-
-    }
-
-    public String getProvinceid() {
-
-        return provinceid;
-
-    }
-
-    public String getDistrictid() {
-
-        return districtid;
-
-    }
-
-    public String getCommuneid() {
-
-        return communeid;
-
-    }
-
-    public String getAddress() {
-
-        return address;
-
-    }
-
-    public String getFulladdress() {
-
-        return fulladdress;
-
-    }
-
-    public String getEventurl() {
-
-        return eventurl;
-
-    }
-
-    public List<EventUrlItemDto> getEventurls() {
-
-        return eventurls;
-
-    }
-
-    public Boolean getIslockevent() {
-
-        return islockevent;
-
-    }
-
-    public Boolean getIsorganizationunit() {
-
-        return isorganizationunit;
-
-    }
-
-    public String getReferralcode() {
-
-        return referralcode;
-
-    }
-
-    public String getUserreferralancestorids() {
-
-        return userreferralancestorids;
-
-    }
-
-    public Double getUserreferrallevel() {
-
-        return userreferrallevel;
-
-    }
-
-    public String getDevicedistributorancestormap() {
-
-        return devicedistributorancestormap;
-
-    }
-
-    public Boolean getIsmastermerchant() {
-
-        return ismastermerchant;
-
-    }
-
-    public String getPassword() {
-
-        return password;
-
-    }
-
-    public String getApptype() {
-
-        return apptype;
-
-    }
-
-    public Boolean getIsmultiplerole() {
-
-        return ismultiplerole;
-
-    }
-
-    public Double getUserreferrerid() {
-
-        return userreferrerid;
-
-    }
-
-    public void setId(Double id) {
-
-        this.id = id;
-
-    }
-
-    public void setCode(String code) {
-
-        this.code = code;
-
-    }
-
-    public void setName(String name) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiCreateMerchantDto(String name, String phoneNumber, String password, AppTypeEnum appType) {
         this.name = name;
-
-    }
-
-    public void setEmail(String email) {
-
-        this.email = email;
-
-    }
-
-    public void setPhonenumber(String phonenumber) {
-
-        this.phonenumber = phonenumber;
-
-    }
-
-    public void setWebsite(String website) {
-
-        this.website = website;
-
-    }
-
-    public void setBusinesssectorids(List<Double> businesssectorids) {
-
-        this.businesssectorids = businesssectorids;
-
-    }
-
-    public void setProvinceid(String provinceid) {
-
-        this.provinceid = provinceid;
-
-    }
-
-    public void setDistrictid(String districtid) {
-
-        this.districtid = districtid;
-
-    }
-
-    public void setCommuneid(String communeid) {
-
-        this.communeid = communeid;
-
-    }
-
-    public void setAddress(String address) {
-
-        this.address = address;
-
-    }
-
-    public void setFulladdress(String fulladdress) {
-
-        this.fulladdress = fulladdress;
-
-    }
-
-    public void setEventurl(String eventurl) {
-
-        this.eventurl = eventurl;
-
-    }
-
-    public void setEventurls(List<EventUrlItemDto> eventurls) {
-
-        this.eventurls = eventurls;
-
-    }
-
-    public void setIslockevent(Boolean islockevent) {
-
-        this.islockevent = islockevent;
-
-    }
-
-    public void setIsorganizationunit(Boolean isorganizationunit) {
-
-        this.isorganizationunit = isorganizationunit;
-
-    }
-
-    public void setReferralcode(String referralcode) {
-
-        this.referralcode = referralcode;
-
-    }
-
-    public void setUserreferralancestorids(String userreferralancestorids) {
-
-        this.userreferralancestorids = userreferralancestorids;
-
-    }
-
-    public void setUserreferrallevel(Double userreferrallevel) {
-
-        this.userreferrallevel = userreferrallevel;
-
-    }
-
-    public void setDevicedistributorancestormap(String devicedistributorancestormap) {
-
-        this.devicedistributorancestormap = devicedistributorancestormap;
-
-    }
-
-    public void setIsmastermerchant(Boolean ismastermerchant) {
-
-        this.ismastermerchant = ismastermerchant;
-
-    }
-
-    public void setPassword(String password) {
-
+        this.phoneNumber = phoneNumber;
         this.password = password;
-
-    }
-
-    public void setApptype(String apptype) {
-
-        this.apptype = apptype;
-
-    }
-
-    public void setIsmultiplerole(Boolean ismultiplerole) {
-
-        this.ismultiplerole = ismultiplerole;
-
-    }
-
-    public void setUserreferrerid(Double userreferrerid) {
-
-        this.userreferrerid = userreferrerid;
-
+        this.appType = appType;
     }
 }

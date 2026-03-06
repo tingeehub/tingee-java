@@ -2,97 +2,41 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OnePayConfigDto {
+    @lombok.NonNull
     @JsonProperty("merchantId")
-    private String merchantid;
+    private String merchantId;
+    @lombok.NonNull
     @JsonProperty("signingKey")
-    private String signingkey;
+    private String signingKey;
+    @lombok.NonNull
     @JsonProperty("verifyKey")
-    private String verifykey;
+    private String verifyKey;
+    @lombok.NonNull
     @JsonProperty("accessCode")
-    private String accesscode;
+    private String accessCode;
+    @lombok.NonNull
     @JsonProperty("hashCode")
-    private String hashcode;
+    private String hashCode;
+    @lombok.NonNull
     @JsonProperty("callbackUrl")
-    private String callbackurl;
+    private String callbackUrl;
 
-    public OnePayConfigDto() {
-    }
-
-    public String getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getSigningkey() {
-
-        return signingkey;
-
-    }
-
-    public String getVerifykey() {
-
-        return verifykey;
-
-    }
-
-    public String getAccesscode() {
-
-        return accesscode;
-
-    }
-
-    public String getHashcode() {
-
-        return hashcode;
-
-    }
-
-    public String getCallbackurl() {
-
-        return callbackurl;
-
-    }
-
-    public void setMerchantid(String merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setSigningkey(String signingkey) {
-
-        this.signingkey = signingkey;
-
-    }
-
-    public void setVerifykey(String verifykey) {
-
-        this.verifykey = verifykey;
-
-    }
-
-    public void setAccesscode(String accesscode) {
-
-        this.accesscode = accesscode;
-
-    }
-
-    public void setHashcode(String hashcode) {
-
-        this.hashcode = hashcode;
-
-    }
-
-    public void setCallbackurl(String callbackurl) {
-
-        this.callbackurl = callbackurl;
-
+    /** Use this constructor to set all required fields. */
+    public OnePayConfigDto(String merchantId, String signingKey, String verifyKey, String accessCode, String hashCode, String callbackUrl) {
+        this.merchantId = merchantId;
+        this.signingKey = signingKey;
+        this.verifyKey = verifyKey;
+        this.accessCode = accessCode;
+        this.hashCode = hashCode;
+        this.callbackUrl = callbackUrl;
     }
 }

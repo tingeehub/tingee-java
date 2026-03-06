@@ -2,153 +2,34 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OCBInfoDto {
     @JsonProperty("vaPrefix")
-    private String vaprefix;
+    private String vaPrefix;
     @JsonProperty("identificationNumber")
-    private String identificationnumber;
+    private String identificationNumber;
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
     @JsonProperty("registerDate")
-    private String registerdate;
+    private String registerDate;
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
     @JsonProperty("merchantName")
-    private String merchantname;
+    private String merchantName;
     @JsonProperty("merchantAddress")
-    private String merchantaddress;
+    private String merchantAddress;
     @JsonProperty("mobilePhone")
-    private String mobilephone;
+    private String mobilePhone;
     @JsonProperty("email")
     private String email;
 
-    public OCBInfoDto() {
-    }
-
-    public String getVaprefix() {
-
-        return vaprefix;
-
-    }
-
-    public String getIdentificationnumber() {
-
-        return identificationnumber;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getRegisterdate() {
-
-        return registerdate;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public String getMerchantname() {
-
-        return merchantname;
-
-    }
-
-    public String getMerchantaddress() {
-
-        return merchantaddress;
-
-    }
-
-    public String getMobilephone() {
-
-        return mobilephone;
-
-    }
-
-    public String getEmail() {
-
-        return email;
-
-    }
-
-    public void setVaprefix(String vaprefix) {
-
-        this.vaprefix = vaprefix;
-
-    }
-
-    public void setIdentificationnumber(String identificationnumber) {
-
-        this.identificationnumber = identificationnumber;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setRegisterdate(String registerdate) {
-
-        this.registerdate = registerdate;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
-    }
-
-    public void setMerchantname(String merchantname) {
-
-        this.merchantname = merchantname;
-
-    }
-
-    public void setMerchantaddress(String merchantaddress) {
-
-        this.merchantaddress = merchantaddress;
-
-    }
-
-    public void setMobilephone(String mobilephone) {
-
-        this.mobilephone = mobilephone;
-
-    }
-
-    public void setEmail(String email) {
-
-        this.email = email;
-
-    }
 }

@@ -2,27 +2,21 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiCreateOrUpdateShopOutputDto {
+    @lombok.NonNull
     @JsonProperty("shopId")
-    private Double shopid;
+    private Integer shopId;
 
-    public OpenApiCreateOrUpdateShopOutputDto() {
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiCreateOrUpdateShopOutputDto(Integer shopId) {
+        this.shopId = shopId;
     }
 }

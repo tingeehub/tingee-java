@@ -8,134 +8,28 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class BankConfigDto {
     @JsonProperty("ocbConfigDtos")
-    private List<OCBConfigDto> ocbconfigdtos;
+    private List<OCBConfigDto> ocbConfigDtos;
     @JsonProperty("mbbConfigDtos")
-    private List<MBBConfigDto> mbbconfigdtos;
+    private List<MBBConfigDto> mbbConfigDtos;
     @JsonProperty("bidvConfigDtos")
-    private List<BIDVConfigDto> bidvconfigdtos;
+    private List<BIDVConfigDto> bidvConfigDtos;
     @JsonProperty("shinhanConfigDtos")
-    private List<ShinhanConfigDto> shinhanconfigdtos;
+    private List<ShinhanConfigDto> shinhanConfigDtos;
     @JsonProperty("vibConfigDtos")
-    private List<VIBConfigDto> vibconfigdtos;
+    private List<VIBConfigDto> vibConfigDtos;
     @JsonProperty("ctgConfigDtos")
-    private List<CTGConfigDto> ctgconfigdtos;
+    private List<CTGConfigDto> ctgConfigDtos;
     @JsonProperty("acbConfigDto")
-    private ACBConfigDto acbconfigdto;
+    private ACBConfigDto acbConfigDto;
     @JsonProperty("vpbConfigDto")
-    private VPBConfigDto vpbconfigdto;
+    private VPBConfigDto vpbConfigDto;
     @JsonProperty("vcbConfigDto")
-    private VCBConfigDto vcbconfigdto;
+    private VCBConfigDto vcbConfigDto;
 
-    public BankConfigDto() {
-    }
-
-    public List<OCBConfigDto> getOcbconfigdtos() {
-
-        return ocbconfigdtos;
-
-    }
-
-    public List<MBBConfigDto> getMbbconfigdtos() {
-
-        return mbbconfigdtos;
-
-    }
-
-    public List<BIDVConfigDto> getBidvconfigdtos() {
-
-        return bidvconfigdtos;
-
-    }
-
-    public List<ShinhanConfigDto> getShinhanconfigdtos() {
-
-        return shinhanconfigdtos;
-
-    }
-
-    public List<VIBConfigDto> getVibconfigdtos() {
-
-        return vibconfigdtos;
-
-    }
-
-    public List<CTGConfigDto> getCtgconfigdtos() {
-
-        return ctgconfigdtos;
-
-    }
-
-    public ACBConfigDto getAcbconfigdto() {
-
-        return acbconfigdto;
-
-    }
-
-    public VPBConfigDto getVpbconfigdto() {
-
-        return vpbconfigdto;
-
-    }
-
-    public VCBConfigDto getVcbconfigdto() {
-
-        return vcbconfigdto;
-
-    }
-
-    public void setOcbconfigdtos(List<OCBConfigDto> ocbconfigdtos) {
-
-        this.ocbconfigdtos = ocbconfigdtos;
-
-    }
-
-    public void setMbbconfigdtos(List<MBBConfigDto> mbbconfigdtos) {
-
-        this.mbbconfigdtos = mbbconfigdtos;
-
-    }
-
-    public void setBidvconfigdtos(List<BIDVConfigDto> bidvconfigdtos) {
-
-        this.bidvconfigdtos = bidvconfigdtos;
-
-    }
-
-    public void setShinhanconfigdtos(List<ShinhanConfigDto> shinhanconfigdtos) {
-
-        this.shinhanconfigdtos = shinhanconfigdtos;
-
-    }
-
-    public void setVibconfigdtos(List<VIBConfigDto> vibconfigdtos) {
-
-        this.vibconfigdtos = vibconfigdtos;
-
-    }
-
-    public void setCtgconfigdtos(List<CTGConfigDto> ctgconfigdtos) {
-
-        this.ctgconfigdtos = ctgconfigdtos;
-
-    }
-
-    public void setAcbconfigdto(ACBConfigDto acbconfigdto) {
-
-        this.acbconfigdto = acbconfigdto;
-
-    }
-
-    public void setVpbconfigdto(VPBConfigDto vpbconfigdto) {
-
-        this.vpbconfigdto = vpbconfigdto;
-
-    }
-
-    public void setVcbconfigdto(VCBConfigDto vcbconfigdto) {
-
-        this.vcbconfigdto = vcbconfigdto;
-
-    }
 }

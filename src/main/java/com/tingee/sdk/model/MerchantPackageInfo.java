@@ -8,36 +8,14 @@ import java.time.LocalDateTime;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class MerchantPackageInfo {
     @JsonProperty("packageName")
-    private String packagename;
+    private String packageName;
     @JsonProperty("expirationDate")
-    private LocalDateTime expirationdate;
+    private LocalDateTime expirationDate;
 
-    public MerchantPackageInfo() {
-    }
-
-    public String getPackagename() {
-
-        return packagename;
-
-    }
-
-    public LocalDateTime getExpirationdate() {
-
-        return expirationdate;
-
-    }
-
-    public void setPackagename(String packagename) {
-
-        this.packagename = packagename;
-
-    }
-
-    public void setExpirationdate(LocalDateTime expirationdate) {
-
-        this.expirationdate = expirationdate;
-
-    }
 }

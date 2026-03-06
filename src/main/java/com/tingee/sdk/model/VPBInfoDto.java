@@ -2,153 +2,34 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class VPBInfoDto {
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
     @JsonProperty("identity")
     private String identity;
     @JsonProperty("registerId")
-    private String registerid;
+    private String registerId;
     @JsonProperty("bankRegisterId")
-    private String bankregisterid;
+    private String bankRegisterId;
     @JsonProperty("isWaitingForApproveDelete")
-    private Boolean iswaitingforapprovedelete;
+    private Boolean isWaitingForApproveDelete;
     @JsonProperty("softposUserName")
-    private String softposusername;
+    private String softposUserName;
     @JsonProperty("softposDeveloperId")
-    private String softposdeveloperid;
+    private String softposDeveloperId;
     @JsonProperty("softposTid")
-    private String softpostid;
+    private String softposTid;
     @JsonProperty("softposMid")
-    private String softposmid;
+    private String softposMid;
 
-    public VPBInfoDto() {
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getIdentity() {
-
-        return identity;
-
-    }
-
-    public String getRegisterid() {
-
-        return registerid;
-
-    }
-
-    public String getBankregisterid() {
-
-        return bankregisterid;
-
-    }
-
-    public Boolean getIswaitingforapprovedelete() {
-
-        return iswaitingforapprovedelete;
-
-    }
-
-    public String getSoftposusername() {
-
-        return softposusername;
-
-    }
-
-    public String getSoftposdeveloperid() {
-
-        return softposdeveloperid;
-
-    }
-
-    public String getSoftpostid() {
-
-        return softpostid;
-
-    }
-
-    public String getSoftposmid() {
-
-        return softposmid;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setIdentity(String identity) {
-
-        this.identity = identity;
-
-    }
-
-    public void setRegisterid(String registerid) {
-
-        this.registerid = registerid;
-
-    }
-
-    public void setBankregisterid(String bankregisterid) {
-
-        this.bankregisterid = bankregisterid;
-
-    }
-
-    public void setIswaitingforapprovedelete(Boolean iswaitingforapprovedelete) {
-
-        this.iswaitingforapprovedelete = iswaitingforapprovedelete;
-
-    }
-
-    public void setSoftposusername(String softposusername) {
-
-        this.softposusername = softposusername;
-
-    }
-
-    public void setSoftposdeveloperid(String softposdeveloperid) {
-
-        this.softposdeveloperid = softposdeveloperid;
-
-    }
-
-    public void setSoftpostid(String softpostid) {
-
-        this.softpostid = softpostid;
-
-    }
-
-    public void setSoftposmid(String softposmid) {
-
-        this.softposmid = softposmid;
-
-    }
 }

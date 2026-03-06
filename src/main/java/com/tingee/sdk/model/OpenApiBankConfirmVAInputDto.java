@@ -2,83 +2,34 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiBankConfirmVAInputDto {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("confirmId")
-    private String confirmid;
+    private String confirmId;
+    @lombok.NonNull
     @JsonProperty("otpNumber")
-    private String otpnumber;
+    private String otpNumber;
+    @lombok.NonNull
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
+    @lombok.NonNull
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
 
-    public OpenApiBankConfirmVAInputDto() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getConfirmid() {
-
-        return confirmid;
-
-    }
-
-    public String getOtpnumber() {
-
-        return otpnumber;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setConfirmid(String confirmid) {
-
-        this.confirmid = confirmid;
-
-    }
-
-    public void setOtpnumber(String otpnumber) {
-
-        this.otpnumber = otpnumber;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiBankConfirmVAInputDto(String confirmId, String otpNumber, BankNameEnum bankName, String bankBin) {
+        this.confirmId = confirmId;
+        this.otpNumber = otpNumber;
+        this.bankName = bankName;
+        this.bankBin = bankBin;
     }
 }

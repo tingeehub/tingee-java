@@ -2,139 +2,49 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class VIBConfigDto {
+    @lombok.NonNull
     @JsonProperty("vaPrefix")
-    private String vaprefix;
+    private String vaPrefix;
     @JsonProperty("pathPublicKey")
-    private FileUploadDto pathpublickey;
+    private FileUploadDto pathPublicKey;
     @JsonProperty("pathPrivateKey")
-    private FileUploadDto pathprivatekey;
+    private FileUploadDto pathPrivateKey;
+    @lombok.NonNull
     @JsonProperty("basicAuthToken")
-    private String basicauthtoken;
+    private String basicAuthToken;
+    @lombok.NonNull
     @JsonProperty("cif")
     private String cif;
+    @lombok.NonNull
     @JsonProperty("clientId")
-    private String clientid;
+    private String clientId;
+    @lombok.NonNull
     @JsonProperty("clientSecret")
-    private String clientsecret;
+    private String clientSecret;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
+    @lombok.NonNull
     @JsonProperty("vaCharactersNumber")
-    private Double vacharactersnumber;
+    private Integer vaCharactersNumber;
 
-    public VIBConfigDto() {
-    }
-
-    public String getVaprefix() {
-
-        return vaprefix;
-
-    }
-
-    public FileUploadDto getPathpublickey() {
-
-        return pathpublickey;
-
-    }
-
-    public FileUploadDto getPathprivatekey() {
-
-        return pathprivatekey;
-
-    }
-
-    public String getBasicauthtoken() {
-
-        return basicauthtoken;
-
-    }
-
-    public String getCif() {
-
-        return cif;
-
-    }
-
-    public String getClientid() {
-
-        return clientid;
-
-    }
-
-    public String getClientsecret() {
-
-        return clientsecret;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public Double getVacharactersnumber() {
-
-        return vacharactersnumber;
-
-    }
-
-    public void setVaprefix(String vaprefix) {
-
-        this.vaprefix = vaprefix;
-
-    }
-
-    public void setPathpublickey(FileUploadDto pathpublickey) {
-
-        this.pathpublickey = pathpublickey;
-
-    }
-
-    public void setPathprivatekey(FileUploadDto pathprivatekey) {
-
-        this.pathprivatekey = pathprivatekey;
-
-    }
-
-    public void setBasicauthtoken(String basicauthtoken) {
-
-        this.basicauthtoken = basicauthtoken;
-
-    }
-
-    public void setCif(String cif) {
-
+    /** Use this constructor to set all required fields. */
+    public VIBConfigDto(String vaPrefix, String basicAuthToken, String cif, String clientId, String clientSecret, String accountNumber, Integer vaCharactersNumber) {
+        this.vaPrefix = vaPrefix;
+        this.basicAuthToken = basicAuthToken;
         this.cif = cif;
-
-    }
-
-    public void setClientid(String clientid) {
-
-        this.clientid = clientid;
-
-    }
-
-    public void setClientsecret(String clientsecret) {
-
-        this.clientsecret = clientsecret;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setVacharactersnumber(Double vacharactersnumber) {
-
-        this.vacharactersnumber = vacharactersnumber;
-
+        this.clientId = clientId;
+        this.clientSecret = clientSecret;
+        this.accountNumber = accountNumber;
+        this.vaCharactersNumber = vaCharactersNumber;
     }
 }

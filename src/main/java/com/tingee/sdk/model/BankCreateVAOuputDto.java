@@ -2,125 +2,39 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class BankCreateVAOuputDto {
+    @lombok.NonNull
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
+    @lombok.NonNull
     @JsonProperty("merchantAccountNumberId")
-    private Double merchantaccountnumberid;
+    private Integer merchantAccountNumberId;
     @JsonProperty("shopId")
-    private Double shopid;
+    private Integer shopId;
+    @lombok.NonNull
     @JsonProperty("status")
-    private String status;
+    private StatusMerchantAccountNumberEnum status;
     @JsonProperty("confirmId")
-    private String confirmid;
+    private String confirmId;
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
     @JsonProperty("deepLink")
-    private String deeplink;
+    private String deepLink;
     @JsonProperty("otpMethod")
-    private String otpmethod;
+    private OtpStbConfirmMethodEnum otpMethod;
 
-    public BankCreateVAOuputDto() {
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public Double getMerchantaccountnumberid() {
-
-        return merchantaccountnumberid;
-
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public String getStatus() {
-
-        return status;
-
-    }
-
-    public String getConfirmid() {
-
-        return confirmid;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public String getDeeplink() {
-
-        return deeplink;
-
-    }
-
-    public String getOtpmethod() {
-
-        return otpmethod;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setMerchantaccountnumberid(Double merchantaccountnumberid) {
-
-        this.merchantaccountnumberid = merchantaccountnumberid;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
-    }
-
-    public void setStatus(String status) {
-
+    /** Use this constructor to set all required fields. */
+    public BankCreateVAOuputDto(BankNameEnum bankName, Integer merchantAccountNumberId, StatusMerchantAccountNumberEnum status) {
+        this.bankName = bankName;
+        this.merchantAccountNumberId = merchantAccountNumberId;
         this.status = status;
-
-    }
-
-    public void setConfirmid(String confirmid) {
-
-        this.confirmid = confirmid;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
-    }
-
-    public void setDeeplink(String deeplink) {
-
-        this.deeplink = deeplink;
-
-    }
-
-    public void setOtpmethod(String otpmethod) {
-
-        this.otpmethod = otpmethod;
-
     }
 }

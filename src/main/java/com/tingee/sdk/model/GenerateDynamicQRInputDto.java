@@ -2,125 +2,42 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class GenerateDynamicQRInputDto {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
+    @lombok.NonNull
     @JsonProperty("qrCodeType")
-    private String qrcodetype;
+    private QRCodeTypeEnum qrCodeType;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
+    @lombok.NonNull
     @JsonProperty("amount")
-    private Double amount;
+    private Long amount;
     @JsonProperty("purpose")
     private String purpose;
+    @lombok.NonNull
+    @JsonProperty("expireInMinute")
+    private Integer expireInMinute;
     @JsonProperty("extraInfo")
-    private String extrainfo;
+    private String extraInfo;
 
-    public GenerateDynamicQRInputDto() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public String getQrcodetype() {
-
-        return qrcodetype;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public Double getAmount() {
-
-        return amount;
-
-    }
-
-    public String getPurpose() {
-
-        return purpose;
-
-    }
-
-    public String getExtrainfo() {
-
-        return extrainfo;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
-    }
-
-    public void setQrcodetype(String qrcodetype) {
-
-        this.qrcodetype = qrcodetype;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setAmount(Double amount) {
-
+    /** Use this constructor to set all required fields. */
+    public GenerateDynamicQRInputDto(String vaAccountNumber, QRCodeTypeEnum qrCodeType, Long amount, Integer expireInMinute) {
+        this.vaAccountNumber = vaAccountNumber;
+        this.qrCodeType = qrCodeType;
         this.amount = amount;
-
-    }
-
-    public void setPurpose(String purpose) {
-
-        this.purpose = purpose;
-
-    }
-
-    public void setExtrainfo(String extrainfo) {
-
-        this.extrainfo = extrainfo;
-
+        this.expireInMinute = expireInMinute;
     }
 }

@@ -2,41 +2,25 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class FileUploadDto {
+    @lombok.NonNull
     @JsonProperty("fileLogId")
-    private String filelogid;
+    private String fileLogId;
+    @lombok.NonNull
     @JsonProperty("path")
     private String path;
 
-    public FileUploadDto() {
-    }
-
-    public String getFilelogid() {
-
-        return filelogid;
-
-    }
-
-    public String getPath() {
-
-        return path;
-
-    }
-
-    public void setFilelogid(String filelogid) {
-
-        this.filelogid = filelogid;
-
-    }
-
-    public void setPath(String path) {
-
+    /** Use this constructor to set all required fields. */
+    public FileUploadDto(String fileLogId, String path) {
+        this.fileLogId = fileLogId;
         this.path = path;
-
     }
 }

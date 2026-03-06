@@ -2,69 +2,26 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiRefundDto {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("transactionCode")
-    private String transactioncode;
+    private String transactionCode;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
 
-    public OpenApiRefundDto() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getTransactioncode() {
-
-        return transactioncode;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setTransactioncode(String transactioncode) {
-
-        this.transactioncode = transactioncode;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiRefundDto(String transactionCode) {
+        this.transactionCode = transactionCode;
     }
 }

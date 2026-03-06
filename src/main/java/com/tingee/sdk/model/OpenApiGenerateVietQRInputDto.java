@@ -2,83 +2,28 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiGenerateVietQRInputDto {
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
     @JsonProperty("amount")
-    private Double amount;
+    private Long amount;
     @JsonProperty("content")
     private String content;
 
-    public OpenApiGenerateVietQRInputDto() {
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public Double getAmount() {
-
-        return amount;
-
-    }
-
-    public String getContent() {
-
-        return content;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setAmount(Double amount) {
-
-        this.amount = amount;
-
-    }
-
-    public void setContent(String content) {
-
-        this.content = content;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiGenerateVietQRInputDto(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 }

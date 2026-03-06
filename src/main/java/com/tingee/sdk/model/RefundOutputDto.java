@@ -2,55 +2,29 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class RefundOutputDto {
+    @lombok.NonNull
     @JsonProperty("refundAmount")
-    private Double refundamount;
+    private Long refundAmount;
+    @lombok.NonNull
     @JsonProperty("transactionId")
-    private String transactionid;
+    private String transactionId;
+    @lombok.NonNull
     @JsonProperty("status")
-    private String status;
+    private DirectDebitRefundStatusEnum status;
 
-    public RefundOutputDto() {
-    }
-
-    public Double getRefundamount() {
-
-        return refundamount;
-
-    }
-
-    public String getTransactionid() {
-
-        return transactionid;
-
-    }
-
-    public String getStatus() {
-
-        return status;
-
-    }
-
-    public void setRefundamount(Double refundamount) {
-
-        this.refundamount = refundamount;
-
-    }
-
-    public void setTransactionid(String transactionid) {
-
-        this.transactionid = transactionid;
-
-    }
-
-    public void setStatus(String status) {
-
+    /** Use this constructor to set all required fields. */
+    public RefundOutputDto(Long refundAmount, String transactionId, DirectDebitRefundStatusEnum status) {
+        this.refundAmount = refundAmount;
+        this.transactionId = transactionId;
         this.status = status;
-
     }
 }

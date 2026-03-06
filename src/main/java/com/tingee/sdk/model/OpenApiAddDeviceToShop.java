@@ -8,106 +8,32 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiAddDeviceToShop {
+    @lombok.NonNull
     @JsonProperty("uuid")
     private String uuid;
+    @lombok.NonNull
     @JsonProperty("securityCode")
-    private String securitycode;
+    private String securityCode;
+    @lombok.NonNull
     @JsonProperty("appType")
-    private String apptype;
+    private AppTypeEnum appType;
     @JsonProperty("masterMerchantId")
-    private Double mastermerchantid;
+    private Double masterMerchantId;
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
     @JsonProperty("vaAccountNumbers")
-    private List<String> vaaccountnumbers;
+    private List<String> vaAccountNumbers;
     @JsonProperty("shopIds")
-    private List<Double> shopids;
+    private List<Double> shopIds;
 
-    public OpenApiAddDeviceToShop() {
-    }
-
-    public String getUuid() {
-
-        return uuid;
-
-    }
-
-    public String getSecuritycode() {
-
-        return securitycode;
-
-    }
-
-    public String getApptype() {
-
-        return apptype;
-
-    }
-
-    public Double getMastermerchantid() {
-
-        return mastermerchantid;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public List<String> getVaaccountnumbers() {
-
-        return vaaccountnumbers;
-
-    }
-
-    public List<Double> getShopids() {
-
-        return shopids;
-
-    }
-
-    public void setUuid(String uuid) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiAddDeviceToShop(String uuid, String securityCode, AppTypeEnum appType) {
         this.uuid = uuid;
-
-    }
-
-    public void setSecuritycode(String securitycode) {
-
-        this.securitycode = securitycode;
-
-    }
-
-    public void setApptype(String apptype) {
-
-        this.apptype = apptype;
-
-    }
-
-    public void setMastermerchantid(Double mastermerchantid) {
-
-        this.mastermerchantid = mastermerchantid;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setVaaccountnumbers(List<String> vaaccountnumbers) {
-
-        this.vaaccountnumbers = vaaccountnumbers;
-
-    }
-
-    public void setShopids(List<Double> shopids) {
-
-        this.shopids = shopids;
-
+        this.securityCode = securityCode;
+        this.appType = appType;
     }
 }

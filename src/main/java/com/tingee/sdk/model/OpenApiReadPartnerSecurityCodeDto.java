@@ -2,55 +2,26 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiReadPartnerSecurityCodeDto {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("uuid")
     private String uuid;
+    @lombok.NonNull
     @JsonProperty("securityCode")
-    private String securitycode;
+    private String securityCode;
 
-    public OpenApiReadPartnerSecurityCodeDto() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getUuid() {
-
-        return uuid;
-
-    }
-
-    public String getSecuritycode() {
-
-        return securitycode;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setUuid(String uuid) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiReadPartnerSecurityCodeDto(String uuid, String securityCode) {
         this.uuid = uuid;
-
-    }
-
-    public void setSecuritycode(String securitycode) {
-
-        this.securitycode = securitycode;
-
+        this.securityCode = securityCode;
     }
 }

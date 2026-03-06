@@ -8,176 +8,59 @@ import java.time.LocalDateTime;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiPaymentTransactionsPagedOutputDto {
+    @lombok.NonNull
     @JsonProperty("transactionId")
-    private String transactionid;
+    private String transactionId;
+    @lombok.NonNull
     @JsonProperty("code")
     private String code;
+    @lombok.NonNull
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
+    @lombok.NonNull
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
+    @lombok.NonNull
     @JsonProperty("amount")
     private String amount;
+    @lombok.NonNull
     @JsonProperty("content")
     private String content;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
+    @lombok.NonNull
     @JsonProperty("transactionDate")
-    private LocalDateTime transactiondate;
+    private LocalDateTime transactionDate;
+    @lombok.NonNull
     @JsonProperty("subscriptionId")
-    private String subscriptionid;
+    private String subscriptionId;
+    @lombok.NonNull
     @JsonProperty("tokenRef")
-    private String tokenref;
+    private String tokenRef;
+    @lombok.NonNull
     @JsonProperty("status")
-    private String status;
+    private DirectDebitTransactionStatusEnum status;
     @JsonProperty("additionalData")
-    private Object additionaldata;
+    private Object additionalData;
 
-    public OpenApiPaymentTransactionsPagedOutputDto() {
-    }
-
-    public String getTransactionid() {
-
-        return transactionid;
-
-    }
-
-    public String getCode() {
-
-        return code;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getAmount() {
-
-        return amount;
-
-    }
-
-    public String getContent() {
-
-        return content;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public LocalDateTime getTransactiondate() {
-
-        return transactiondate;
-
-    }
-
-    public String getSubscriptionid() {
-
-        return subscriptionid;
-
-    }
-
-    public String getTokenref() {
-
-        return tokenref;
-
-    }
-
-    public String getStatus() {
-
-        return status;
-
-    }
-
-    public Object getAdditionaldata() {
-
-        return additionaldata;
-
-    }
-
-    public void setTransactionid(String transactionid) {
-
-        this.transactionid = transactionid;
-
-    }
-
-    public void setCode(String code) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiPaymentTransactionsPagedOutputDto(String transactionId, String code, BankNameEnum bankName, String bankBin, String amount, String content, String accountNumber, LocalDateTime transactionDate, String subscriptionId, String tokenRef, DirectDebitTransactionStatusEnum status) {
+        this.transactionId = transactionId;
         this.code = code;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setAmount(String amount) {
-
+        this.bankName = bankName;
+        this.bankBin = bankBin;
         this.amount = amount;
-
-    }
-
-    public void setContent(String content) {
-
         this.content = content;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setTransactiondate(LocalDateTime transactiondate) {
-
-        this.transactiondate = transactiondate;
-
-    }
-
-    public void setSubscriptionid(String subscriptionid) {
-
-        this.subscriptionid = subscriptionid;
-
-    }
-
-    public void setTokenref(String tokenref) {
-
-        this.tokenref = tokenref;
-
-    }
-
-    public void setStatus(String status) {
-
+        this.accountNumber = accountNumber;
+        this.transactionDate = transactionDate;
+        this.subscriptionId = subscriptionId;
+        this.tokenRef = tokenRef;
         this.status = status;
-
-    }
-
-    public void setAdditionaldata(Object additionaldata) {
-
-        this.additionaldata = additionaldata;
-
     }
 }

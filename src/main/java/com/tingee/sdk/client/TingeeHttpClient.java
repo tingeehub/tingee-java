@@ -6,7 +6,7 @@ import com.tingee.sdk.signature.SignatureUtils;
 import com.tingee.sdk.types.TingeeApiResponse;
 import okhttp3.*;
 
-import java.io.IOException;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -45,59 +45,65 @@ public class TingeeHttpClient {
         Object body,
         Map<String, String> queryParams,
         com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<T>> responseType
-    ) throws IOException {
-        String timestamp = SignatureUtils.formatTimestamp();
-        String signature = SignatureUtils.generateSignature(secretKey, timestamp, body != null ? body : new HashMap<>());
+    ) {
+        try {
+            String timestamp = SignatureUtils.formatTimestamp();
+            String signature = SignatureUtils.generateSignature(secretKey, timestamp, body != null ? body : new HashMap<>());
 
-        // Build URL with query parameters
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(baseUrl + (path.startsWith("/") ? path : "/" + path)).newBuilder();
-        if (queryParams != null) {
-            for (Map.Entry<String, String> entry : queryParams.entrySet()) {
-                if (entry.getValue() != null) {
-                    urlBuilder.addQueryParameter(entry.getKey(), entry.getValue());
+            // Build URL with query parameters
+            HttpUrl.Builder urlBuilder = HttpUrl.parse(baseUrl + (path.startsWith("/") ? path : "/" + path)).newBuilder();
+            if (queryParams != null) {
+                for (Map.Entry<String, String> entry : queryParams.entrySet()) {
+                    if (entry.getValue() != null) {
+                        urlBuilder.addQueryParameter(entry.getKey(), entry.getValue());
+                    }
                 }
             }
-        }
-        String url = urlBuilder.build().toString();
+            String url = urlBuilder.build().toString();
 
-        // Build request body
-        RequestBody requestBody = null;
-        if (body != null && (method.equals("POST") || method.equals("PUT") || method.equals("PATCH"))) {
-            String jsonBody = objectMapper.writeValueAsString(body);
-            requestBody = RequestBody.create(jsonBody, MediaType.parse("application/json"));
-        }
-
-        // Build request
-        Request.Builder requestBuilder = new Request.Builder()
-            .url(url)
-            .addHeader("accept", "application/json")
-            .addHeader("content-type", "application/json")
-            .addHeader("x-signature", signature)
-            .addHeader("x-request-timestamp", timestamp)
-            .addHeader("x-client-id", clientId);
-
-        if (requestBody != null) {
-            requestBuilder.method(method.toUpperCase(), requestBody);
-        } else {
-            requestBuilder.method(method.toUpperCase(), null);
-        }
-
-        Request request = requestBuilder.build();
-
-        // Execute request
-        try (Response response = httpClient.newCall(request).execute()) {
-            if (!response.isSuccessful()) {
-                String errorBody = response.body() != null ? response.body().string() : "";
-                throw new TingeeHttpError(
-                    "Request failed with status " + response.code(),
-                    response.code(),
-                    errorBody
-                );
+            // Build request body
+            RequestBody requestBody = null;
+            if (body != null && (method.equals("POST") || method.equals("PUT") || method.equals("PATCH"))) {
+                String jsonBody = objectMapper.writeValueAsString(body);
+                requestBody = RequestBody.create(jsonBody, MediaType.parse("application/json"));
             }
 
-            String responseBody = response.body() != null ? response.body().string() : "{}";
-            TingeeApiResponse<T> apiResponse = objectMapper.readValue(responseBody, responseType);
-            return apiResponse;
+            // Build request
+            Request.Builder requestBuilder = new Request.Builder()
+                .url(url)
+                .addHeader("accept", "application/json")
+                .addHeader("content-type", "application/json")
+                .addHeader("x-signature", signature)
+                .addHeader("x-request-timestamp", timestamp)
+                .addHeader("x-client-id", clientId);
+
+            if (requestBody != null) {
+                requestBuilder.method(method.toUpperCase(), requestBody);
+            } else {
+                requestBuilder.method(method.toUpperCase(), null);
+            }
+
+            Request request = requestBuilder.build();
+
+            // Execute request
+            try (Response response = httpClient.newCall(request).execute()) {
+                if (!response.isSuccessful()) {
+                    String errorBody = response.body() != null ? response.body().string() : "";
+                    throw new TingeeHttpError(
+                        "Request failed with status " + response.code(),
+                        response.code(),
+                        errorBody
+                    );
+                }
+
+                String responseBody = response.body() != null ? response.body().string() : "{}";
+                TingeeApiResponse<T> apiResponse = objectMapper.readValue(responseBody, responseType);
+                return apiResponse;
+            }
+        } catch (TingeeHttpError e) {
+            throw e; // rethrow as-is (already RuntimeException)
+        } catch (Exception e) {
+            throw new TingeeApiException("API request failed: " + e.getMessage(), e);
         }
     }
 
@@ -110,58 +116,64 @@ public class TingeeHttpClient {
         Object body,
         Map<String, String> queryParams,
         com.fasterxml.jackson.core.type.TypeReference<T> responseType
-    ) throws IOException {
-        String timestamp = SignatureUtils.formatTimestamp();
-        String signature = SignatureUtils.generateSignature(secretKey, timestamp, body != null ? body : new HashMap<>());
+    ) {
+        try {
+            String timestamp = SignatureUtils.formatTimestamp();
+            String signature = SignatureUtils.generateSignature(secretKey, timestamp, body != null ? body : new HashMap<>());
 
-        // Build URL with query parameters
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(baseUrl + (path.startsWith("/") ? path : "/" + path)).newBuilder();
-        if (queryParams != null) {
-            for (Map.Entry<String, String> entry : queryParams.entrySet()) {
-                if (entry.getValue() != null) {
-                    urlBuilder.addQueryParameter(entry.getKey(), entry.getValue());
+            // Build URL with query parameters
+            HttpUrl.Builder urlBuilder = HttpUrl.parse(baseUrl + (path.startsWith("/") ? path : "/" + path)).newBuilder();
+            if (queryParams != null) {
+                for (Map.Entry<String, String> entry : queryParams.entrySet()) {
+                    if (entry.getValue() != null) {
+                        urlBuilder.addQueryParameter(entry.getKey(), entry.getValue());
+                    }
                 }
             }
-        }
-        String url = urlBuilder.build().toString();
+            String url = urlBuilder.build().toString();
 
-        // Build request body
-        RequestBody requestBody = null;
-        if (body != null && (method.equals("POST") || method.equals("PUT") || method.equals("PATCH"))) {
-            String jsonBody = objectMapper.writeValueAsString(body);
-            requestBody = RequestBody.create(jsonBody, MediaType.parse("application/json"));
-        }
-
-        // Build request
-        Request.Builder requestBuilder = new Request.Builder()
-            .url(url)
-            .addHeader("accept", "application/json")
-            .addHeader("content-type", "application/json")
-            .addHeader("x-signature", signature)
-            .addHeader("x-request-timestamp", timestamp)
-            .addHeader("x-client-id", clientId);
-
-        if (requestBody != null) {
-            requestBuilder.method(method.toUpperCase(), requestBody);
-        } else {
-            requestBuilder.method(method.toUpperCase(), null);
-        }
-
-        Request request = requestBuilder.build();
-
-        // Execute request
-        try (Response response = httpClient.newCall(request).execute()) {
-            if (!response.isSuccessful()) {
-                String errorBody = response.body() != null ? response.body().string() : "";
-                throw new TingeeHttpError(
-                    "Request failed with status " + response.code(),
-                    response.code(),
-                    errorBody
-                );
+            // Build request body
+            RequestBody requestBody = null;
+            if (body != null && (method.equals("POST") || method.equals("PUT") || method.equals("PATCH"))) {
+                String jsonBody = objectMapper.writeValueAsString(body);
+                requestBody = RequestBody.create(jsonBody, MediaType.parse("application/json"));
             }
 
-            String responseBody = response.body() != null ? response.body().string() : "{}";
-            return objectMapper.readValue(responseBody, responseType);
+            // Build request
+            Request.Builder requestBuilder = new Request.Builder()
+                .url(url)
+                .addHeader("accept", "application/json")
+                .addHeader("content-type", "application/json")
+                .addHeader("x-signature", signature)
+                .addHeader("x-request-timestamp", timestamp)
+                .addHeader("x-client-id", clientId);
+
+            if (requestBody != null) {
+                requestBuilder.method(method.toUpperCase(), requestBody);
+            } else {
+                requestBuilder.method(method.toUpperCase(), null);
+            }
+
+            Request request = requestBuilder.build();
+
+            // Execute request
+            try (Response response = httpClient.newCall(request).execute()) {
+                if (!response.isSuccessful()) {
+                    String errorBody = response.body() != null ? response.body().string() : "";
+                    throw new TingeeHttpError(
+                        "Request failed with status " + response.code(),
+                        response.code(),
+                        errorBody
+                    );
+                }
+
+                String responseBody = response.body() != null ? response.body().string() : "{}";
+                return objectMapper.readValue(responseBody, responseType);
+            }
+        } catch (TingeeHttpError e) {
+            throw e; // rethrow as-is
+        } catch (Exception e) {
+            throw new TingeeApiException("API request failed: " + e.getMessage(), e);
         }
     }
 }

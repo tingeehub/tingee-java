@@ -2,41 +2,23 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class DeleteSubscriptionOutputDto {
     @JsonProperty("confirmUrl")
-    private String confirmurl;
+    private String confirmUrl;
+    @lombok.NonNull
     @JsonProperty("code")
     private String code;
 
-    public DeleteSubscriptionOutputDto() {
-    }
-
-    public String getConfirmurl() {
-
-        return confirmurl;
-
-    }
-
-    public String getCode() {
-
-        return code;
-
-    }
-
-    public void setConfirmurl(String confirmurl) {
-
-        this.confirmurl = confirmurl;
-
-    }
-
-    public void setCode(String code) {
-
+    /** Use this constructor to set all required fields. */
+    public DeleteSubscriptionOutputDto(String code) {
         this.code = code;
-
     }
 }

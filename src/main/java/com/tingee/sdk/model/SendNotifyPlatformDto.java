@@ -8,64 +8,29 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class SendNotifyPlatformDto {
+    @lombok.NonNull
     @JsonProperty("telegramDtos")
-    private List<SendNotifyTelegramDto> telegramdtos;
+    private List<SendNotifyTelegramDto> telegramDtos;
+    @lombok.NonNull
     @JsonProperty("larkDtos")
-    private List<SendNotifyLarkDto> larkdtos;
+    private List<SendNotifyLarkDto> larkDtos;
+    @lombok.NonNull
     @JsonProperty("zaloDtos")
-    private List<SendNotifyZaloDto> zalodtos;
+    private List<SendNotifyZaloDto> zaloDtos;
+    @lombok.NonNull
     @JsonProperty("tingeeBoxDtos")
-    private List<SendNotifyTingeeBoxDto> tingeeboxdtos;
+    private List<SendNotifyTingeeBoxDto> tingeeBoxDtos;
 
-    public SendNotifyPlatformDto() {
-    }
-
-    public List<SendNotifyTelegramDto> getTelegramdtos() {
-
-        return telegramdtos;
-
-    }
-
-    public List<SendNotifyLarkDto> getLarkdtos() {
-
-        return larkdtos;
-
-    }
-
-    public List<SendNotifyZaloDto> getZalodtos() {
-
-        return zalodtos;
-
-    }
-
-    public List<SendNotifyTingeeBoxDto> getTingeeboxdtos() {
-
-        return tingeeboxdtos;
-
-    }
-
-    public void setTelegramdtos(List<SendNotifyTelegramDto> telegramdtos) {
-
-        this.telegramdtos = telegramdtos;
-
-    }
-
-    public void setLarkdtos(List<SendNotifyLarkDto> larkdtos) {
-
-        this.larkdtos = larkdtos;
-
-    }
-
-    public void setZalodtos(List<SendNotifyZaloDto> zalodtos) {
-
-        this.zalodtos = zalodtos;
-
-    }
-
-    public void setTingeeboxdtos(List<SendNotifyTingeeBoxDto> tingeeboxdtos) {
-
-        this.tingeeboxdtos = tingeeboxdtos;
-
+    /** Use this constructor to set all required fields. */
+    public SendNotifyPlatformDto(List<SendNotifyTelegramDto> telegramDtos, List<SendNotifyLarkDto> larkDtos, List<SendNotifyZaloDto> zaloDtos, List<SendNotifyTingeeBoxDto> tingeeBoxDtos) {
+        this.telegramDtos = telegramDtos;
+        this.larkDtos = larkDtos;
+        this.zaloDtos = zaloDtos;
+        this.tingeeBoxDtos = tingeeBoxDtos;
     }
 }

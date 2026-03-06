@@ -8,162 +8,45 @@ import java.time.LocalDateTime;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class MerchantBankConfigPagedOutputDto {
+    @lombok.NonNull
     @JsonProperty("id")
-    private Double id;
+    private Integer id;
+    @lombok.NonNull
     @JsonProperty("creationTime")
-    private LocalDateTime creationtime;
+    private LocalDateTime creationTime;
     @JsonProperty("creatorUserId")
-    private Double creatoruserid;
+    private Double creatorUserId;
+    @lombok.NonNull
     @JsonProperty("lastModificationTime")
-    private LocalDateTime lastmodificationtime;
+    private LocalDateTime lastModificationTime;
     @JsonProperty("lastModifierUserId")
-    private Double lastmodifieruserid;
+    private Double lastModifierUserId;
     @JsonProperty("deleterUserId")
-    private Double deleteruserid;
+    private Double deleterUserId;
+    @lombok.NonNull
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("accountType")
-    private String accounttype;
+    private BankAccountTypeEnum accountType;
     @JsonProperty("configDto")
-    private Object configdto;
+    private Object configDto;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
 
-    public MerchantBankConfigPagedOutputDto() {
-    }
-
-    public Double getId() {
-
-        return id;
-
-    }
-
-    public LocalDateTime getCreationtime() {
-
-        return creationtime;
-
-    }
-
-    public Double getCreatoruserid() {
-
-        return creatoruserid;
-
-    }
-
-    public LocalDateTime getLastmodificationtime() {
-
-        return lastmodificationtime;
-
-    }
-
-    public Double getLastmodifieruserid() {
-
-        return lastmodifieruserid;
-
-    }
-
-    public Double getDeleteruserid() {
-
-        return deleteruserid;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getAccounttype() {
-
-        return accounttype;
-
-    }
-
-    public Object getConfigdto() {
-
-        return configdto;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public void setId(Double id) {
-
+    /** Use this constructor to set all required fields. */
+    public MerchantBankConfigPagedOutputDto(Integer id, LocalDateTime creationTime, LocalDateTime lastModificationTime, Integer merchantId, BankAccountTypeEnum accountType) {
         this.id = id;
-
-    }
-
-    public void setCreationtime(LocalDateTime creationtime) {
-
-        this.creationtime = creationtime;
-
-    }
-
-    public void setCreatoruserid(Double creatoruserid) {
-
-        this.creatoruserid = creatoruserid;
-
-    }
-
-    public void setLastmodificationtime(LocalDateTime lastmodificationtime) {
-
-        this.lastmodificationtime = lastmodificationtime;
-
-    }
-
-    public void setLastmodifieruserid(Double lastmodifieruserid) {
-
-        this.lastmodifieruserid = lastmodifieruserid;
-
-    }
-
-    public void setDeleteruserid(Double deleteruserid) {
-
-        this.deleteruserid = deleteruserid;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setAccounttype(String accounttype) {
-
-        this.accounttype = accounttype;
-
-    }
-
-    public void setConfigdto(Object configdto) {
-
-        this.configdto = configdto;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
+        this.creationTime = creationTime;
+        this.lastModificationTime = lastModificationTime;
+        this.merchantId = merchantId;
+        this.accountType = accountType;
     }
 }

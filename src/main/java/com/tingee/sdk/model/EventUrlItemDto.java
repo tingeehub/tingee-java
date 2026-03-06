@@ -8,50 +8,23 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class EventUrlItemDto {
+    @lombok.NonNull
     @JsonProperty("url")
     private String url;
+    @lombok.NonNull
     @JsonProperty("type")
-    private String type;
+    private EventUrlItemType type;
     @JsonProperty("ids")
     private List<String> ids;
 
-    public EventUrlItemDto() {
-    }
-
-    public String getUrl() {
-
-        return url;
-
-    }
-
-    public String getType() {
-
-        return type;
-
-    }
-
-    public List<String> getIds() {
-
-        return ids;
-
-    }
-
-    public void setUrl(String url) {
-
+    /** Use this constructor to set all required fields. */
+    public EventUrlItemDto(String url, EventUrlItemType type) {
         this.url = url;
-
-    }
-
-    public void setType(String type) {
-
         this.type = type;
-
-    }
-
-    public void setIds(List<String> ids) {
-
-        this.ids = ids;
-
     }
 }

@@ -8,36 +8,21 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiGetStatusDynamicQROutputDto {
+    @lombok.NonNull
     @JsonProperty("billInfo")
-    private OpenApiBillInfoDto billinfo;
+    private OpenApiBillInfoDto billInfo;
+    @lombok.NonNull
     @JsonProperty("transactionInfos")
-    private List<OpenApiTransactionPagedOuputDto> transactioninfos;
+    private List<OpenApiTransactionPagedOuputDto> transactionInfos;
 
-    public OpenApiGetStatusDynamicQROutputDto() {
-    }
-
-    public OpenApiBillInfoDto getBillinfo() {
-
-        return billinfo;
-
-    }
-
-    public List<OpenApiTransactionPagedOuputDto> getTransactioninfos() {
-
-        return transactioninfos;
-
-    }
-
-    public void setBillinfo(OpenApiBillInfoDto billinfo) {
-
-        this.billinfo = billinfo;
-
-    }
-
-    public void setTransactioninfos(List<OpenApiTransactionPagedOuputDto> transactioninfos) {
-
-        this.transactioninfos = transactioninfos;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiGetStatusDynamicQROutputDto(OpenApiBillInfoDto billInfo, List<OpenApiTransactionPagedOuputDto> transactionInfos) {
+        this.billInfo = billInfo;
+        this.transactionInfos = transactionInfos;
     }
 }

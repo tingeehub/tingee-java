@@ -2,209 +2,42 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class BankInfoDto {
     @JsonProperty("ocbInfoDto")
-    private OCBInfoDto ocbinfodto;
+    private OCBInfoDto ocbInfoDto;
     @JsonProperty("tpbInfoDto")
-    private TPBInfoDto tpbinfodto;
+    private TPBInfoDto tpbInfoDto;
     @JsonProperty("bidvInfoDto")
-    private BIDVInfoDto bidvinfodto;
+    private BIDVInfoDto bidvInfoDto;
     @JsonProperty("mbbInfoDto")
-    private MBBInfoDto mbbinfodto;
+    private MBBInfoDto mbbInfoDto;
     @JsonProperty("acbInfoDto")
-    private ACBInfoDto acbinfodto;
+    private ACBInfoDto acbInfoDto;
     @JsonProperty("vpbInfoDto")
-    private VPBInfoDto vpbinfodto;
+    private VPBInfoDto vpbInfoDto;
     @JsonProperty("shinhanInfoDto")
-    private ShinhanInfoDto shinhaninfodto;
+    private ShinhanInfoDto shinhanInfoDto;
     @JsonProperty("pgbInfoDto")
-    private PGBInfoDto pgbinfodto;
+    private PGBInfoDto pgbInfoDto;
     @JsonProperty("vibInfoDto")
-    private VIBInfoDto vibinfodto;
+    private VIBInfoDto vibInfoDto;
     @JsonProperty("ctgInfoDto")
-    private CTGInfoDto ctginfodto;
+    private CTGInfoDto ctgInfoDto;
     @JsonProperty("stbInfoDto")
-    private STBInfoDto stbinfodto;
+    private STBInfoDto stbInfoDto;
     @JsonProperty("agribankInfoDto")
-    private AgribankInfoDto agribankinfodto;
+    private AgribankInfoDto agribankInfoDto;
     @JsonProperty("vcbInfoDto")
-    private VCBInfoDto vcbinfodto;
+    private VCBInfoDto vcbInfoDto;
     @JsonProperty("cobInfoDto")
-    private COBInfoDto cobinfodto;
+    private COBInfoDto cobInfoDto;
 
-    public BankInfoDto() {
-    }
-
-    public OCBInfoDto getOcbinfodto() {
-
-        return ocbinfodto;
-
-    }
-
-    public TPBInfoDto getTpbinfodto() {
-
-        return tpbinfodto;
-
-    }
-
-    public BIDVInfoDto getBidvinfodto() {
-
-        return bidvinfodto;
-
-    }
-
-    public MBBInfoDto getMbbinfodto() {
-
-        return mbbinfodto;
-
-    }
-
-    public ACBInfoDto getAcbinfodto() {
-
-        return acbinfodto;
-
-    }
-
-    public VPBInfoDto getVpbinfodto() {
-
-        return vpbinfodto;
-
-    }
-
-    public ShinhanInfoDto getShinhaninfodto() {
-
-        return shinhaninfodto;
-
-    }
-
-    public PGBInfoDto getPgbinfodto() {
-
-        return pgbinfodto;
-
-    }
-
-    public VIBInfoDto getVibinfodto() {
-
-        return vibinfodto;
-
-    }
-
-    public CTGInfoDto getCtginfodto() {
-
-        return ctginfodto;
-
-    }
-
-    public STBInfoDto getStbinfodto() {
-
-        return stbinfodto;
-
-    }
-
-    public AgribankInfoDto getAgribankinfodto() {
-
-        return agribankinfodto;
-
-    }
-
-    public VCBInfoDto getVcbinfodto() {
-
-        return vcbinfodto;
-
-    }
-
-    public COBInfoDto getCobinfodto() {
-
-        return cobinfodto;
-
-    }
-
-    public void setOcbinfodto(OCBInfoDto ocbinfodto) {
-
-        this.ocbinfodto = ocbinfodto;
-
-    }
-
-    public void setTpbinfodto(TPBInfoDto tpbinfodto) {
-
-        this.tpbinfodto = tpbinfodto;
-
-    }
-
-    public void setBidvinfodto(BIDVInfoDto bidvinfodto) {
-
-        this.bidvinfodto = bidvinfodto;
-
-    }
-
-    public void setMbbinfodto(MBBInfoDto mbbinfodto) {
-
-        this.mbbinfodto = mbbinfodto;
-
-    }
-
-    public void setAcbinfodto(ACBInfoDto acbinfodto) {
-
-        this.acbinfodto = acbinfodto;
-
-    }
-
-    public void setVpbinfodto(VPBInfoDto vpbinfodto) {
-
-        this.vpbinfodto = vpbinfodto;
-
-    }
-
-    public void setShinhaninfodto(ShinhanInfoDto shinhaninfodto) {
-
-        this.shinhaninfodto = shinhaninfodto;
-
-    }
-
-    public void setPgbinfodto(PGBInfoDto pgbinfodto) {
-
-        this.pgbinfodto = pgbinfodto;
-
-    }
-
-    public void setVibinfodto(VIBInfoDto vibinfodto) {
-
-        this.vibinfodto = vibinfodto;
-
-    }
-
-    public void setCtginfodto(CTGInfoDto ctginfodto) {
-
-        this.ctginfodto = ctginfodto;
-
-    }
-
-    public void setStbinfodto(STBInfoDto stbinfodto) {
-
-        this.stbinfodto = stbinfodto;
-
-    }
-
-    public void setAgribankinfodto(AgribankInfoDto agribankinfodto) {
-
-        this.agribankinfodto = agribankinfodto;
-
-    }
-
-    public void setVcbinfodto(VCBInfoDto vcbinfodto) {
-
-        this.vcbinfodto = vcbinfodto;
-
-    }
-
-    public void setCobinfodto(COBInfoDto cobinfodto) {
-
-        this.cobinfodto = cobinfodto;
-
-    }
 }

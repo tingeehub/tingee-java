@@ -2,167 +2,59 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiShopNFCConfigDto {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("shopId")
-    private Double shopid;
+    private Double shopId;
+    @lombok.NonNull
     @JsonProperty("displayName")
-    private String displayname;
+    private String displayName;
+    @lombok.NonNull
     @JsonProperty("color")
     private String color;
+    @lombok.NonNull
     @JsonProperty("address")
     private String address;
+    @lombok.NonNull
     @JsonProperty("title")
     private String title;
+    @lombok.NonNull
     @JsonProperty("description")
     private String description;
+    @lombok.NonNull
     @JsonProperty("logo")
     private String logo;
+    @lombok.NonNull
     @JsonProperty("avatar")
     private String avatar;
+    @lombok.NonNull
     @JsonProperty("isActive")
-    private Boolean isactive;
+    private Boolean isActive;
+    @lombok.NonNull
     @JsonProperty("modules")
     private ShopNfcModuleItemDto modules;
 
-    public OpenApiShopNFCConfigDto() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public String getDisplayname() {
-
-        return displayname;
-
-    }
-
-    public String getColor() {
-
-        return color;
-
-    }
-
-    public String getAddress() {
-
-        return address;
-
-    }
-
-    public String getTitle() {
-
-        return title;
-
-    }
-
-    public String getDescription() {
-
-        return description;
-
-    }
-
-    public String getLogo() {
-
-        return logo;
-
-    }
-
-    public String getAvatar() {
-
-        return avatar;
-
-    }
-
-    public Boolean getIsactive() {
-
-        return isactive;
-
-    }
-
-    public ShopNfcModuleItemDto getModules() {
-
-        return modules;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
-    }
-
-    public void setDisplayname(String displayname) {
-
-        this.displayname = displayname;
-
-    }
-
-    public void setColor(String color) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiShopNFCConfigDto(Double shopId, String displayName, String color, String address, String title, String description, String logo, String avatar, Boolean isActive, ShopNfcModuleItemDto modules) {
+        this.shopId = shopId;
+        this.displayName = displayName;
         this.color = color;
-
-    }
-
-    public void setAddress(String address) {
-
         this.address = address;
-
-    }
-
-    public void setTitle(String title) {
-
         this.title = title;
-
-    }
-
-    public void setDescription(String description) {
-
         this.description = description;
-
-    }
-
-    public void setLogo(String logo) {
-
         this.logo = logo;
-
-    }
-
-    public void setAvatar(String avatar) {
-
         this.avatar = avatar;
-
-    }
-
-    public void setIsactive(Boolean isactive) {
-
-        this.isactive = isactive;
-
-    }
-
-    public void setModules(ShopNfcModuleItemDto modules) {
-
+        this.isActive = isActive;
         this.modules = modules;
-
     }
 }

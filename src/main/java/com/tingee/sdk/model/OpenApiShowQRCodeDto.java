@@ -2,209 +2,50 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiShowQRCodeDto {
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("uuid")
     private String uuid;
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
+    @lombok.NonNull
     @JsonProperty("amount")
-    private Double amount;
+    private Long amount;
+    @lombok.NonNull
     @JsonProperty("qrCode")
-    private String qrcode;
+    private String qrCode;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
     @JsonProperty("deviceType")
-    private String devicetype;
+    private DeviceTypeEnum deviceType;
     @JsonProperty("firstText")
-    private String firsttext;
+    private String firstText;
     @JsonProperty("secondText")
-    private String secondtext;
+    private String secondText;
     @JsonProperty("thirdText")
-    private String thirdtext;
+    private String thirdText;
     @JsonProperty("showTime")
-    private Double showtime;
+    private Integer showTime;
     @JsonProperty("isStaticQr")
-    private Boolean isstaticqr;
+    private Boolean isStaticQr;
     @JsonProperty("playSound")
-    private Boolean playsound;
+    private Boolean playSound;
 
-    public OpenApiShowQRCodeDto() {
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getUuid() {
-
-        return uuid;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public Double getAmount() {
-
-        return amount;
-
-    }
-
-    public String getQrcode() {
-
-        return qrcode;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public String getDevicetype() {
-
-        return devicetype;
-
-    }
-
-    public String getFirsttext() {
-
-        return firsttext;
-
-    }
-
-    public String getSecondtext() {
-
-        return secondtext;
-
-    }
-
-    public String getThirdtext() {
-
-        return thirdtext;
-
-    }
-
-    public Double getShowtime() {
-
-        return showtime;
-
-    }
-
-    public Boolean getIsstaticqr() {
-
-        return isstaticqr;
-
-    }
-
-    public Boolean getPlaysound() {
-
-        return playsound;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setUuid(String uuid) {
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiShowQRCodeDto(String uuid, Long amount, String qrCode) {
         this.uuid = uuid;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
-    }
-
-    public void setAmount(Double amount) {
-
         this.amount = amount;
-
-    }
-
-    public void setQrcode(String qrcode) {
-
-        this.qrcode = qrcode;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setDevicetype(String devicetype) {
-
-        this.devicetype = devicetype;
-
-    }
-
-    public void setFirsttext(String firsttext) {
-
-        this.firsttext = firsttext;
-
-    }
-
-    public void setSecondtext(String secondtext) {
-
-        this.secondtext = secondtext;
-
-    }
-
-    public void setThirdtext(String thirdtext) {
-
-        this.thirdtext = thirdtext;
-
-    }
-
-    public void setShowtime(Double showtime) {
-
-        this.showtime = showtime;
-
-    }
-
-    public void setIsstaticqr(Boolean isstaticqr) {
-
-        this.isstaticqr = isstaticqr;
-
-    }
-
-    public void setPlaysound(Boolean playsound) {
-
-        this.playsound = playsound;
-
+        this.qrCode = qrCode;
     }
 }

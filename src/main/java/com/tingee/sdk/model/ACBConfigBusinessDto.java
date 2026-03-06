@@ -2,83 +2,37 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class ACBConfigBusinessDto {
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
+    @lombok.NonNull
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
+    @lombok.NonNull
     @JsonProperty("vaPrefix")
-    private String vaprefix;
+    private String vaPrefix;
+    @lombok.NonNull
     @JsonProperty("mobile")
     private String mobile;
+    @lombok.NonNull
     @JsonProperty("acbUserId")
-    private String acbuserid;
+    private String acbUserId;
 
-    public ACBConfigBusinessDto() {
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getVaprefix() {
-
-        return vaprefix;
-
-    }
-
-    public String getMobile() {
-
-        return mobile;
-
-    }
-
-    public String getAcbuserid() {
-
-        return acbuserid;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setVaprefix(String vaprefix) {
-
-        this.vaprefix = vaprefix;
-
-    }
-
-    public void setMobile(String mobile) {
-
+    /** Use this constructor to set all required fields. */
+    public ACBConfigBusinessDto(String accountNumber, String accountName, String vaPrefix, String mobile, String acbUserId) {
+        this.accountNumber = accountNumber;
+        this.accountName = accountName;
+        this.vaPrefix = vaPrefix;
         this.mobile = mobile;
-
-    }
-
-    public void setAcbuserid(String acbuserid) {
-
-        this.acbuserid = acbuserid;
-
+        this.acbUserId = acbUserId;
     }
 }

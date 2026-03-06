@@ -145,4 +145,26 @@ public final class TingeeSigner {
 
         return new WebhookVerifyResult("00", "Success");
     }
+
+    /**
+     * Verify webhook signature where body is a raw JSON string.
+     * The string is parsed into a Map automatically.
+     */
+    @SuppressWarnings("unchecked")
+    public static WebhookVerifyResult verifyWebhookSignature(
+            String secretToken,
+            String signature,
+            String timestamp,
+            String bodyJson
+    ) {
+        if (bodyJson == null || bodyJson.isBlank()) {
+            return new WebhookVerifyResult("MISSING_BODY", "body is required and must be an object");
+        }
+        try {
+            Map<String, Object> body = MAPPER.readValue(bodyJson, Map.class);
+            return verifyWebhookSignature(secretToken, signature, timestamp, body);
+        } catch (Exception e) {
+            return new WebhookVerifyResult("INVALID_BODY", "body string is not valid JSON");
+        }
+    }
 }

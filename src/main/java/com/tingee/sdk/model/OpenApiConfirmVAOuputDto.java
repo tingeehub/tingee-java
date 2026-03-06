@@ -2,69 +2,33 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiConfirmVAOuputDto {
+    @lombok.NonNull
     @JsonProperty("accountType")
-    private String accounttype;
+    private BankAccountTypeEnum accountType;
+    @lombok.NonNull
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
+    @lombok.NonNull
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
 
-    public OpenApiConfirmVAOuputDto() {
-    }
-
-    public String getAccounttype() {
-
-        return accounttype;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public void setAccounttype(String accounttype) {
-
-        this.accounttype = accounttype;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiConfirmVAOuputDto(BankAccountTypeEnum accountType, BankNameEnum bankName, String accountNumber, String vaAccountNumber) {
+        this.accountType = accountType;
+        this.bankName = bankName;
+        this.accountNumber = accountNumber;
+        this.vaAccountNumber = vaAccountNumber;
     }
 }

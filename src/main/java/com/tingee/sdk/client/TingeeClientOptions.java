@@ -1,7 +1,15 @@
 package com.tingee.sdk.client;
 
 /**
- * Configuration options for TingeeClient
+ * Configuration options for TingeeClient.
+ *
+ * <p>Usage:
+ * <pre>{@code
+ * TingeeClientOptions options = TingeeClientOptions
+ *     .builder(secretKey, clientId)
+ *     .environment(TingeeEnvironment.SANDBOX)
+ *     .build();
+ * }</pre>
  */
 public class TingeeClientOptions {
     private final String secretKey;
@@ -41,25 +49,32 @@ public class TingeeClientOptions {
         return getEnvironment().getBaseUrl();
     }
 
-    public static Builder builder() {
-        return new Builder();
+    /**
+     * Creates a new builder with the two required credentials.
+     *
+     * @param secretKey your Tingee secret key (required)
+     * @param clientId  your Tingee client ID (required)
+     */
+    public static Builder builder(String secretKey, String clientId) {
+        return new Builder(secretKey, clientId);
     }
 
     public static class Builder {
-        private String secretKey;
-        private String clientId;
+        private final String secretKey;
+        private final String clientId;
         private TingeeEnvironment environment;
         private Integer timeout;
         private String baseUrl;
 
-        public Builder secretKey(String secretKey) {
+        private Builder(String secretKey, String clientId) {
+            if (secretKey == null || secretKey.isEmpty()) {
+                throw new IllegalArgumentException("secretKey is required");
+            }
+            if (clientId == null || clientId.isEmpty()) {
+                throw new IllegalArgumentException("clientId is required");
+            }
             this.secretKey = secretKey;
-            return this;
-        }
-
-        public Builder clientId(String clientId) {
             this.clientId = clientId;
-            return this;
         }
 
         public Builder environment(TingeeEnvironment environment) {
@@ -78,12 +93,6 @@ public class TingeeClientOptions {
         }
 
         public TingeeClientOptions build() {
-            if (secretKey == null || secretKey.isEmpty()) {
-                throw new IllegalArgumentException("secretKey is required");
-            }
-            if (clientId == null || clientId.isEmpty()) {
-                throw new IllegalArgumentException("clientId is required");
-            }
             return new TingeeClientOptions(this);
         }
     }

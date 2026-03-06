@@ -8,50 +8,21 @@ import java.util.List;
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
 public class OpenApiVerifyReferralCodeResponseDto {
+    @lombok.NonNull
     @JsonProperty("isValid")
-    private Boolean isvalid;
+    private Boolean isValid;
     @JsonProperty("canConnectAllBanks")
-    private Boolean canconnectallbanks;
+    private Boolean canConnectAllBanks;
     @JsonProperty("bankBins")
-    private List<String> bankbins;
+    private List<String> bankBins;
 
-    public OpenApiVerifyReferralCodeResponseDto() {
-    }
-
-    public Boolean getIsvalid() {
-
-        return isvalid;
-
-    }
-
-    public Boolean getCanconnectallbanks() {
-
-        return canconnectallbanks;
-
-    }
-
-    public List<String> getBankbins() {
-
-        return bankbins;
-
-    }
-
-    public void setIsvalid(Boolean isvalid) {
-
-        this.isvalid = isvalid;
-
-    }
-
-    public void setCanconnectallbanks(Boolean canconnectallbanks) {
-
-        this.canconnectallbanks = canconnectallbanks;
-
-    }
-
-    public void setBankbins(List<String> bankbins) {
-
-        this.bankbins = bankbins;
-
+    /** Use this constructor to set all required fields. */
+    public OpenApiVerifyReferralCodeResponseDto(Boolean isValid) {
+        this.isValid = isValid;
     }
 }

@@ -2,475 +2,98 @@ package com.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
+@lombok.Getter
+@lombok.Setter
+@lombok.ToString
 public class OpenApiCreateVAInpuDto {
     @JsonProperty("name")
     private String name;
     @JsonProperty("cashFlowSource")
-    private String cashflowsource;
+    private CashFlowSourceEnum cashFlowSource;
+    @lombok.NonNull
     @JsonProperty("accountType")
-    private String accounttype;
+    private BankAccountTypeEnum accountType;
+    @lombok.NonNull
     @JsonProperty("accountNumber")
-    private String accountnumber;
+    private String accountNumber;
+    @lombok.NonNull
     @JsonProperty("accountName")
-    private String accountname;
+    private String accountName;
+    @lombok.NonNull
     @JsonProperty("identity")
     private String identity;
+    @lombok.NonNull
     @JsonProperty("mobile")
     private String mobile;
     @JsonProperty("masterMerchantId")
-    private Double mastermerchantid;
+    private Integer masterMerchantId;
     @JsonProperty("shopId")
-    private Double shopid;
+    private Integer shopId;
     @JsonProperty("vaPrefix")
-    private String vaprefix;
+    private String vaPrefix;
     @JsonProperty("vaSuffix")
-    private String vasuffix;
+    private String vaSuffix;
     @JsonProperty("merchantName")
-    private String merchantname;
+    private String merchantName;
     @JsonProperty("merchantAddress")
-    private String merchantaddress;
+    private String merchantAddress;
     @JsonProperty("serviceId")
-    private Double serviceid;
+    private Integer serviceId;
     @JsonProperty("isCreateNonOtp")
-    private Boolean iscreatenonotp;
+    private Boolean isCreateNonOtp;
     @JsonProperty("code")
     private String code;
     @JsonProperty("taxCode")
-    private String taxcode;
+    private String taxCode;
     @JsonProperty("softposUserName")
-    private String softposusername;
+    private String softposUserName;
     @JsonProperty("softposDeveloperId")
-    private String softposdeveloperid;
+    private String softposDeveloperId;
     @JsonProperty("softposTid")
-    private String softpostid;
+    private String softposTid;
     @JsonProperty("softposMid")
-    private String softposmid;
+    private String softposMid;
     @JsonProperty("authorizationCode")
-    private String authorizationcode;
+    private String authorizationCode;
     @JsonProperty("sessionLogin")
-    private String sessionlogin;
+    private String sessionLogin;
     @JsonProperty("isNotifyAccountNumber")
-    private Boolean isnotifyaccountnumber;
+    private Boolean isNotifyAccountNumber;
+    @lombok.NonNull
     @JsonProperty("appType")
-    private String apptype;
+    private AppTypeEnum appType;
     @JsonProperty("linkType")
-    private String linktype;
+    private LinkTypeEnum linkType;
     @JsonProperty("vaAccountNumber")
-    private String vaaccountnumber;
+    private String vaAccountNumber;
     @JsonProperty("acbUserId")
-    private String acbuserid;
+    private String acbUserId;
     @JsonProperty("bankBin")
-    private String bankbin;
+    private String bankBin;
     @JsonProperty("bankName")
-    private String bankname;
+    private BankNameEnum bankName;
     @JsonProperty("merchantId")
-    private Double merchantid;
+    private Integer merchantId;
+    @lombok.NonNull
     @JsonProperty("redirectUrl")
-    private String redirecturl;
+    private String redirectUrl;
+    @lombok.NonNull
     @JsonProperty("webhookUrl")
-    private String webhookurl;
-
-    public OpenApiCreateVAInpuDto() {
-    }
-
-    public String getName() {
-
-        return name;
-
-    }
-
-    public String getCashflowsource() {
-
-        return cashflowsource;
-
-    }
-
-    public String getAccounttype() {
-
-        return accounttype;
-
-    }
-
-    public String getAccountnumber() {
-
-        return accountnumber;
-
-    }
-
-    public String getAccountname() {
-
-        return accountname;
-
-    }
-
-    public String getIdentity() {
-
-        return identity;
-
-    }
-
-    public String getMobile() {
-
-        return mobile;
-
-    }
-
-    public Double getMastermerchantid() {
-
-        return mastermerchantid;
-
-    }
-
-    public Double getShopid() {
-
-        return shopid;
-
-    }
-
-    public String getVaprefix() {
-
-        return vaprefix;
-
-    }
-
-    public String getVasuffix() {
-
-        return vasuffix;
-
-    }
-
-    public String getMerchantname() {
-
-        return merchantname;
-
-    }
-
-    public String getMerchantaddress() {
-
-        return merchantaddress;
-
-    }
-
-    public Double getServiceid() {
-
-        return serviceid;
-
-    }
-
-    public Boolean getIscreatenonotp() {
-
-        return iscreatenonotp;
-
-    }
-
-    public String getCode() {
-
-        return code;
-
-    }
-
-    public String getTaxcode() {
-
-        return taxcode;
-
-    }
-
-    public String getSoftposusername() {
-
-        return softposusername;
-
-    }
-
-    public String getSoftposdeveloperid() {
-
-        return softposdeveloperid;
-
-    }
-
-    public String getSoftpostid() {
-
-        return softpostid;
-
-    }
-
-    public String getSoftposmid() {
-
-        return softposmid;
-
-    }
-
-    public String getAuthorizationcode() {
-
-        return authorizationcode;
-
-    }
-
-    public String getSessionlogin() {
-
-        return sessionlogin;
-
-    }
-
-    public Boolean getIsnotifyaccountnumber() {
-
-        return isnotifyaccountnumber;
-
-    }
-
-    public String getApptype() {
-
-        return apptype;
-
-    }
-
-    public String getLinktype() {
-
-        return linktype;
-
-    }
-
-    public String getVaaccountnumber() {
-
-        return vaaccountnumber;
-
-    }
-
-    public String getAcbuserid() {
-
-        return acbuserid;
-
-    }
-
-    public String getBankbin() {
-
-        return bankbin;
-
-    }
-
-    public String getBankname() {
-
-        return bankname;
-
-    }
-
-    public Double getMerchantid() {
-
-        return merchantid;
-
-    }
-
-    public String getRedirecturl() {
-
-        return redirecturl;
-
-    }
-
-    public String getWebhookurl() {
-
-        return webhookurl;
-
-    }
-
-    public void setName(String name) {
-
-        this.name = name;
-
-    }
-
-    public void setCashflowsource(String cashflowsource) {
-
-        this.cashflowsource = cashflowsource;
-
-    }
-
-    public void setAccounttype(String accounttype) {
-
-        this.accounttype = accounttype;
-
-    }
-
-    public void setAccountnumber(String accountnumber) {
-
-        this.accountnumber = accountnumber;
-
-    }
-
-    public void setAccountname(String accountname) {
-
-        this.accountname = accountname;
-
-    }
-
-    public void setIdentity(String identity) {
-
+    private String webhookUrl;
+
+    /** Use this constructor to set all required fields. */
+    public OpenApiCreateVAInpuDto(BankAccountTypeEnum accountType, String accountNumber, String accountName, String identity, String mobile, AppTypeEnum appType, String redirectUrl, String webhookUrl) {
+        this.accountType = accountType;
+        this.accountNumber = accountNumber;
+        this.accountName = accountName;
         this.identity = identity;
-
-    }
-
-    public void setMobile(String mobile) {
-
         this.mobile = mobile;
-
-    }
-
-    public void setMastermerchantid(Double mastermerchantid) {
-
-        this.mastermerchantid = mastermerchantid;
-
-    }
-
-    public void setShopid(Double shopid) {
-
-        this.shopid = shopid;
-
-    }
-
-    public void setVaprefix(String vaprefix) {
-
-        this.vaprefix = vaprefix;
-
-    }
-
-    public void setVasuffix(String vasuffix) {
-
-        this.vasuffix = vasuffix;
-
-    }
-
-    public void setMerchantname(String merchantname) {
-
-        this.merchantname = merchantname;
-
-    }
-
-    public void setMerchantaddress(String merchantaddress) {
-
-        this.merchantaddress = merchantaddress;
-
-    }
-
-    public void setServiceid(Double serviceid) {
-
-        this.serviceid = serviceid;
-
-    }
-
-    public void setIscreatenonotp(Boolean iscreatenonotp) {
-
-        this.iscreatenonotp = iscreatenonotp;
-
-    }
-
-    public void setCode(String code) {
-
-        this.code = code;
-
-    }
-
-    public void setTaxcode(String taxcode) {
-
-        this.taxcode = taxcode;
-
-    }
-
-    public void setSoftposusername(String softposusername) {
-
-        this.softposusername = softposusername;
-
-    }
-
-    public void setSoftposdeveloperid(String softposdeveloperid) {
-
-        this.softposdeveloperid = softposdeveloperid;
-
-    }
-
-    public void setSoftpostid(String softpostid) {
-
-        this.softpostid = softpostid;
-
-    }
-
-    public void setSoftposmid(String softposmid) {
-
-        this.softposmid = softposmid;
-
-    }
-
-    public void setAuthorizationcode(String authorizationcode) {
-
-        this.authorizationcode = authorizationcode;
-
-    }
-
-    public void setSessionlogin(String sessionlogin) {
-
-        this.sessionlogin = sessionlogin;
-
-    }
-
-    public void setIsnotifyaccountnumber(Boolean isnotifyaccountnumber) {
-
-        this.isnotifyaccountnumber = isnotifyaccountnumber;
-
-    }
-
-    public void setApptype(String apptype) {
-
-        this.apptype = apptype;
-
-    }
-
-    public void setLinktype(String linktype) {
-
-        this.linktype = linktype;
-
-    }
-
-    public void setVaaccountnumber(String vaaccountnumber) {
-
-        this.vaaccountnumber = vaaccountnumber;
-
-    }
-
-    public void setAcbuserid(String acbuserid) {
-
-        this.acbuserid = acbuserid;
-
-    }
-
-    public void setBankbin(String bankbin) {
-
-        this.bankbin = bankbin;
-
-    }
-
-    public void setBankname(String bankname) {
-
-        this.bankname = bankname;
-
-    }
-
-    public void setMerchantid(Double merchantid) {
-
-        this.merchantid = merchantid;
-
-    }
-
-    public void setRedirecturl(String redirecturl) {
-
-        this.redirecturl = redirecturl;
-
-    }
-
-    public void setWebhookurl(String webhookurl) {
-
-        this.webhookurl = webhookurl;
-
+        this.appType = appType;
+        this.redirectUrl = redirectUrl;
+        this.webhookUrl = webhookUrl;
     }
 }
