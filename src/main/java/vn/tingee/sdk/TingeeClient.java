@@ -5,6 +5,7 @@ import vn.tingee.sdk.client.TingeeEnvironment;
 import vn.tingee.sdk.client.TingeeHttpClient;
 import vn.tingee.sdk.signature.TingeeSigner;
 import vn.tingee.sdk.types.TingeeApiResponse;
+import vn.tingee.sdk.types.TingeeWebhookBody;
 import java.util.HashMap;
 import java.util.Map;
 import vn.tingee.sdk.model.*;
@@ -75,12 +76,12 @@ public class TingeeClient {
      *
      * @param signature  Value of x-signature header
      * @param timestamp  Value of x-request-timestamp header
-     * @param body       Parsed webhook body as a Map
+     * @param body       Parsed webhook body as TingeeWebhookBody
      */
     public TingeeSigner.WebhookVerifyResult verifyWebhookSignature(
             String signature,
             String timestamp,
-            java.util.Map<String, Object> body) {
+            TingeeWebhookBody body) {
         return TingeeSigner.verifyWebhookSignature(secretKey, signature, timestamp, body);
     }
 

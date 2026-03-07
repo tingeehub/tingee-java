@@ -1,5 +1,7 @@
 package vn.tingee.sdk.signature;
 
+import vn.tingee.sdk.types.TingeeWebhookBody;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -9,8 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.List;
-import java.util.Map;
+
 
 /**
  * Tingee webhook signature utilities.
@@ -20,16 +21,13 @@ public final class TingeeSigner {
     private TingeeSigner() {}
 
     private static final String HMAC_ALGO = "HmacSHA512";
-    private static final List<String> REQUIRED_BODY_FIELDS =
-            List.of("clientId", "transactionCode", "amount", "bank", "transactionDate");
+
 
     /** Timestamp format: yyyyMMddHHmmssSSS */
     private static final DateTimeFormatter TIMESTAMP_FMT =
             DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
 
     private static final ObjectMapper MAPPER = new ObjectMapper();
-
-    // â”€â”€ Result â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     public static final class WebhookVerifyResult {
         private final String code;
@@ -49,8 +47,6 @@ public final class TingeeSigner {
             return "WebhookVerifyResult{code='" + code + "', message='" + message + "'}";
         }
     }
-
-    // â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     /**
      * Generate HMAC-SHA512 signature.
@@ -86,8 +82,6 @@ public final class TingeeSigner {
         return formatTimestamp(vnNow.toLocalDateTime());
     }
 
-    // â”€â”€ Verify â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
     /**
      * Verify the HMAC-SHA512 signature of an incoming Tingee webhook callback.
      *
@@ -96,7 +90,7 @@ public final class TingeeSigner {
      *     secretToken, // from your merchant config
      *     request.getHeader("x-signature"),
      *     request.getHeader("x-request-timestamp"),
-     *     bodyMap      // Map parsed from the JSON body
+     *     body         // TingeeWebhookBody parsed from the JSON body
      * );
      * if (!result.isValid()) {
      *     response.setStatus(401);
@@ -105,10 +99,10 @@ public final class TingeeSigner {
      * }</pre>
      */
     public static WebhookVerifyResult verifyWebhookSignature(
-            String            secretToken,
-            String            signature,
-            String            timestamp,
-            Map<String, Object> body
+            String             secretToken,
+            String             signature,
+            String             timestamp,
+            TingeeWebhookBody  body
     ) {
         if (signature == null || signature.isEmpty()) {
             return new WebhookVerifyResult("MISSING_SIGNATURE", "x-signature header is required");
@@ -120,16 +114,17 @@ public final class TingeeSigner {
             return new WebhookVerifyResult("INVALID_TIMESTAMP",
                     "x-request-timestamp must be in yyyyMMddHHmmssSSS format (17 digits)");
         }
-        if (body == null || body.isEmpty()) {
+        if (body == null) {
             return new WebhookVerifyResult("MISSING_BODY", "body is required and must be an object");
         }
 
-        for (String field : REQUIRED_BODY_FIELDS) {
-            Object val = body.get(field);
-            if (val == null || val.toString().isEmpty()) {
-                return new WebhookVerifyResult("MISSING_BODY_FIELD", "body." + field + " is required");
-            }
-        }
+        // Check required fields directly
+        if (isEmpty(body.getClientId()))        return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.clientId is required");
+        if (isEmpty(body.getTransactionCode())) return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.transactionCode is required");
+        if (body.getAmount() == null)           return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.amount is required");
+        if (isEmpty(body.getBank()))            return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.bank is required");
+        if (isEmpty(body.getAccountNumber()))   return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.accountNumber is required");
+        if (isEmpty(body.getTransactionDate())) return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.transactionDate is required");
 
         try {
             String expected = generateSignature(secretToken, timestamp, body);
@@ -148,9 +143,8 @@ public final class TingeeSigner {
 
     /**
      * Verify webhook signature where body is a raw JSON string.
-     * The string is parsed into a Map automatically.
+     * Parsed automatically into TingeeWebhookBody.
      */
-    @SuppressWarnings("unchecked")
     public static WebhookVerifyResult verifyWebhookSignature(
             String secretToken,
             String signature,
@@ -161,11 +155,15 @@ public final class TingeeSigner {
             return new WebhookVerifyResult("MISSING_BODY", "body is required and must be an object");
         }
         try {
-            Map<String, Object> body = MAPPER.readValue(bodyJson, Map.class);
+            TingeeWebhookBody body = MAPPER.readValue(bodyJson, TingeeWebhookBody.class);
             return verifyWebhookSignature(secretToken, signature, timestamp, body);
         } catch (Exception e) {
             return new WebhookVerifyResult("INVALID_BODY", "body string is not valid JSON");
         }
+    }
+
+    private static boolean isEmpty(String s) {
+        return s == null || s.isEmpty();
     }
 }
 
