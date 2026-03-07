@@ -17,7 +17,6 @@ public class OpenApiCreateOrUpdateShopDto {
     private String name;
     @JsonProperty("email")
     private String email;
-    @lombok.NonNull
     @JsonProperty("phoneNumber")
     private String phoneNumber;
     @JsonProperty("provinceId")
@@ -47,9 +46,8 @@ public class OpenApiCreateOrUpdateShopDto {
     private Integer merchantId;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiCreateOrUpdateShopDto(String name, String phoneNumber, Boolean isActive) {
+    public OpenApiCreateOrUpdateShopDto(String name, Boolean isActive) {
         this.name = name;
-        this.phoneNumber = phoneNumber;
         this.isActive = isActive;
     }
 }

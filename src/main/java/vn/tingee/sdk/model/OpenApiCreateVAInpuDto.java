@@ -17,16 +17,12 @@ public class OpenApiCreateVAInpuDto {
     @lombok.NonNull
     @JsonProperty("accountType")
     private BankAccountTypeEnum accountType;
-    @lombok.NonNull
     @JsonProperty("accountNumber")
     private String accountNumber;
-    @lombok.NonNull
     @JsonProperty("accountName")
     private String accountName;
-    @lombok.NonNull
     @JsonProperty("identity")
     private String identity;
-    @lombok.NonNull
     @JsonProperty("mobile")
     private String mobile;
     @JsonProperty("masterMerchantId")
@@ -78,22 +74,14 @@ public class OpenApiCreateVAInpuDto {
     private BankNameEnum bankName;
     @JsonProperty("merchantId")
     private Integer merchantId;
-    @lombok.NonNull
     @JsonProperty("redirectUrl")
     private String redirectUrl;
-    @lombok.NonNull
     @JsonProperty("webhookUrl")
     private String webhookUrl;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiCreateVAInpuDto(BankAccountTypeEnum accountType, String accountNumber, String accountName, String identity, String mobile, AppTypeEnum appType, String redirectUrl, String webhookUrl) {
+    public OpenApiCreateVAInpuDto(BankAccountTypeEnum accountType, AppTypeEnum appType) {
         this.accountType = accountType;
-        this.accountNumber = accountNumber;
-        this.accountName = accountName;
-        this.identity = identity;
-        this.mobile = mobile;
         this.appType = appType;
-        this.redirectUrl = redirectUrl;
-        this.webhookUrl = webhookUrl;
     }
 }
