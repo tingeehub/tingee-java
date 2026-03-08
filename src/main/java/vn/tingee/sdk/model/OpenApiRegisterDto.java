@@ -13,6 +13,7 @@ public class OpenApiRegisterDto {
     @lombok.NonNull
     @JsonProperty("requestId")
     private String requestId;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("accountName")

@@ -15,6 +15,7 @@ public class OpenApiRefundDto {
     @lombok.NonNull
     @JsonProperty("transactionCode")
     private String transactionCode;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("bankName")

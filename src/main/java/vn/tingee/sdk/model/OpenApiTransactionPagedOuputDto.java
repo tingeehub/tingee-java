@@ -20,6 +20,7 @@ public class OpenApiTransactionPagedOuputDto {
     @lombok.NonNull
     @JsonProperty("shopId")
     private Integer shopId;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("cashFlowSource")

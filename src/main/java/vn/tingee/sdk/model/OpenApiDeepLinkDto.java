@@ -25,6 +25,7 @@ public class OpenApiDeepLinkDto {
     @JsonProperty("callbackUrl")
     private String callbackUrl;
     @lombok.NonNull
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @lombok.NonNull

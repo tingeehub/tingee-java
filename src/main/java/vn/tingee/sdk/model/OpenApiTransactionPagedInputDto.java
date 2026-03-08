@@ -28,6 +28,7 @@ public class OpenApiTransactionPagedInputDto {
     private List<Double> shopIds;
     @JsonProperty("vaAccountNumbers")
     private List<String> vaAccountNumbers;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("billId")

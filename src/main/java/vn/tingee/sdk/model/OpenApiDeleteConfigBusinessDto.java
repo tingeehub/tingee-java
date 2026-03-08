@@ -18,6 +18,7 @@ public class OpenApiDeleteConfigBusinessDto {
     private ACBConfigBusinessDto configRemove;
     @JsonProperty("merchantId")
     private Integer merchantId;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("bankName")

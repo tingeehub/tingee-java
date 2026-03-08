@@ -15,6 +15,7 @@ public class OpenApiRegisterNotifyDto {
     @lombok.NonNull
     @JsonProperty("vaAccountNumber")
     private String vaAccountNumber;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("bankName")

@@ -52,6 +52,7 @@ public class OpenApiSubscriptionStatusResponseDto {
     @JsonProperty("subscriptionId")
     private String subscriptionId;
     @lombok.NonNull
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
 

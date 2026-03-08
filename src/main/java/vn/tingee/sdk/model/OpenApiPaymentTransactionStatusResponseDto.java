@@ -21,6 +21,7 @@ public class OpenApiPaymentTransactionStatusResponseDto {
     @JsonProperty("tokenRef")
     private String tokenRef;
     @lombok.NonNull
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @lombok.NonNull

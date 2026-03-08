@@ -36,6 +36,7 @@ public class MerchantBankConfigPagedOutputDto {
     private BankAccountTypeEnum accountType;
     @JsonProperty("configDto")
     private Object configDto;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("bankName")

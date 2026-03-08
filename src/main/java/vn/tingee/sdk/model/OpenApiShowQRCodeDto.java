@@ -23,6 +23,7 @@ public class OpenApiShowQRCodeDto {
     @lombok.NonNull
     @JsonProperty("qrCode")
     private String qrCode;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("bankName")

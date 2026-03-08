@@ -18,26 +18,23 @@ public class GenerateDynamicQRInputDto {
     @lombok.NonNull
     @JsonProperty("qrCodeType")
     private QRCodeTypeEnum qrCodeType;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("bankName")
     private BankNameEnum bankName;
-    @lombok.NonNull
     @JsonProperty("amount")
     private Long amount;
     @JsonProperty("purpose")
     private String purpose;
-    @lombok.NonNull
     @JsonProperty("expireInMinute")
     private Integer expireInMinute;
     @JsonProperty("extraInfo")
     private String extraInfo;
 
     /** Use this constructor to set all required fields. */
-    public GenerateDynamicQRInputDto(String vaAccountNumber, QRCodeTypeEnum qrCodeType, Long amount, Integer expireInMinute) {
+    public GenerateDynamicQRInputDto(String vaAccountNumber, QRCodeTypeEnum qrCodeType) {
         this.vaAccountNumber = vaAccountNumber;
         this.qrCodeType = qrCodeType;
-        this.amount = amount;
-        this.expireInMinute = expireInMinute;
     }
 }

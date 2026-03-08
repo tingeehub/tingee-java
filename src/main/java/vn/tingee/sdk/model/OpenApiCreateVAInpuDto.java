@@ -68,6 +68,7 @@ public class OpenApiCreateVAInpuDto {
     private String vaAccountNumber;
     @JsonProperty("acbUserId")
     private String acbUserId;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("bankName")

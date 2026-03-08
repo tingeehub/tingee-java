@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.ToString
 public class OpenApiGenerateVietQROuputDto {
     @lombok.NonNull
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @lombok.NonNull

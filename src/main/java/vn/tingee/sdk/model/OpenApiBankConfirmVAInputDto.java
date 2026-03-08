@@ -22,6 +22,7 @@ public class OpenApiBankConfirmVAInputDto {
     @JsonProperty("bankName")
     private BankNameEnum bankName;
     @lombok.NonNull
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
 

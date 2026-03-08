@@ -21,6 +21,7 @@ public class V2AccountNumberDDLDto {
     @JsonProperty("merchantId")
     private Integer merchantId;
     @lombok.NonNull
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @lombok.NonNull

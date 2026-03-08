@@ -25,6 +25,7 @@ public class OpenApiConfigAccountBusinessDto {
     @lombok.NonNull
     @JsonProperty("acbUserId")
     private String acbUserId;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
 

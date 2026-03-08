@@ -25,6 +25,7 @@ public class OpenApiBankCreateOrUpdateConfigDto {
     private String otpNumber;
     @JsonProperty("confirmId")
     private String confirmId;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("bankName")

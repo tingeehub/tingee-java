@@ -18,6 +18,7 @@ public class OpenApiBillInfoDto {
     @JsonProperty("qrCodeType")
     private String qrCodeType;
     @lombok.NonNull
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @lombok.NonNull

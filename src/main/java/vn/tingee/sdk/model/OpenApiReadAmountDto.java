@@ -22,6 +22,7 @@ public class OpenApiReadAmountDto {
     @JsonProperty("amount")
     private Long amount;
     @lombok.NonNull
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("firstDisplayText")

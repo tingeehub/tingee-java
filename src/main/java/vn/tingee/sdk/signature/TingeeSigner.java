@@ -1,7 +1,5 @@
 package vn.tingee.sdk.signature;
 
-import vn.tingee.sdk.types.TingeeWebhookBody;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -99,10 +97,10 @@ public final class TingeeSigner {
      * }</pre>
      */
     public static WebhookVerifyResult verifyWebhookSignature(
-            String             secretToken,
-            String             signature,
-            String             timestamp,
-            TingeeWebhookBody  body
+            String secretToken,
+            String signature,
+            String timestamp,
+            Object body
     ) {
         if (signature == null || signature.isEmpty()) {
             return new WebhookVerifyResult("MISSING_SIGNATURE", "x-signature header is required");
@@ -118,13 +116,18 @@ public final class TingeeSigner {
             return new WebhookVerifyResult("MISSING_BODY", "body is required and must be an object");
         }
 
-        // Check required fields directly
-        if (isEmpty(body.getClientId()))        return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.clientId is required");
-        if (isEmpty(body.getTransactionCode())) return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.transactionCode is required");
-        if (body.getAmount() == null)           return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.amount is required");
-        if (isEmpty(body.getBank()))            return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.bank is required");
-        if (isEmpty(body.getAccountNumber()))   return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.accountNumber is required");
-        if (isEmpty(body.getTransactionDate())) return new WebhookVerifyResult("MISSING_BODY_FIELD", "body.transactionDate is required");
+        // Convert object to Map for field validation
+        @SuppressWarnings("unchecked")
+        java.util.Map<String, Object> map = MAPPER.convertValue(body, java.util.Map.class);
+
+        // Check required fields
+        String[] requiredFields = {"clientId", "transactionCode", "amount", "bank", "accountNumber", "transactionDate"};
+        for (String field : requiredFields) {
+            Object val = map.get(field);
+            if (val == null || val.toString().isEmpty()) {
+                return new WebhookVerifyResult("MISSING_BODY_FIELD", "body." + field + " is required");
+            }
+        }
 
         try {
             String expected = generateSignature(secretToken, timestamp, body);
@@ -143,7 +146,7 @@ public final class TingeeSigner {
 
     /**
      * Verify webhook signature where body is a raw JSON string.
-     * Parsed automatically into TingeeWebhookBody.
+     * Parsed automatically into a Map.
      */
     public static WebhookVerifyResult verifyWebhookSignature(
             String secretToken,
@@ -155,15 +158,13 @@ public final class TingeeSigner {
             return new WebhookVerifyResult("MISSING_BODY", "body is required and must be an object");
         }
         try {
-            TingeeWebhookBody body = MAPPER.readValue(bodyJson, TingeeWebhookBody.class);
-            return verifyWebhookSignature(secretToken, signature, timestamp, body);
+            Object parsed = MAPPER.readValue(bodyJson, Object.class);
+            return verifyWebhookSignature(secretToken, signature, timestamp, parsed);
         } catch (Exception e) {
             return new WebhookVerifyResult("INVALID_BODY", "body string is not valid JSON");
         }
     }
 
-    private static boolean isEmpty(String s) {
-        return s == null || s.isEmpty();
-    }
 }
+
 

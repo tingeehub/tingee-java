@@ -24,6 +24,7 @@ public class OpenApiMerchantBankConfigPagedInputDto {
     private BankAccountTypeEnum accountType;
     @JsonProperty("merchantId")
     private Integer merchantId;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @JsonProperty("bankName")

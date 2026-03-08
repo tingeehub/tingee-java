@@ -16,6 +16,7 @@ public class OpenApiGetVAPagedOuputDto {
     @lombok.NonNull
     @JsonProperty("bankName")
     private BankNameEnum bankName;
+    /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
     @lombok.NonNull
