@@ -2,7 +2,7 @@
 
 > SDK chính thức tích hợp **Tingee Open API** cho Java 17+
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.tingee/sdk-java)](https://central.sonatype.com/artifact/com.tingee/sdk-java)
+[![Maven Central](https://img.shields.io/maven-central/v/vn.tingee/sdk-java)](https://central.sonatype.com/artifact/vn.tingee/sdk-java)
 [![Java](https://img.shields.io/badge/Java-17%2B-orange)](https://openjdk.org)
 [![License: ISC](https://img.shields.io/badge/License-ISC-yellow)](LICENSE)
 
@@ -14,16 +14,16 @@
 
 ```xml
 <dependency>
-  <groupId>com.tingee</groupId>
+  <groupId>vn.tingee</groupId>
   <artifactId>sdk-java</artifactId>
-  <version>0.1.0-beta</version>
+  <version>0.1.0</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation 'com.tingee:sdk-java:0.1.0-beta'
+implementation 'vn.tingee:sdk-java:0.1.0'
 ```
 
 ---
@@ -31,8 +31,8 @@ implementation 'com.tingee:sdk-java:0.1.0-beta'
 ## Bắt đầu nhanh
 
 ```java
-import com.tingee.sdk.TingeeClient;
-import com.tingee.sdk.client.TingeeEnvironment;
+import vn.tingee.sdk.TingeeClient;
+import vn.tingee.sdk.client.TingeeEnvironment;
 
 TingeeClient client = TingeeClient.builder(
         System.getenv("TINGEE_SECRET_KEY"),

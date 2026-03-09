@@ -135,8 +135,8 @@ public class TingeeClient {
     /**
          * getBanks
          */
-        public TingeeApiResponse<Bank> getBanks() {
-            return httpClient.request("GET", "/v1/bank/get-banks", null, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Bank>>() {});
+        public TingeeApiResponse<List<Bank>> getBanks() {
+            return httpClient.request("GET", "/v1/bank/get-banks", null, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<List<Bank>>>() {});
         }
 
     /**
