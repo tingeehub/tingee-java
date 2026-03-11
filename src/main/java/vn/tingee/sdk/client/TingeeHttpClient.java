@@ -2,6 +2,7 @@ package vn.tingee.sdk.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import vn.tingee.sdk.SdkVersion;
 import vn.tingee.sdk.signature.SignatureUtils;
 import vn.tingee.sdk.types.TingeeApiResponse;
 import okhttp3.*;
@@ -75,7 +76,8 @@ public class TingeeHttpClient {
                 .addHeader("content-type", "application/json")
                 .addHeader("x-signature", signature)
                 .addHeader("x-request-timestamp", timestamp)
-                .addHeader("x-client-id", clientId);
+                .addHeader("x-client-id", clientId)
+                .addHeader("x-sdk-version", "tingee-sdk/java/" + SdkVersion.VERSION);
 
             if (requestBody != null) {
                 requestBuilder.method(method.toUpperCase(), requestBody);
@@ -146,7 +148,8 @@ public class TingeeHttpClient {
                 .addHeader("content-type", "application/json")
                 .addHeader("x-signature", signature)
                 .addHeader("x-request-timestamp", timestamp)
-                .addHeader("x-client-id", clientId);
+                .addHeader("x-client-id", clientId)
+                .addHeader("x-sdk-source", "tingee-sdk/java/" + SdkVersion.VERSION);
 
             if (requestBody != null) {
                 requestBuilder.method(method.toUpperCase(), requestBody);
