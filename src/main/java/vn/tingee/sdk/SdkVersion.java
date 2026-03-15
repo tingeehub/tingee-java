@@ -4,5 +4,5 @@ package vn.tingee.sdk;
 public final class SdkVersion {
     private SdkVersion() {}
 
-    public static final String VERSION = "0.1.0-beta.3";
+    public static final String VERSION = "0.1.0";
 }

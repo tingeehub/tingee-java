@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @lombok.Getter
 @lombok.Setter
+@lombok.NoArgsConstructor
 @lombok.ToString
 public class OpenApiRefundDto {
     @JsonProperty("merchantId")

@@ -208,13 +208,6 @@ public class TingeeClient {
         public TingeeApiResponse<BankDeleteVAOutputDto> confirmRegisterNotify(OpenApiBankConfirmVAInputDto body) {
             return httpClient.request("POST", "/v1/bank/confirm-register-notify", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<BankDeleteVAOutputDto>>() {});
         }
-
-    /**
-         * refund
-         */
-        public TingeeApiResponse<EmptyDto> refund(OpenApiRefundDto body) {
-            return httpClient.request("POST", "/v1/bank/refund", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
-        }
     }
 
     public final DeviceGroup device;
