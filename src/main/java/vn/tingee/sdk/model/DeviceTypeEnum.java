@@ -25,6 +25,7 @@ public enum DeviceTypeEnum {
     VN_50("vn-50"),
     LOA_PAY("loa-pay"),
     TRUSTED_PAY("trusted-pay"),
+    PAY_ALERT("pay-alert"),
     TINGEE_BOX_3VN_MBB("tingee-box-3vn-mbb"),
     TINGEE_BOX_3PRO_MBB("tingee-box-3pro-mbb"),
     TINGEE_BOX_3PRO_X("tingee-box-3pro-x"),

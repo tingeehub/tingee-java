@@ -1,0 +1,28 @@
+package vn.tingee.sdk.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * Auto-generated from OpenAPI spec
+ * DO NOT EDIT MANUALLY
+ */
+@lombok.Getter
+@lombok.Setter
+@lombok.NoArgsConstructor
+@lombok.ToString
+public class TrackingResultDto {
+    @lombok.NonNull
+    @JsonProperty("invoiceCode")
+    private String invoiceCode;
+    @JsonProperty("trackingCode")
+    private String trackingCode;
+    @JsonProperty("invoiceNumber")
+    private String invoiceNumber;
+    @JsonProperty("reservationCode")
+    private String reservationCode;
+
+    /** Use this constructor to set all required fields. */
+    public TrackingResultDto(String invoiceCode) {
+        this.invoiceCode = invoiceCode;
+    }
+}

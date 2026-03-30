@@ -2,17 +2,14 @@ package vn.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
-
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
  */
 @lombok.Getter
 @lombok.Setter
-@lombok.NoArgsConstructor
 @lombok.ToString
-public class OpenApiAccountNumberDDLPagedInputDto {
+public class GetPagingEInvoiceAccountInputDto {
     @JsonProperty("filter")
     private String filter;
     @JsonProperty("sorting")
@@ -23,23 +20,17 @@ public class OpenApiAccountNumberDDLPagedInputDto {
     @lombok.NonNull
     @JsonProperty("maxResultCount")
     private Integer maxResultCount;
+    @JsonProperty("provider")
+    private EInvoiceProviderEnum provider;
+    @JsonProperty("isDefault")
+    private Boolean isDefault;
+    @JsonProperty("isActive")
+    private Boolean isActive;
     @JsonProperty("merchantId")
     private Integer merchantId;
-    @JsonProperty("merchantAccountNumberIds")
-    private List<Integer> merchantAccountNumberIds;
-    @JsonProperty("shopIds")
-    private List<Integer> shopIds;
-    @JsonProperty("realVANumbers")
-    private List<String> realVANumbers;
-    @JsonProperty("isGetMerchantCashAccountsNumber")
-    private Boolean isGetMerchantCashAccountsNumber;
-    @JsonProperty("bankBins")
-    private List<String> bankBins;
-    @JsonProperty("bankNames")
-    private List<BankNameEnum> bankNames;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiAccountNumberDDLPagedInputDto(Integer skipCount, Integer maxResultCount) {
+    public GetPagingEInvoiceAccountInputDto(Integer skipCount, Integer maxResultCount) {
         this.skipCount = skipCount;
         this.maxResultCount = maxResultCount;
     }

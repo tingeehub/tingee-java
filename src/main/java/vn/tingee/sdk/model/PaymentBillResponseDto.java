@@ -11,10 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.NoArgsConstructor
 @lombok.ToString
 public class PaymentBillResponseDto {
-    @lombok.NonNull
     @JsonProperty("code")
     private String code;
-    @lombok.NonNull
     @JsonProperty("status")
     private DirectDebitTransactionStatusEnum status;
     @JsonProperty("transactionCode")
@@ -26,9 +24,4 @@ public class PaymentBillResponseDto {
     @JsonProperty("returnUrl")
     private String returnUrl;
 
-    /** Use this constructor to set all required fields. */
-    public PaymentBillResponseDto(String code, DirectDebitTransactionStatusEnum status) {
-        this.code = code;
-        this.status = status;
-    }
 }

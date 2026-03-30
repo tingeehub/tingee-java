@@ -6,14 +6,14 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Auto-generated from OpenAPI spec — DO NOT EDIT MANUALLY
  */
-public enum DataAccessFilterEnum {
-    REFERRAL_ONLY("referral-only"),
-    DISTRIBUTOR_ONLY("distributor-only"),
-    WITH_PACKAGE_ONLY("with-package-only");
+public enum EInvoiceProviderEnum {
+    X_CYBER("x-cyber"),
+    HILO("hilo"),
+    S_INVOICE("s-invoice");
 
     private final String value;
 
-    DataAccessFilterEnum(String value) {
+    EInvoiceProviderEnum(String value) {
         this.value = value;
     }
 
@@ -23,8 +23,8 @@ public enum DataAccessFilterEnum {
     }
 
     @JsonCreator
-    public static DataAccessFilterEnum fromValue(String value) {
-        for (DataAccessFilterEnum e : values()) {
+    public static EInvoiceProviderEnum fromValue(String value) {
+        for (EInvoiceProviderEnum e : values()) {
             if (e.value.equals(value)) return e;
         }
         throw new IllegalArgumentException("Unknown value: " + value);

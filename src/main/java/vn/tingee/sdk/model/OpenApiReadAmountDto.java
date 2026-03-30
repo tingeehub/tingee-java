@@ -25,6 +25,8 @@ public class OpenApiReadAmountDto {
     /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
+    @JsonProperty("bankName")
+    private BankNameEnum bankName;
     @JsonProperty("firstDisplayText")
     private String firstDisplayText;
     @JsonProperty("secondDisplayText")

@@ -39,5 +39,7 @@ public class BankInfoDto {
     private VCBInfoDto vcbInfoDto;
     @JsonProperty("cobInfoDto")
     private COBInfoDto cobInfoDto;
+    @JsonProperty("msbInfoDto")
+    private MSBInfoDto msbInfoDto;
 
 }

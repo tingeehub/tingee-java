@@ -11,12 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.NoArgsConstructor
 @lombok.ToString
 public class OpenApiCreateOrUpdateShopOutputDto {
-    @lombok.NonNull
     @JsonProperty("shopId")
     private Integer shopId;
 
-    /** Use this constructor to set all required fields. */
-    public OpenApiCreateOrUpdateShopOutputDto(Integer shopId) {
-        this.shopId = shopId;
-    }
 }

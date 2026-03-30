@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @lombok.Getter
 @lombok.Setter
+@lombok.NoArgsConstructor
 @lombok.ToString
 public class BIDVOpenApiReadAmountDto {
     @lombok.NonNull
@@ -23,6 +24,8 @@ public class BIDVOpenApiReadAmountDto {
     /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
+    @JsonProperty("bankName")
+    private BankNameEnum bankName;
     @JsonProperty("firstDisplayText")
     private String firstDisplayText;
     @JsonProperty("secondDisplayText")

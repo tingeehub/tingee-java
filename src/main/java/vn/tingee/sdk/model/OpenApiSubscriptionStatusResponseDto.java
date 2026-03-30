@@ -42,22 +42,19 @@ public class OpenApiSubscriptionStatusResponseDto {
     @lombok.NonNull
     @JsonProperty("confirmPhoneNumber")
     private String confirmPhoneNumber;
-    @lombok.NonNull
     @JsonProperty("tokenRef")
     private String tokenRef;
     @lombok.NonNull
     @JsonProperty("status")
     private DirectDebitStatusEnum status;
-    @lombok.NonNull
     @JsonProperty("subscriptionId")
     private String subscriptionId;
-    @lombok.NonNull
     /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiSubscriptionStatusResponseDto(LocalDateTime lastModificationTime, BankNameEnum bankName, String accountNumber, String phone, Boolean confirmPaymentByEmail, Boolean confirmPaymentByZalo, String confirmPhoneNumber, String tokenRef, DirectDebitStatusEnum status, String subscriptionId, String bankBin) {
+    public OpenApiSubscriptionStatusResponseDto(LocalDateTime lastModificationTime, BankNameEnum bankName, String accountNumber, String phone, Boolean confirmPaymentByEmail, Boolean confirmPaymentByZalo, String confirmPhoneNumber, DirectDebitStatusEnum status) {
         this.lastModificationTime = lastModificationTime;
         this.bankName = bankName;
         this.accountNumber = accountNumber;
@@ -65,9 +62,6 @@ public class OpenApiSubscriptionStatusResponseDto {
         this.confirmPaymentByEmail = confirmPaymentByEmail;
         this.confirmPaymentByZalo = confirmPaymentByZalo;
         this.confirmPhoneNumber = confirmPhoneNumber;
-        this.tokenRef = tokenRef;
         this.status = status;
-        this.subscriptionId = subscriptionId;
-        this.bankBin = bankBin;
     }
 }

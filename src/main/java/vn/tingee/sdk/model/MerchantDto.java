@@ -83,6 +83,8 @@ public class MerchantDto {
     private String deviceDistributorAncestorMap;
     @JsonProperty("isMasterMerchant")
     private Boolean isMasterMerchant;
+    @JsonProperty("baasType")
+    private MerchantBaasTypeEnum baasType;
     @JsonProperty("merchantPackages")
     private List<MerchantPackageInfo> merchantPackages;
     @JsonProperty("masterMerchantNames")

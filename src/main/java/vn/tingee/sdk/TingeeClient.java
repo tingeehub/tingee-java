@@ -45,13 +45,12 @@ public class TingeeClient {
         // <generated-groups-init>
         this.bank = new BankGroup(this.httpClient);
         this.device = new DeviceGroup(this.httpClient);
-        this.user = new UserGroup(this.httpClient);
         this.shop = new ShopGroup(this.httpClient);
         this.deepLink = new DeepLinkGroup(this.httpClient);
-        this.accountNumber = new AccountNumberGroup(this.httpClient);
         this.transaction = new TransactionGroup(this.httpClient);
-        this.merchant = new MerchantGroup(this.httpClient);
         this.directDebit = new DirectDebitGroup(this.httpClient);
+        this.merchant = new MerchantGroup(this.httpClient);
+        this.eInvoice = new EInvoiceGroup(this.httpClient);
         // </generated-groups-init>
     }
 
@@ -224,13 +223,6 @@ public class TingeeClient {
         }
 
     /**
-         * DeviceController_readPartnerSecurityCode
-         */
-        public TingeeApiResponse<EmptyDto> readPartnerSecurityCode(OpenApiReadPartnerSecurityCodeDto body) {
-            return httpClient.request("POST", "/v1/device/read-partner-security-code", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
-        }
-
-    /**
          * DeviceController_addDeviceToShop
          */
         public TingeeApiResponse<List<SendNotifyTingeeBoxDto>> addDeviceToShop(OpenApiAddDeviceToShop body) {
@@ -242,13 +234,6 @@ public class TingeeClient {
          */
         public TingeeApiResponse<EmptyDto> updateShopDeviceLinkStatus(OpenApiUpdateShopDeviceLinkDto body) {
             return httpClient.request("POST", "/v1/device/update-shop-device-link-status", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
-        }
-
-    /**
-         * DeviceController_publishReadAmount
-         */
-        public TingeeApiResponse<EmptyDto> readAmount(BIDVOpenApiReadAmountDto body) {
-            return httpClient.request("POST", "/v1/device/read-amount", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
         }
 
     /**
@@ -310,22 +295,6 @@ public class TingeeClient {
         }
     }
 
-    public final UserGroup user;
-
-    public class UserGroup {
-        private final vn.tingee.sdk.client.TingeeHttpClient httpClient;
-        public UserGroup(vn.tingee.sdk.client.TingeeHttpClient httpClient) { this.httpClient = httpClient; }
-
-    /**
-         * UserController_verifyReferralCode
-         */
-        public TingeeApiResponse<OpenApiVerifyReferralCodeResponseDto> verifyReferralCode(String referralCode) {
-            Map<String, String> queryParams = new HashMap<>();
-            queryParams.put("referralCode", String.valueOf(referralCode));
-            return httpClient.request("POST", "/v1/user/verify-referral-code", null, queryParams, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<OpenApiVerifyReferralCodeResponseDto>>() {});
-        }
-    }
-
     public final ShopGroup shop;
 
     public class ShopGroup {
@@ -361,20 +330,6 @@ public class TingeeClient {
         }
     }
 
-    public final AccountNumberGroup accountNumber;
-
-    public class AccountNumberGroup {
-        private final vn.tingee.sdk.client.TingeeHttpClient httpClient;
-        public AccountNumberGroup(vn.tingee.sdk.client.TingeeHttpClient httpClient) { this.httpClient = httpClient; }
-
-    /**
-         * AccountNumberController_getAllDDL
-         */
-        public TingeeApiResponse<List<V2AccountNumberDDLDto>> getAllDdl(OpenApiAccountNumberDDLPagedInputDto body) {
-            return httpClient.request("POST", "/v1/account-number/get-all-ddl", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<List<V2AccountNumberDDLDto>>>() {});
-        }
-    }
-
     public final TransactionGroup transaction;
 
     public class TransactionGroup {
@@ -386,71 +341,6 @@ public class TingeeClient {
          */
         public TingeeApiResponse<PagedResultDto<OpenApiTransactionPagedOuputDto>> getPaging(OpenApiTransactionPagedInputDto body) {
             return httpClient.request("POST", "/v1/transaction/get-paging", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<PagedResultDto<OpenApiTransactionPagedOuputDto>>>() {});
-        }
-    }
-
-    public final MerchantGroup merchant;
-
-    public class MerchantGroup {
-        private final vn.tingee.sdk.client.TingeeHttpClient httpClient;
-        public MerchantGroup(vn.tingee.sdk.client.TingeeHttpClient httpClient) { this.httpClient = httpClient; }
-
-    /**
-         * MerchantController_getPagingConfig
-         */
-        public TingeeApiResponse<PagedResultDto<MerchantBankConfigPagedOutputDto>> getPagingConfig(OpenApiMerchantBankConfigPagedInputDto body) {
-            return httpClient.request("POST", "/v1/merchant/get-paging-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<PagedResultDto<MerchantBankConfigPagedOutputDto>>>() {});
-        }
-
-    /**
-         * MerchantController_createOrUpdateConfig
-         */
-        public TingeeApiResponse<java.lang.Number> createOrUpdateConfig(OpenApiBankCreateOrUpdateConfigDto body) {
-            return httpClient.request("POST", "/v1/merchant/create-or-update-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<java.lang.Number>>() {});
-        }
-
-    /**
-         * MerchantController_deleteConfig
-         */
-        public TingeeApiResponse<java.lang.Number> deleteConfig(OpenApiDeleteConfigDto body) {
-            return httpClient.request("POST", "/v1/merchant/delete-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<java.lang.Number>>() {});
-        }
-
-    /**
-         * MerchantController_configAccountBusinessForACB
-         */
-        public TingeeApiResponse<OpenApiCreateBankVAOutputDto> configAccountBusiness(OpenApiConfigAccountBusinessDto body) {
-            return httpClient.request("POST", "/v1/merchant/config-account-business", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<OpenApiCreateBankVAOutputDto>>() {});
-        }
-
-    /**
-         * MerchantController_deleteConfigAccountBusiness
-         */
-        public TingeeApiResponse<Object> deleteConfigAccountBusiness(OpenApiDeleteConfigBusinessDto body) {
-            return httpClient.request("POST", "/v1/merchant/delete-config-account-business", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Object>>() {});
-        }
-
-    /**
-         * MerchantController_createMerchant
-         */
-        public TingeeApiResponse<java.lang.Number> create(OpenApiCreateMerchantDto body) {
-            return httpClient.request("POST", "/v1/merchant/create", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<java.lang.Number>>() {});
-        }
-
-    /**
-         * MerchantController_getPagingMerchants
-         */
-        public TingeeApiResponse<PagedResultDto<MerchantDto>> getPaging(OpenApiGetPagingMerchantsDto body) {
-            return httpClient.request("POST", "/v1/merchant/get-paging", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<PagedResultDto<MerchantDto>>>() {});
-        }
-
-    /**
-         * MerchantController_delete
-         */
-        public TingeeApiResponse<EmptyDto> delete(Double merchantId) {
-            Map<String, String> queryParams = new HashMap<>();
-            queryParams.put("merchantId", String.valueOf(merchantId));
-            return httpClient.request("DELETE", "/v1/merchant/delete", null, queryParams, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
         }
     }
 
@@ -529,6 +419,141 @@ public class TingeeClient {
             queryParams.put("skipCount", String.valueOf(skipCount));
             queryParams.put("maxResultCount", String.valueOf(maxResultCount));
             return httpClient.request("GET", "/v1/direct-debit/get-paging-transactions", null, queryParams, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<PagedResultDto<OpenApiPaymentTransactionsPagedOutputDto>>>() {});
+        }
+    }
+
+    public final MerchantGroup merchant;
+
+    public class MerchantGroup {
+        private final vn.tingee.sdk.client.TingeeHttpClient httpClient;
+        public MerchantGroup(vn.tingee.sdk.client.TingeeHttpClient httpClient) { this.httpClient = httpClient; }
+
+    /**
+         * MerchantController_getPagingConfig
+         */
+        public TingeeApiResponse<PagedResultDto<MerchantBankConfigPagedOutputDto>> getPagingConfig(OpenApiMerchantBankConfigPagedInputDto body) {
+            return httpClient.request("POST", "/v1/merchant/get-paging-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<PagedResultDto<MerchantBankConfigPagedOutputDto>>>() {});
+        }
+
+    /**
+         * MerchantController_createOrUpdateConfig
+         */
+        public TingeeApiResponse<java.lang.Number> createOrUpdateConfig(OpenApiBankCreateOrUpdateConfigDto body) {
+            return httpClient.request("POST", "/v1/merchant/create-or-update-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<java.lang.Number>>() {});
+        }
+
+    /**
+         * MerchantController_deleteConfig
+         */
+        public TingeeApiResponse<java.lang.Number> deleteConfig(OpenApiDeleteConfigDto body) {
+            return httpClient.request("POST", "/v1/merchant/delete-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<java.lang.Number>>() {});
+        }
+
+    /**
+         * MerchantController_configAccountBusinessForACB
+         */
+        public TingeeApiResponse<OpenApiCreateBankVAOutputDto> configAccountBusiness(OpenApiConfigAccountBusinessDto body) {
+            return httpClient.request("POST", "/v1/merchant/config-account-business", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<OpenApiCreateBankVAOutputDto>>() {});
+        }
+
+    /**
+         * MerchantController_deleteConfigAccountBusiness
+         */
+        public TingeeApiResponse<Object> deleteConfigAccountBusiness(OpenApiDeleteConfigBusinessDto body) {
+            return httpClient.request("POST", "/v1/merchant/delete-config-account-business", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Object>>() {});
+        }
+
+    /**
+         * MerchantController_createMerchant
+         */
+        public TingeeApiResponse<java.lang.Number> create(OpenApiCreateMerchantDto body) {
+            return httpClient.request("POST", "/v1/merchant/create", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<java.lang.Number>>() {});
+        }
+
+    /**
+         * MerchantController_getPagingMerchants
+         */
+        public TingeeApiResponse<PagedResultDto<MerchantDto>> getPaging(OpenApiGetPagingMerchantsDto body) {
+            return httpClient.request("POST", "/v1/merchant/get-paging", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<PagedResultDto<MerchantDto>>>() {});
+        }
+
+    /**
+         * MerchantController_delete
+         */
+        public TingeeApiResponse<EmptyDto> delete(Double merchantId) {
+            Map<String, String> queryParams = new HashMap<>();
+            queryParams.put("merchantId", String.valueOf(merchantId));
+            return httpClient.request("DELETE", "/v1/merchant/delete", null, queryParams, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+    }
+
+    public final EInvoiceGroup eInvoice;
+
+    public class EInvoiceGroup {
+        private final vn.tingee.sdk.client.TingeeHttpClient httpClient;
+        public EInvoiceGroup(vn.tingee.sdk.client.TingeeHttpClient httpClient) { this.httpClient = httpClient; }
+
+    /**
+         * EInvoiceController_getPagingAccount
+         */
+        public TingeeApiResponse<PagedResultDto<GetPagingEInvoiceAccountOutputDto>> getPagingAccount(GetPagingEInvoiceAccountInputDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/get-paging-account", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<PagedResultDto<GetPagingEInvoiceAccountOutputDto>>>() {});
+        }
+
+    /**
+         * EInvoiceController_createOrUpdateAccount
+         */
+        public TingeeApiResponse<EInvoiceAccountOutputDto> createOrUpdateAccount(CreateOrUpdateEInvoiceAccountDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/create-or-update-account", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EInvoiceAccountOutputDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_deleteAccount
+         */
+        public TingeeApiResponse<EmptyDto> deleteAccount(DeleteEInvoiceAccountDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/delete-account", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_getProvider
+         */
+        public TingeeApiResponse<List<EInvoiceProviderDto>> getProvider() {
+            return httpClient.request("POST", "/v1/e-invoice/get-provider", null, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<List<EInvoiceProviderDto>>>() {});
+        }
+
+    /**
+         * EInvoiceController_createInvoice
+         */
+        public TingeeApiResponse<DownloadInvoiceOutputDto> create(CreateInvoiceDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/create", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<DownloadInvoiceOutputDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_createAndIssue
+         */
+        public TingeeApiResponse<TrackingResultDto> createAndIssue(CreateInvoiceDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/create-and-issue", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<TrackingResultDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_downloadInvoice
+         */
+        public TingeeApiResponse<DownloadInvoiceOutputDto> download(DownloadInvoiceQueryDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/download", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<DownloadInvoiceOutputDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_getInvoiceTemplates
+         */
+        public TingeeApiResponse<InvoiceTemplateOutputDto> invoiceTemplates(InvoiceTemplateQueryDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/invoice-templates", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<InvoiceTemplateOutputDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_sendInvoiceEmail
+         */
+        public TingeeApiResponse<EmptyDto> sendEmail(SendInvoiceEmailDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/send-email", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
         }
     }
 

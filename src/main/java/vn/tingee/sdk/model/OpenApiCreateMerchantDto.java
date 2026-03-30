@@ -56,6 +56,8 @@ public class OpenApiCreateMerchantDto {
     private String deviceDistributorAncestorMap;
     @JsonProperty("isMasterMerchant")
     private Boolean isMasterMerchant;
+    @JsonProperty("baasType")
+    private MerchantBaasTypeEnum baasType;
     @lombok.NonNull
     @JsonProperty("password")
     private String password;

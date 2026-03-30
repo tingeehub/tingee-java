@@ -10,10 +10,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.Setter
 @lombok.NoArgsConstructor
 @lombok.ToString
-public class DeleteSubscriptionOutputDto {
-    @JsonProperty("confirmUrl")
-    private String confirmUrl;
+public class EInvoiceProviderDto {
     @JsonProperty("code")
-    private String code;
+    private EInvoiceProviderEnum code;
+    @JsonProperty("name")
+    private String name;
 
 }

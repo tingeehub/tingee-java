@@ -73,6 +73,8 @@ public class DeviceDto {
     @lombok.NonNull
     @JsonProperty("masterMerchantId")
     private Double masterMerchantId;
+    @JsonProperty("expirationDate")
+    private LocalDateTime expirationDate;
     @JsonProperty("merchantName")
     private String merchantName;
     @JsonProperty("shopDtos")
