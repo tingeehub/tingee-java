@@ -1,5 +1,6 @@
 package vn.tingee.sdk.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -10,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.Setter
 @lombok.NoArgsConstructor
 @lombok.ToString
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class OpenApiConfirmVAOuputDto {
     @JsonProperty("accountType")
     private BankAccountTypeEnum accountType;
@@ -19,5 +21,7 @@ public class OpenApiConfirmVAOuputDto {
     private String accountNumber;
     @JsonProperty("vaAccountNumber")
     private String vaAccountNumber;
+    @JsonProperty("shopId")
+    private Integer shopId;
 
 }
