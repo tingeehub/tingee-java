@@ -29,5 +29,7 @@ public class BankCreateVAOuputDto {
     private String deepLink;
     @JsonProperty("otpMethod")
     private OtpStbConfirmMethodEnum otpMethod;
+    @JsonProperty("qrDto")
+    private OneQRDto qrDto;
 
 }

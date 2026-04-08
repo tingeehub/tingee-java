@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @lombok.ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OpenApiSubscriptionStatusResponseDto {
-    @lombok.NonNull
     @JsonProperty("lastModificationTime")
     private LocalDateTime lastModificationTime;
     @JsonProperty("lastModifierUserId")
@@ -56,8 +55,7 @@ public class OpenApiSubscriptionStatusResponseDto {
     private String bankBin;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiSubscriptionStatusResponseDto(LocalDateTime lastModificationTime, BankNameEnum bankName, String accountNumber, String phone, Boolean confirmPaymentByEmail, Boolean confirmPaymentByZalo, String confirmPhoneNumber, DirectDebitStatusEnum status) {
-        this.lastModificationTime = lastModificationTime;
+    public OpenApiSubscriptionStatusResponseDto(BankNameEnum bankName, String accountNumber, String phone, Boolean confirmPaymentByEmail, Boolean confirmPaymentByZalo, String confirmPhoneNumber, DirectDebitStatusEnum status) {
         this.bankName = bankName;
         this.accountNumber = accountNumber;
         this.phone = phone;

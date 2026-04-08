@@ -20,7 +20,8 @@ public enum BankNameEnum {
     AGRIBANK("AGRIBANK"),
     SHINHAN("SHINHAN"),
     COB("COB"),
-    MSB("MSB");
+    MSB("MSB"),
+    NEXTPAY("NEXTPAY");
 
     private final String value;
 

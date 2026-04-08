@@ -12,16 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.NoArgsConstructor
 @lombok.ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class VCBInfoDto {
-    @JsonProperty("accountName")
-    private String accountName;
-    @JsonProperty("accountNumber")
-    private String accountNumber;
-    @JsonProperty("mobile")
-    private String mobile;
-    @JsonProperty("baasDto")
-    private VCBBaasDto baasDto;
-    @JsonProperty("qrDto")
-    private OneQRDto qrDto;
+public class Provider {
+
 
 }

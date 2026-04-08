@@ -17,9 +17,9 @@ public class TaxRateSummaryDto {
     @JsonProperty("taxRateCode")
     private String taxRateCode;
     @JsonProperty("totalTaxableAmount")
-    private Long totalTaxableAmount;
+    private String totalTaxableAmount;
     @JsonProperty("taxAmount")
-    private Long taxAmount;
+    private String taxAmount;
 
     /** Use this constructor to set all required fields. */
     public TaxRateSummaryDto(String taxRateCode) {

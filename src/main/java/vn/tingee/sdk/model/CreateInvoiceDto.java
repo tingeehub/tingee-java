@@ -15,10 +15,8 @@ import java.util.List;
 public class CreateInvoiceDto {
     @JsonProperty("merchantId")
     private Integer merchantId;
-    @JsonProperty("provider")
-    private EInvoiceProviderEnum provider;
-    @JsonProperty("taxCode")
-    private String taxCode;
+    @JsonProperty("accountId")
+    private Integer accountId;
     @JsonProperty("invoiceType")
     private String invoiceType;
     @lombok.NonNull
@@ -56,7 +54,7 @@ public class CreateInvoiceDto {
     @JsonProperty("currency")
     private String currency;
     @JsonProperty("exchangeRate")
-    private Double exchangeRate;
+    private String exchangeRate;
     @JsonProperty("amountInWords")
     private String amountInWords;
     @JsonProperty("note")
@@ -65,13 +63,13 @@ public class CreateInvoiceDto {
     @JsonProperty("items")
     private List<InvoiceItemDto> items;
     @JsonProperty("totalDiscount")
-    private Integer totalDiscount;
+    private String totalDiscount;
     @JsonProperty("totalBeforeTax")
-    private Integer totalBeforeTax;
+    private String totalBeforeTax;
     @JsonProperty("totalTax")
-    private Integer totalTax;
+    private String totalTax;
     @JsonProperty("totalAfterTax")
-    private Integer totalAfterTax;
+    private String totalAfterTax;
     @JsonProperty("taxRateSummaries")
     private List<TaxRateSummaryDto> taxRateSummaries;
 

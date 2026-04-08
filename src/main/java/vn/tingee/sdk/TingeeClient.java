@@ -438,15 +438,15 @@ public class TingeeClient {
     /**
          * MerchantController_createOrUpdateConfig
          */
-        public TingeeApiResponse<java.lang.Number> createOrUpdateConfig(OpenApiBankCreateOrUpdateConfigDto body) {
-            return httpClient.request("POST", "/v1/merchant/create-or-update-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<java.lang.Number>>() {});
+        public TingeeApiResponse<Long> createOrUpdateConfig(OpenApiBankCreateOrUpdateConfigDto body) {
+            return httpClient.request("POST", "/v1/merchant/create-or-update-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Long>>() {});
         }
 
     /**
          * MerchantController_deleteConfig
          */
-        public TingeeApiResponse<java.lang.Number> deleteConfig(OpenApiDeleteConfigDto body) {
-            return httpClient.request("POST", "/v1/merchant/delete-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<java.lang.Number>>() {});
+        public TingeeApiResponse<Long> deleteConfig(OpenApiDeleteConfigDto body) {
+            return httpClient.request("POST", "/v1/merchant/delete-config", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Long>>() {});
         }
 
     /**
@@ -466,8 +466,8 @@ public class TingeeClient {
     /**
          * MerchantController_createMerchant
          */
-        public TingeeApiResponse<java.lang.Number> create(OpenApiCreateMerchantDto body) {
-            return httpClient.request("POST", "/v1/merchant/create", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<java.lang.Number>>() {});
+        public TingeeApiResponse<Long> create(OpenApiCreateMerchantDto body) {
+            return httpClient.request("POST", "/v1/merchant/create", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Long>>() {});
         }
 
     /**
@@ -503,8 +503,8 @@ public class TingeeClient {
     /**
          * EInvoiceController_createOrUpdateAccount
          */
-        public TingeeApiResponse<EInvoiceAccountOutputDto> createOrUpdateAccount(CreateOrUpdateEInvoiceAccountDto body) {
-            return httpClient.request("POST", "/v1/e-invoice/create-or-update-account", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EInvoiceAccountOutputDto>>() {});
+        public TingeeApiResponse<Long> createOrUpdateAccount(CreateOrUpdateEInvoiceAccountDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/create-or-update-account", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Long>>() {});
         }
 
     /**

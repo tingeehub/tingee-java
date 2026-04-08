@@ -18,12 +18,10 @@ public class MerchantBankConfigPagedOutputDto {
     @lombok.NonNull
     @JsonProperty("id")
     private Integer id;
-    @lombok.NonNull
     @JsonProperty("creationTime")
     private LocalDateTime creationTime;
     @JsonProperty("creatorUserId")
     private Double creatorUserId;
-    @lombok.NonNull
     @JsonProperty("lastModificationTime")
     private LocalDateTime lastModificationTime;
     @JsonProperty("lastModifierUserId")
@@ -45,10 +43,8 @@ public class MerchantBankConfigPagedOutputDto {
     private BankNameEnum bankName;
 
     /** Use this constructor to set all required fields. */
-    public MerchantBankConfigPagedOutputDto(Integer id, LocalDateTime creationTime, LocalDateTime lastModificationTime, Integer merchantId, BankAccountTypeEnum accountType) {
+    public MerchantBankConfigPagedOutputDto(Integer id, Integer merchantId, BankAccountTypeEnum accountType) {
         this.id = id;
-        this.creationTime = creationTime;
-        this.lastModificationTime = lastModificationTime;
         this.merchantId = merchantId;
         this.accountType = accountType;
     }

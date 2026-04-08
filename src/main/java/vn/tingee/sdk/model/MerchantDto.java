@@ -19,18 +19,8 @@ public class MerchantDto {
     @lombok.NonNull
     @JsonProperty("id")
     private Integer id;
-    @lombok.NonNull
     @JsonProperty("creationTime")
     private LocalDateTime creationTime;
-    @JsonProperty("creatorUserId")
-    private Double creatorUserId;
-    @lombok.NonNull
-    @JsonProperty("lastModificationTime")
-    private LocalDateTime lastModificationTime;
-    @JsonProperty("lastModifierUserId")
-    private Double lastModifierUserId;
-    @JsonProperty("deleterUserId")
-    private Double deleterUserId;
     @JsonProperty("code")
     private String code;
     @lombok.NonNull
@@ -93,10 +83,8 @@ public class MerchantDto {
     private String masterMerchantNames;
 
     /** Use this constructor to set all required fields. */
-    public MerchantDto(Integer id, LocalDateTime creationTime, LocalDateTime lastModificationTime, String name, String phoneNumber) {
+    public MerchantDto(Integer id, String name, String phoneNumber) {
         this.id = id;
-        this.creationTime = creationTime;
-        this.lastModificationTime = lastModificationTime;
         this.name = name;
         this.phoneNumber = phoneNumber;
     }

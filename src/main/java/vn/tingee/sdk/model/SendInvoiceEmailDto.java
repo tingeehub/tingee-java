@@ -12,10 +12,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class SendInvoiceEmailDto {
     @JsonProperty("merchantId")
     private Integer merchantId;
-    @JsonProperty("provider")
-    private EInvoiceProviderEnum provider;
-    @JsonProperty("taxCode")
-    private String taxCode;
+    @JsonProperty("accountId")
+    private Integer accountId;
     @lombok.NonNull
     @JsonProperty("invoiceCode")
     private String invoiceCode;

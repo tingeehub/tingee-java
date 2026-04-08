@@ -18,7 +18,6 @@ public class GetPagingEInvoiceAccountOutputDto {
     @lombok.NonNull
     @JsonProperty("id")
     private Integer id;
-    @lombok.NonNull
     @JsonProperty("creationTime")
     private LocalDateTime creationTime;
     @lombok.NonNull
@@ -42,9 +41,8 @@ public class GetPagingEInvoiceAccountOutputDto {
     private Boolean isActive;
 
     /** Use this constructor to set all required fields. */
-    public GetPagingEInvoiceAccountOutputDto(Integer id, LocalDateTime creationTime, Double merchantId, EInvoiceProviderEnum provider, String taxCode, String username, String password) {
+    public GetPagingEInvoiceAccountOutputDto(Integer id, Double merchantId, EInvoiceProviderEnum provider, String taxCode, String username, String password) {
         this.id = id;
-        this.creationTime = creationTime;
         this.merchantId = merchantId;
         this.provider = provider;
         this.taxCode = taxCode;

@@ -18,12 +18,10 @@ import java.util.List;
 public class DeviceDto {
     @JsonProperty("id")
     private Integer id;
-    @lombok.NonNull
     @JsonProperty("creationTime")
     private LocalDateTime creationTime;
     @JsonProperty("creatorUserId")
     private Double creatorUserId;
-    @lombok.NonNull
     @JsonProperty("lastModificationTime")
     private LocalDateTime lastModificationTime;
     @JsonProperty("lastModifierUserId")
@@ -64,6 +62,8 @@ public class DeviceDto {
     private String securityCode;
     @JsonProperty("selectedBankNames")
     private List<BankNameEnum> selectedBankNames;
+    @JsonProperty("serialNumber")
+    private String serialNumber;
     @JsonProperty("userReferralAncestorIds")
     private String userReferralAncestorIds;
     @JsonProperty("userReferralLevel")
@@ -85,11 +85,19 @@ public class DeviceDto {
     private String agentName;
     @JsonProperty("agentId")
     private Integer agentId;
+    @JsonProperty("simPhoneNumber")
+    private String simPhoneNumber;
+    @JsonProperty("simSerialNumber")
+    private String simSerialNumber;
+    @JsonProperty("simProvider")
+    private String simProvider;
+    @JsonProperty("simPlan")
+    private String simPlan;
+    @JsonProperty("simExpirationDate")
+    private LocalDateTime simExpirationDate;
 
     /** Use this constructor to set all required fields. */
-    public DeviceDto(LocalDateTime creationTime, LocalDateTime lastModificationTime, DeviceTypeEnum type, String uuid, String name, DeviceStatusEnum status, Double masterMerchantId) {
-        this.creationTime = creationTime;
-        this.lastModificationTime = lastModificationTime;
+    public DeviceDto(DeviceTypeEnum type, String uuid, String name, DeviceStatusEnum status, Double masterMerchantId) {
         this.type = type;
         this.uuid = uuid;
         this.name = name;

@@ -33,5 +33,7 @@ public class VPBInfoDto {
     private String softposTid;
     @JsonProperty("softposMid")
     private String softposMid;
+    @JsonProperty("qrDto")
+    private OneQRDto qrDto;
 
 }

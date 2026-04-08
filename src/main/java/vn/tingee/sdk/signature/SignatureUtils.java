@@ -1,6 +1,8 @@
 package vn.tingee.sdk.signature;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
@@ -9,30 +11,17 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-/**
- * Utility class for generating HMAC-SHA512 signatures for Tingee API requests
- */
 public class SignatureUtils {
     private static final String HMAC_SHA512 = "HmacSHA512";
-    private static final ObjectMapper objectMapper = new ObjectMapper();
+    private static final ObjectMapper objectMapper = new ObjectMapper()
+            .registerModule(new JavaTimeModule())
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     private static final ZoneId VIETNAM_ZONE = ZoneId.of("Asia/Ho_Chi_Minh");
     private static final DateTimeFormatter TIMESTAMP_FMT =
             DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
 
-    /**
-     * Generate signature for Tingee API request.
-     *
-     * Signature format: HMAC-SHA512(secretKey, timestamp + ":" + JSON.stringify(body))
-     * Matches Node.js: JSON.stringify(null) === "null", JSON.stringify({}) === "{}"
-     *
-     * @param secretKey Secret key for HMAC
-     * @param timestamp Request timestamp in format yyyyMMddHHmmssSSS
-     * @param body      Request body object (null serializes to "null", same as JSON.stringify)
-     * @return Hex-encoded signature string
-     */
     public static String generateSignature(String secretKey, String timestamp, Object body) {
         try {
-            // JSON.stringify(null) === "null" in JavaScript â€” match that behaviour
             String jsonBody = objectMapper.writeValueAsString(body);
 
             String message = timestamp + ":" + jsonBody;
@@ -61,24 +50,10 @@ public class SignatureUtils {
         }
     }
 
-    /**
-     * Format current time to Tingee timestamp format: yyyyMMddHHmmssSSS
-     * Always uses Vietnam timezone (UTC+7), regardless of machine timezone.
-     * Matches Node.js signer.ts behaviour.
-     *
-     * @return Formatted timestamp string (17 digits)
-     */
     public static String formatTimestamp() {
         return formatTimestamp(Instant.now());
     }
 
-    /**
-     * Format an Instant to Tingee timestamp format: yyyyMMddHHmmssSSS
-     * Always uses Vietnam timezone (UTC+7).
-     *
-     * @param instant Instant to format
-     * @return Formatted timestamp string (17 digits)
-     */
     public static String formatTimestamp(Instant instant) {
         ZonedDateTime vnTime = instant.atZone(VIETNAM_ZONE);
         String base = vnTime.format(TIMESTAMP_FMT);

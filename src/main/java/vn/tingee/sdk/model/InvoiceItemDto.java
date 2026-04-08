@@ -22,30 +22,30 @@ public class InvoiceItemDto {
     private String unitName;
     @lombok.NonNull
     @JsonProperty("quantity")
-    private Integer quantity;
+    private String quantity;
     @lombok.NonNull
     @JsonProperty("unitPrice")
-    private Integer unitPrice;
+    private String unitPrice;
     @JsonProperty("discount")
-    private Double discount;
+    private String discount;
     @JsonProperty("discountAmount")
-    private Long discountAmount;
+    private String discountAmount;
     @JsonProperty("totalBeforeTax")
-    private Long totalBeforeTax;
+    private String totalBeforeTax;
     @lombok.NonNull
     @JsonProperty("taxRateCode")
     private String taxRateCode;
     @JsonProperty("taxAmount")
-    private Long taxAmount;
+    private String taxAmount;
     @JsonProperty("totalAfterTax")
-    private Long totalAfterTax;
+    private String totalAfterTax;
     @JsonProperty("itemType")
     private Integer itemType;
     @JsonProperty("adjustmentType")
     private Integer adjustmentType;
 
     /** Use this constructor to set all required fields. */
-    public InvoiceItemDto(String itemName, Integer quantity, Integer unitPrice, String taxRateCode) {
+    public InvoiceItemDto(String itemName, String quantity, String unitPrice, String taxRateCode) {
         this.itemName = itemName;
         this.quantity = quantity;
         this.unitPrice = unitPrice;
