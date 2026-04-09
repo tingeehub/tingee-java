@@ -38,24 +38,8 @@ public class OpenApiCreateMerchantDto {
     private String address;
     @JsonProperty("fullAddress")
     private String fullAddress;
-    @JsonProperty("eventUrl")
-    private String eventUrl;
-    @JsonProperty("eventUrls")
-    private List<EventUrlItemDto> eventUrls;
-    @JsonProperty("isLockEvent")
-    private Boolean isLockEvent;
-    @JsonProperty("isOrganizationUnit")
-    private Boolean isOrganizationUnit;
     @JsonProperty("referralCode")
     private String referralCode;
-    @JsonProperty("userReferralAncestorIds")
-    private String userReferralAncestorIds;
-    @JsonProperty("userReferralLevel")
-    private Double userReferralLevel;
-    @JsonProperty("deviceDistributorAncestorMap")
-    private String deviceDistributorAncestorMap;
-    @JsonProperty("isMasterMerchant")
-    private Boolean isMasterMerchant;
     @JsonProperty("baasType")
     private MerchantBaasTypeEnum baasType;
     @lombok.NonNull
@@ -64,10 +48,6 @@ public class OpenApiCreateMerchantDto {
     @lombok.NonNull
     @JsonProperty("appType")
     private AppTypeEnum appType;
-    @JsonProperty("isMultipleRole")
-    private Boolean isMultipleRole;
-    @JsonProperty("userReferrerId")
-    private Double userReferrerId;
 
     /** Use this constructor to set all required fields. */
     public OpenApiCreateMerchantDto(String name, String phoneNumber, String password, AppTypeEnum appType) {

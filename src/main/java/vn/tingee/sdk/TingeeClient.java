@@ -466,8 +466,8 @@ public class TingeeClient {
     /**
          * MerchantController_createMerchant
          */
-        public TingeeApiResponse<Long> create(OpenApiCreateMerchantDto body) {
-            return httpClient.request("POST", "/v1/merchant/create", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Long>>() {});
+        public TingeeApiResponse<OpenApiMerchantIdDto> create(OpenApiCreateMerchantDto body) {
+            return httpClient.request("POST", "/v1/merchant/create", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<OpenApiMerchantIdDto>>() {});
         }
 
     /**
