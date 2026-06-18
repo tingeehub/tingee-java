@@ -27,6 +27,8 @@ public class BankCreateVAOuputDto {
     private String vaAccountNumber;
     @JsonProperty("deepLink")
     private String deepLink;
+    @JsonProperty("authorizeLink")
+    private String authorizeLink;
     @JsonProperty("otpMethod")
     private OtpStbConfirmMethodEnum otpMethod;
     @JsonProperty("qrDto")

@@ -293,6 +293,27 @@ public class TingeeClient {
         public TingeeApiResponse<Object> generateAndShowDynamicQrCode(OpenApiGenerateAndShowDynamicQrCodeDto body) {
             return httpClient.request("POST", "/v1/device/generate-and-show-dynamic-qr-code", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Object>>() {});
         }
+
+    /**
+         * DeviceController_printReceipt
+         */
+        public TingeeApiResponse<EmptyDto> printReceipt(OpenApiPrintReceiptDto body) {
+            return httpClient.request("POST", "/v1/device/print-receipt", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * DeviceController_nfcCommand
+         */
+        public TingeeApiResponse<EmptyDto> nfcCommand(OpenApiNfcCommandDto body) {
+            return httpClient.request("POST", "/v1/device/nfc-command", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * DeviceController_resetDevice
+         */
+        public TingeeApiResponse<EmptyDto> resetDevice(OpenApiResetDeviceDto body) {
+            return httpClient.request("POST", "/v1/device/reset-device", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
     }
 
     public final ShopGroup shop;
@@ -327,6 +348,13 @@ public class TingeeClient {
          */
         public TingeeApiResponse<String> generate(OpenApiDeepLinkDto body) {
             return httpClient.request("POST", "/v1/deep-link/generate", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<String>>() {});
+        }
+
+    /**
+         * DeepLinkController_deepLinkBIDVTEST
+         */
+        public TingeeApiResponse<String> generateBidvTest(OpenApiDeepLinkBIDVTESTDto body) {
+            return httpClient.request("POST", "/v1/deep-link/generate-bidv-test", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<String>>() {});
         }
     }
 
@@ -536,6 +564,13 @@ public class TingeeClient {
         }
 
     /**
+         * EInvoiceController_getInvoiceInfo
+         */
+        public TingeeApiResponse<TrackingResultDto> getInvoiceInfo(GetInvoiceInfoQueryDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/get-invoice-info", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<TrackingResultDto>>() {});
+        }
+
+    /**
          * EInvoiceController_downloadInvoice
          */
         public TingeeApiResponse<DownloadInvoiceOutputDto> download(DownloadInvoiceQueryDto body) {
@@ -545,7 +580,7 @@ public class TingeeClient {
     /**
          * EInvoiceController_getInvoiceTemplates
          */
-        public TingeeApiResponse<InvoiceTemplateOutputDto> invoiceTemplates(InvoiceTemplateQueryDto body) {
+        public TingeeApiResponse<InvoiceTemplateOutputDto> invoiceTemplates(InvoiceTemplateInputDto body) {
             return httpClient.request("POST", "/v1/e-invoice/invoice-templates", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<InvoiceTemplateOutputDto>>() {});
         }
 

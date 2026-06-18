@@ -16,21 +16,19 @@ public class OpenApiUpdateShopDeviceLinkDto {
     @JsonProperty("uuid")
     private String uuid;
     @lombok.NonNull
-    @JsonProperty("type")
-    private DeviceTypeEnum type;
-    @lombok.NonNull
     @JsonProperty("appType")
     private AppTypeEnum appType;
     @lombok.NonNull
     @JsonProperty("shopsLinkToDeviceDtos")
     private List<OpenApiShopLinkToDeviceDto> shopsLinkToDeviceDtos;
+    @JsonProperty("type")
+    private DeviceTypeEnum type;
     @JsonProperty("merchantId")
     private Integer merchantId;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiUpdateShopDeviceLinkDto(String uuid, DeviceTypeEnum type, AppTypeEnum appType, List<OpenApiShopLinkToDeviceDto> shopsLinkToDeviceDtos) {
+    public OpenApiUpdateShopDeviceLinkDto(String uuid, AppTypeEnum appType, List<OpenApiShopLinkToDeviceDto> shopsLinkToDeviceDtos) {
         this.uuid = uuid;
-        this.type = type;
         this.appType = appType;
         this.shopsLinkToDeviceDtos = shopsLinkToDeviceDtos;
     }

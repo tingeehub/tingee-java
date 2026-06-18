@@ -19,6 +19,8 @@ public class OpenApiPaymentTransactionStatusResponseDto {
     private String transactionId;
     @JsonProperty("subscriptionId")
     private String subscriptionId;
+    @JsonProperty("customerKey")
+    private String customerKey;
     @lombok.NonNull
     @JsonProperty("tokenRef")
     private String tokenRef;

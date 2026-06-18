@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum EInvoiceProviderEnum {
     X_CYBER("x-cyber"),
     HILO("hilo"),
-    S_INVOICE("s-invoice");
+    S_INVOICE("s-invoice"),
+    MISA("misa");
 
     private final String value;
 

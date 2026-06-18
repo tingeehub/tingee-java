@@ -9,9 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.Getter
 @lombok.Setter
 @lombok.ToString
-public class OpenApiDeepLinkDto {
-    @JsonProperty("merchantId")
-    private Integer merchantId;
+public class OpenApiDeepLinkBIDVTESTDto {
     @lombok.NonNull
     @JsonProperty("type")
     private String type;
@@ -44,7 +42,7 @@ public class OpenApiDeepLinkDto {
     private String billNumber;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiDeepLinkDto(String type, String qrCode, String bankBin, String destinationBankBin, String accountName, String accountNumber, String billNumber) {
+    public OpenApiDeepLinkBIDVTESTDto(String type, String qrCode, String bankBin, String destinationBankBin, String accountName, String accountNumber, String billNumber) {
         this.type = type;
         this.qrCode = qrCode;
         this.bankBin = bankBin;

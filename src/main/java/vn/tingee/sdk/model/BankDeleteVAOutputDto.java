@@ -15,5 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class BankDeleteVAOutputDto {
     @JsonProperty("confirmId")
     private String confirmId;
+    @JsonProperty("authorizeLink")
+    private String authorizeLink;
 
 }

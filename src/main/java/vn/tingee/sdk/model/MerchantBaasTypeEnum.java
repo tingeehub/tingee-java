@@ -10,7 +10,8 @@ public enum MerchantBaasTypeEnum {
     TRIAL("trial"),
     TRIAL_EXTENDED("trial-extended"),
     CUSTOMER("customer"),
-    CANCELLED("cancelled");
+    CANCELLED("cancelled"),
+    UNCLASSIFIED("unclassified");
 
     private final String value;
 

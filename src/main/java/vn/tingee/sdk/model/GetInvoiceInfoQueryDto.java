@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.Getter
 @lombok.Setter
 @lombok.ToString
-public class SendInvoiceEmailDto {
+public class GetInvoiceInfoQueryDto {
     @JsonProperty("merchantId")
     private Integer merchantId;
     @JsonProperty("accountId")
@@ -17,15 +17,9 @@ public class SendInvoiceEmailDto {
     @lombok.NonNull
     @JsonProperty("invoiceCode")
     private String invoiceCode;
-    @JsonProperty("buyerName")
-    private String buyerName;
-    @lombok.NonNull
-    @JsonProperty("recipientEmail")
-    private String recipientEmail;
 
     /** Use this constructor to set all required fields. */
-    public SendInvoiceEmailDto(String invoiceCode, String recipientEmail) {
+    public GetInvoiceInfoQueryDto(String invoiceCode) {
         this.invoiceCode = invoiceCode;
-        this.recipientEmail = recipientEmail;
     }
 }

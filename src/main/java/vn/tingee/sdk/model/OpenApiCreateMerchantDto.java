@@ -48,6 +48,8 @@ public class OpenApiCreateMerchantDto {
     @lombok.NonNull
     @JsonProperty("appType")
     private AppTypeEnum appType;
+    @JsonProperty("requirePasswordChange")
+    private Boolean requirePasswordChange;
 
     /** Use this constructor to set all required fields. */
     public OpenApiCreateMerchantDto(String name, String phoneNumber, String password, AppTypeEnum appType) {

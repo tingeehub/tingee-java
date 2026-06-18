@@ -22,6 +22,10 @@ public class TrackingResultDto {
     private String invoiceNumber;
     @JsonProperty("reservationCode")
     private String reservationCode;
+    @JsonProperty("codeOfTax")
+    private String codeOfTax;
+    @JsonProperty("url")
+    private String url;
 
     /** Use this constructor to set all required fields. */
     public TrackingResultDto(String invoiceCode) {

@@ -34,19 +34,17 @@ public class OpenApiBillInfoDto {
     private String qrAccount;
     @lombok.NonNull
     @JsonProperty("amount")
-    private Double amount;
-    @lombok.NonNull
+    private Long amount;
     @JsonProperty("purpose")
     private String purpose;
-    @lombok.NonNull
     @JsonProperty("totalAmountPaid")
-    private Double totalAmountPaid;
+    private Long totalAmountPaid;
     @lombok.NonNull
     @JsonProperty("totalPaymentsCount")
-    private Double totalPaymentsCount;
+    private Integer totalPaymentsCount;
     @lombok.NonNull
     @JsonProperty("expireInMinute")
-    private Double expireInMinute;
+    private Integer expireInMinute;
     @JsonProperty("extraInfo")
     private String extraInfo;
     @lombok.NonNull
@@ -54,7 +52,7 @@ public class OpenApiBillInfoDto {
     private String status;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiBillInfoDto(String billId, String qrCodeType, String bankBin, String accountNumber, String vaAccountNumber, String qrAccount, Double amount, String purpose, Double totalAmountPaid, Double totalPaymentsCount, Double expireInMinute, String status) {
+    public OpenApiBillInfoDto(String billId, String qrCodeType, String bankBin, String accountNumber, String vaAccountNumber, String qrAccount, Long amount, Integer totalPaymentsCount, Integer expireInMinute, String status) {
         this.billId = billId;
         this.qrCodeType = qrCodeType;
         this.bankBin = bankBin;
@@ -62,8 +60,6 @@ public class OpenApiBillInfoDto {
         this.vaAccountNumber = vaAccountNumber;
         this.qrAccount = qrAccount;
         this.amount = amount;
-        this.purpose = purpose;
-        this.totalAmountPaid = totalAmountPaid;
         this.totalPaymentsCount = totalPaymentsCount;
         this.expireInMinute = expireInMinute;
         this.status = status;

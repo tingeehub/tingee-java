@@ -35,6 +35,10 @@ public class OpenApiReadAmountDto {
     private String thirdDisplayText;
     @JsonProperty("playSound")
     private Boolean playSound;
+    @JsonProperty("isPrint")
+    private Boolean isPrint;
+    @JsonProperty("printData")
+    private OpenApiPrintDataDto printData;
 
     /** Use this constructor to set all required fields. */
     public OpenApiReadAmountDto(String uuid, String transactionId, Long amount, String bankBin) {

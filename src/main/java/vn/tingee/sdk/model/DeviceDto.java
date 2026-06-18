@@ -95,6 +95,8 @@ public class DeviceDto {
     private String simPlan;
     @JsonProperty("simExpirationDate")
     private LocalDateTime simExpirationDate;
+    @JsonProperty("simActivationDate")
+    private LocalDateTime simActivationDate;
 
     /** Use this constructor to set all required fields. */
     public DeviceDto(DeviceTypeEnum type, String uuid, String name, DeviceStatusEnum status, Double masterMerchantId) {
