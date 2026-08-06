@@ -51,6 +51,7 @@ public class TingeeClient {
         this.directDebit = new DirectDebitGroup(this.httpClient);
         this.merchant = new MerchantGroup(this.httpClient);
         this.eInvoice = new EInvoiceGroup(this.httpClient);
+        this.paymentGateway = new PaymentGatewayGroup(this.httpClient);
         // </generated-groups-init>
     }
 
@@ -202,10 +203,52 @@ public class TingeeClient {
         }
 
     /**
+         * onVA
+         */
+        public TingeeApiResponse<GenerateDynamicQROuputDto> onVa(OpenApiOnVADto body) {
+            return httpClient.request("POST", "/v1/bank/on-va", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<GenerateDynamicQROuputDto>>() {});
+        }
+
+    /**
+         * offVA
+         */
+        public TingeeApiResponse<EmptyDto> offVa(OpenApiOffVADto body) {
+            return httpClient.request("POST", "/v1/bank/off-va", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * updateWebhookNotification
+         */
+        public TingeeApiResponse<Boolean> webhookNotification(UpdateWebhookNotificationDto body) {
+            return httpClient.request("POST", "/v1/bank/webhook-notification", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<Boolean>>() {});
+        }
+
+    /**
+         * createBankLinkSession
+         */
+        public TingeeApiResponse<String> createBankLinkSession(CreateBankLinkSessionInputDto body) {
+            return httpClient.request("POST", "/v1/bank/create-bank-link-session", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<String>>() {});
+        }
+
+    /**
          * confirmRegisterNotify
          */
         public TingeeApiResponse<BankDeleteVAOutputDto> confirmRegisterNotify(OpenApiBankConfirmVAInputDto body) {
             return httpClient.request("POST", "/v1/bank/confirm-register-notify", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<BankDeleteVAOutputDto>>() {});
+        }
+
+    /**
+         * createDebitVA
+         */
+        public TingeeApiResponse<BankCreateVAOuputDto> createDebit(OpenApiCreateDebitAccountInputDto body) {
+            return httpClient.request("POST", "/v1/bank/create-debit", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<BankCreateVAOuputDto>>() {});
+        }
+
+    /**
+         * createBatchVAOnOff
+         */
+        public List<OpenApiCreateBatchVaOnOffOutputDto> createBatchVaOnOff(OpenApiCreateBatchVaOnOffInputDto body) {
+            return httpClient.requestRaw("POST", "/v1/bank/create-batch-va-on-off", body, null, new com.fasterxml.jackson.core.type.TypeReference<List<OpenApiCreateBatchVaOnOffOutputDto>>() {});
         }
     }
 
@@ -589,6 +632,62 @@ public class TingeeClient {
          */
         public TingeeApiResponse<EmptyDto> sendEmail(SendInvoiceEmailDto body) {
             return httpClient.request("POST", "/v1/e-invoice/send-email", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_xbillConnectTCT
+         */
+        public TingeeApiResponse<EmptyDto> inputConnect(ConnectTCTRequestDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/input/connect", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_xbillDisconnectTCT
+         */
+        public TingeeApiResponse<EmptyDto> inputDisconnect(InputInvoiceBaseDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/input/disconnect", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_syncIncomeInvoice
+         */
+        public TingeeApiResponse<EmptyDto> inputSync(SyncIncomeInvoiceRequestDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/input/sync", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_getIncomeInvoicesList
+         */
+        public TingeeApiResponse<EmptyDto> inputList(GetIncomeInvoicesListRequestDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/input/list", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_getIncomeInvoiceDetail
+         */
+        public TingeeApiResponse<EmptyDto> inputDetail(GetIncomeInvoiceDetailRequestDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/input/detail", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+
+    /**
+         * EInvoiceController_getIncomeInvoicePreviewBase64
+         */
+        public TingeeApiResponse<EmptyDto> inputPreviewBase64(GetIncomeInvoicePreviewBase64RequestDto body) {
+            return httpClient.request("POST", "/v1/e-invoice/input/preview-base64", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<EmptyDto>>() {});
+        }
+    }
+
+    public final PaymentGatewayGroup paymentGateway;
+
+    public class PaymentGatewayGroup {
+        private final vn.tingee.sdk.client.TingeeHttpClient httpClient;
+        public PaymentGatewayGroup(vn.tingee.sdk.client.TingeeHttpClient httpClient) { this.httpClient = httpClient; }
+
+    /**
+         * PaymentGatewayController_createLink
+         */
+        public TingeeApiResponse<String> createLink(OpenApiCreatePaymentLinkInputDto body) {
+            return httpClient.request("POST", "/v1/payment-gateway/create-link", body, null, new com.fasterxml.jackson.core.type.TypeReference<TingeeApiResponse<String>>() {});
         }
     }
 

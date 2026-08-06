@@ -33,6 +33,10 @@ public class CreateInvoiceDto {
     private LocalDateTime invoiceDate;
     @JsonProperty("buyerTaxCode")
     private String buyerTaxCode;
+    @JsonProperty("buyerIdentity")
+    private String buyerIdentity;
+    @JsonProperty("buyerIdType")
+    private String buyerIdType;
     @JsonProperty("buyerName")
     private String buyerName;
     @JsonProperty("buyerLegalName")

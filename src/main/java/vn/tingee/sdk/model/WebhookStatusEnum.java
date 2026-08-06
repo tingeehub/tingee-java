@@ -13,7 +13,11 @@ public enum WebhookStatusEnum {
     INSUFFICIENT_BALANCE("insufficient-balance"),
     EXCEED_DAILY_LIMIT("exceed-daily-limit"),
     CONFIRM_VA_SUCCESS("confirm-va-success"),
-    CONFIRM_VA_FAILED("confirm-va-failed");
+    CONFIRM_VA_FAILED("confirm-va-failed"),
+    DELETE_VA_SUCCESS("delete-va-success"),
+    DELETE_VA_FAILED("delete-va-failed"),
+    BANK_LINK_SUCCESS("bank-link-success"),
+    BANK_LINK_FAILED("bank-link-failed");
 
     private final String value;
 

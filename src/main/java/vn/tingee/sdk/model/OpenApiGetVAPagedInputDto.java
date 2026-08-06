@@ -34,11 +34,16 @@ public class OpenApiGetVAPagedInputDto {
     @lombok.NonNull
     @JsonProperty("accountType")
     private BankAccountTypeEnum accountType;
+    @JsonProperty("status")
+    private StatusMerchantAccountNumberEnum status;
     @JsonProperty("agentId")
     private Integer agentId;
     @lombok.NonNull
     @JsonProperty("dataAccess")
     private DataAccessFilterEnum dataAccess;
+    @lombok.NonNull
+    @JsonProperty("transactionType")
+    private TransactionTypeEnum transactionType;
     /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
@@ -46,11 +51,12 @@ public class OpenApiGetVAPagedInputDto {
     private BankNameEnum bankName;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiGetVAPagedInputDto(Integer skipCount, Integer maxResultCount, Integer merchantId, BankAccountTypeEnum accountType, DataAccessFilterEnum dataAccess) {
+    public OpenApiGetVAPagedInputDto(Integer skipCount, Integer maxResultCount, Integer merchantId, BankAccountTypeEnum accountType, DataAccessFilterEnum dataAccess, TransactionTypeEnum transactionType) {
         this.skipCount = skipCount;
         this.maxResultCount = maxResultCount;
         this.merchantId = merchantId;
         this.accountType = accountType;
         this.dataAccess = dataAccess;
+        this.transactionType = transactionType;
     }
 }

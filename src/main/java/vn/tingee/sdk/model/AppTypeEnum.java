@@ -20,6 +20,7 @@ public enum AppTypeEnum {
     TINGEE_MERCHANT_APP("tingee-merchant-app"),
     LOA_HUB("loa-hub"),
     MINI_APP_MBB("mini-app-mbb"),
+    MINI_APP_ZALO("mini-app-zalo"),
     BAAS("baas");
 
     private final String value;

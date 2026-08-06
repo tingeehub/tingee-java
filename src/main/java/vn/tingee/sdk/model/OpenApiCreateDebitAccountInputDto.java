@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.Getter
 @lombok.Setter
 @lombok.ToString
-public class OpenApiCreateVAInpuDto {
+public class OpenApiCreateDebitAccountInputDto {
     @JsonProperty("name")
     private String name;
     @JsonProperty("cashFlowSource")
@@ -77,8 +77,6 @@ public class OpenApiCreateVAInpuDto {
     private Boolean isAbleOnOffByBill;
     @JsonProperty("requestId")
     private String requestId;
-    @JsonProperty("transactionType")
-    private TransactionTypeEnum transactionType;
     @JsonProperty("walletId")
     private String walletId;
     /** Bank BIN. Use {@link BankBinEnum} constants. */
@@ -94,7 +92,7 @@ public class OpenApiCreateVAInpuDto {
     private String webhookUrl;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiCreateVAInpuDto(AppTypeEnum appType, Double minAmount, Double maxAmount) {
+    public OpenApiCreateDebitAccountInputDto(AppTypeEnum appType, Double minAmount, Double maxAmount) {
         this.appType = appType;
         this.minAmount = minAmount;
         this.maxAmount = maxAmount;

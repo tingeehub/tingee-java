@@ -23,6 +23,8 @@ public class OpenApiGenerateAndShowDynamicQrCodeDto {
     private String bankBin;
     @JsonProperty("bankName")
     private BankNameEnum bankName;
+    @JsonProperty("name")
+    private String name;
     @JsonProperty("amount")
     private Long amount;
     @JsonProperty("purpose")

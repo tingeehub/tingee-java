@@ -6,16 +6,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Auto-generated from OpenAPI spec — DO NOT EDIT MANUALLY
  */
-public enum EInvoiceProviderEnum {
-    X_CYBER("x-cyber"),
-    HILO("hilo"),
-    S_INVOICE("s-invoice"),
-    MISA("misa"),
-    BKAV("bkav");
+public enum BankLinkSessionTypeEnum {
+    BANK_LINK("bank-link"),
+    BANK_CONFIG("bank-config");
 
     private final String value;
 
-    EInvoiceProviderEnum(String value) {
+    BankLinkSessionTypeEnum(String value) {
         this.value = value;
     }
 
@@ -25,8 +22,8 @@ public enum EInvoiceProviderEnum {
     }
 
     @JsonCreator
-    public static EInvoiceProviderEnum fromValue(String value) {
-        for (EInvoiceProviderEnum e : values()) {
+    public static BankLinkSessionTypeEnum fromValue(String value) {
+        for (BankLinkSessionTypeEnum e : values()) {
             if (e.value.equals(value)) return e;
         }
         throw new IllegalArgumentException("Unknown value: " + value);

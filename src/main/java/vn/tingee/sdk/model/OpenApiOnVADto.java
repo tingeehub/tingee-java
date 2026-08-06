@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.Getter
 @lombok.Setter
 @lombok.ToString
-public class GenerateDynamicQRInputDto {
+public class OpenApiOnVADto {
     @JsonProperty("merchantId")
     private Integer merchantId;
     @lombok.NonNull
@@ -35,7 +35,7 @@ public class GenerateDynamicQRInputDto {
     private String extraInfo;
 
     /** Use this constructor to set all required fields. */
-    public GenerateDynamicQRInputDto(String vaAccountNumber, QRCodeTypeEnum qrCodeType) {
+    public OpenApiOnVADto(String vaAccountNumber, QRCodeTypeEnum qrCodeType) {
         this.vaAccountNumber = vaAccountNumber;
         this.qrCodeType = qrCodeType;
     }

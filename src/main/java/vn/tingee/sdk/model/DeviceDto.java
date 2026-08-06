@@ -77,6 +77,8 @@ public class DeviceDto {
     private Double masterMerchantId;
     @JsonProperty("expirationDate")
     private LocalDateTime expirationDate;
+    @JsonProperty("latestReferralCode")
+    private String latestReferralCode;
     @JsonProperty("merchantName")
     private String merchantName;
     @JsonProperty("shopDtos")

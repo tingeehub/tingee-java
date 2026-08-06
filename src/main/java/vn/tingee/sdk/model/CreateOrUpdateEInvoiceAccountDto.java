@@ -2,6 +2,8 @@ package vn.tingee.sdk.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.List;
+
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
@@ -10,6 +12,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.Setter
 @lombok.ToString
 public class CreateOrUpdateEInvoiceAccountDto {
+    @lombok.NonNull
+    @JsonProperty("masterMerchantId")
+    private Double masterMerchantId;
     @lombok.NonNull
     @JsonProperty("provider")
     private EInvoiceProviderEnum provider;
@@ -30,9 +35,12 @@ public class CreateOrUpdateEInvoiceAccountDto {
     private Integer id;
     @JsonProperty("merchantId")
     private Integer merchantId;
+    @JsonProperty("services")
+    private List<String> services;
 
     /** Use this constructor to set all required fields. */
-    public CreateOrUpdateEInvoiceAccountDto(EInvoiceProviderEnum provider, String taxCode, String username, String password) {
+    public CreateOrUpdateEInvoiceAccountDto(Double masterMerchantId, EInvoiceProviderEnum provider, String taxCode, String username, String password) {
+        this.masterMerchantId = masterMerchantId;
         this.provider = provider;
         this.taxCode = taxCode;
         this.username = username;

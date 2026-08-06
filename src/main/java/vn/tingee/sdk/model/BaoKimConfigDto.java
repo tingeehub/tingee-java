@@ -13,12 +13,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BaoKimConfigDto {
-    @lombok.NonNull
     @JsonProperty("mid")
     private String mid;
+    @JsonProperty("accountName")
+    private String accountName;
+    @JsonProperty("walletId")
+    private String walletId;
+    @JsonProperty("privateKey")
+    private String privateKey;
 
-    /** Use this constructor to set all required fields. */
-    public BaoKimConfigDto(String mid) {
-        this.mid = mid;
-    }
 }

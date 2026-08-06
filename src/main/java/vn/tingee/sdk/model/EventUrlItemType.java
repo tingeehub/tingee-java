@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum EventUrlItemType {
     SHOP("shop"),
     ACCOUNTNUMBER("accountNumber"),
-    ALL("all");
+    ALL("all"),
+    MERCHANT("merchant");
 
     private final String value;
 

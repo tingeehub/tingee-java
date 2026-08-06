@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Auto-generated from OpenAPI spec
@@ -24,6 +25,9 @@ public class GetPagingEInvoiceAccountOutputDto {
     @JsonProperty("merchantId")
     private Double merchantId;
     @lombok.NonNull
+    @JsonProperty("masterMerchantId")
+    private Double masterMerchantId;
+    @lombok.NonNull
     @JsonProperty("provider")
     private EInvoiceProviderEnum provider;
     @lombok.NonNull
@@ -39,11 +43,14 @@ public class GetPagingEInvoiceAccountOutputDto {
     private Boolean isDefault;
     @JsonProperty("isActive")
     private Boolean isActive;
+    @JsonProperty("services")
+    private List<String> services;
 
     /** Use this constructor to set all required fields. */
-    public GetPagingEInvoiceAccountOutputDto(Integer id, Double merchantId, EInvoiceProviderEnum provider, String taxCode, String username, String password) {
+    public GetPagingEInvoiceAccountOutputDto(Integer id, Double merchantId, Double masterMerchantId, EInvoiceProviderEnum provider, String taxCode, String username, String password) {
         this.id = id;
         this.merchantId = merchantId;
+        this.masterMerchantId = masterMerchantId;
         this.provider = provider;
         this.taxCode = taxCode;
         this.username = username;

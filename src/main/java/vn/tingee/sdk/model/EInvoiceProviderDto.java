@@ -17,5 +17,11 @@ public class EInvoiceProviderDto {
     private EInvoiceProviderEnum code;
     @JsonProperty("name")
     private String name;
+    @JsonProperty("description")
+    private String description;
+    @JsonProperty("urlLogo")
+    private String urlLogo;
+    @JsonProperty("lookupUrlPattern")
+    private String lookupUrlPattern;
 
 }

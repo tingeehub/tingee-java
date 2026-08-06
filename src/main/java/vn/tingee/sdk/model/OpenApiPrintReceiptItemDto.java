@@ -22,6 +22,14 @@ public class OpenApiPrintReceiptItemDto {
     @lombok.NonNull
     @JsonProperty("unitPrice")
     private Long unitPrice;
+    @JsonProperty("code")
+    private String code;
+    @JsonProperty("unit")
+    private String unit;
+    @JsonProperty("lineDiscount")
+    private Double lineDiscount;
+    @JsonProperty("promotionLabel")
+    private String promotionLabel;
 
     /** Use this constructor to set all required fields. */
     public OpenApiPrintReceiptItemDto(String name, Integer quantity, Long unitPrice) {

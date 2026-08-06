@@ -12,15 +12,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.NoArgsConstructor
 @lombok.ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DownloadInvoiceOutputDto {
+public class PayooConfigDto {
     @lombok.NonNull
-    @JsonProperty("invoiceCode")
-    private String invoiceCode;
-    @JsonProperty("pdfBase64")
-    private String pdfBase64;
+    @JsonProperty("accountName")
+    private String accountName;
 
     /** Use this constructor to set all required fields. */
-    public DownloadInvoiceOutputDto(String invoiceCode) {
-        this.invoiceCode = invoiceCode;
+    public PayooConfigDto(String accountName) {
+        this.accountName = accountName;
     }
 }

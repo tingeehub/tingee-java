@@ -33,5 +33,7 @@ public class BankConfigDto {
     private VPBConfigDto vpbConfigDto;
     @JsonProperty("vcbConfigDto")
     private VCBConfigDto vcbConfigDto;
+    @JsonProperty("baokimConfigDto")
+    private BaoKimConfigDto baokimConfigDto;
 
 }

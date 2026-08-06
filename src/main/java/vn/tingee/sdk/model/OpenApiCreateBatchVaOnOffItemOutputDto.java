@@ -12,15 +12,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.NoArgsConstructor
 @lombok.ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DownloadInvoiceOutputDto {
+public class OpenApiCreateBatchVaOnOffItemOutputDto {
     @lombok.NonNull
-    @JsonProperty("invoiceCode")
-    private String invoiceCode;
-    @JsonProperty("pdfBase64")
-    private String pdfBase64;
+    @JsonProperty("vaAccountNumber")
+    private String vaAccountNumber;
+    @lombok.NonNull
+    @JsonProperty("qrData")
+    private String qrData;
 
     /** Use this constructor to set all required fields. */
-    public DownloadInvoiceOutputDto(String invoiceCode) {
-        this.invoiceCode = invoiceCode;
+    public OpenApiCreateBatchVaOnOffItemOutputDto(String vaAccountNumber, String qrData) {
+        this.vaAccountNumber = vaAccountNumber;
+        this.qrData = qrData;
     }
 }

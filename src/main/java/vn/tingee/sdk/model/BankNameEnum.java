@@ -22,6 +22,8 @@ public enum BankNameEnum {
     COB("COB"),
     MSB("MSB"),
     NEXTPAY("NEXTPAY"),
+    PAYOO("PAYOO"),
+    BAOKIM("BAOKIM"),
     TPB("TPB");
 
     private final String value;

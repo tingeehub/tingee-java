@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum CashFlowSourceEnum {
     BANK_TRANSFER("bank-transfer"),
-    CARD("card");
+    CARD("card"),
+    CASH("cash");
 
     private final String value;
 

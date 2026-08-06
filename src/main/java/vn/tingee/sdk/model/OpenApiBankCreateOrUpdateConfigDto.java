@@ -22,6 +22,10 @@ public class OpenApiBankCreateOrUpdateConfigDto {
     private VCBConfigBusinessDto vcbConfigDto;
     @JsonProperty("msbConfigDto")
     private MSBConfigBusinessDto msbConfigDto;
+    @JsonProperty("baokimConfigDto")
+    private BaoKimConfigDto baokimConfigDto;
+    @JsonProperty("payooConfigDto")
+    private PayooConfigDto payooConfigDto;
     @lombok.NonNull
     @JsonProperty("accountType")
     private BankAccountTypeEnum accountType;
