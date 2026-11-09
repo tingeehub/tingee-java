@@ -14,41 +14,37 @@ public class GetIncomeInvoicesListRequestDto {
     private Integer merchantId;
     @JsonProperty("accountId")
     private Integer accountId;
-    @JsonProperty("fromDate")
-    private String fromDate;
-    @JsonProperty("toDate")
-    private String toDate;
-    @JsonProperty("benBan")
-    private String benBan;
-    @JsonProperty("benMua")
-    private String benMua;
+    @JsonProperty("sellerTaxCode")
+    private String sellerTaxCode;
+    @JsonProperty("buyerTaxCode")
+    private String buyerTaxCode;
     @JsonProperty("current")
     private Double current;
-    @JsonProperty("ngayDuyetBd")
-    private String ngayDuyetBd;
-    @JsonProperty("ngayDuyetKt")
-    private String ngayDuyetKt;
-    @JsonProperty("ngayLapBd")
-    private String ngayLapBd;
-    @JsonProperty("ngayLapKt")
-    private String ngayLapKt;
-    @JsonProperty("ngayNhanBd")
-    private String ngayNhanBd;
-    @JsonProperty("ngayNhanKt")
-    private String ngayNhanKt;
-    @JsonProperty("nhanDan")
-    private String nhanDan;
+    @JsonProperty("approvedFromDate")
+    private String approvedFromDate;
+    @JsonProperty("approvedToDate")
+    private String approvedToDate;
+    @JsonProperty("invoiceFromDate")
+    private String invoiceFromDate;
+    @JsonProperty("invoiceToDate")
+    private String invoiceToDate;
+    @JsonProperty("receivedFromDate")
+    private String receivedFromDate;
+    @JsonProperty("receivedToDate")
+    private String receivedToDate;
+    @JsonProperty("label")
+    private String label;
     @JsonProperty("page")
     private Double page;
     @JsonProperty("pageSize")
     private Double pageSize;
     @JsonProperty("size")
     private Double size;
-    @JsonProperty("soHoaDon")
-    private String soHoaDon;
-    @JsonProperty("tinhChatHoaDon")
-    private Double tinhChatHoaDon;
-    @JsonProperty("trangThaiPheDuyet")
-    private Double trangThaiPheDuyet;
+    @JsonProperty("invoiceNo")
+    private String invoiceNo;
+    @JsonProperty("invoiceProperty")
+    private Double invoiceProperty;
+    @JsonProperty("approvalStatus")
+    private Double approvalStatus;
 
 }

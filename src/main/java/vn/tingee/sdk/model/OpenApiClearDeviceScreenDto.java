@@ -9,19 +9,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.Getter
 @lombok.Setter
 @lombok.ToString
-public class OpenApiOffVADto {
+public class OpenApiClearDeviceScreenDto {
     @JsonProperty("merchantId")
     private Integer merchantId;
     @lombok.NonNull
-    @JsonProperty("billId")
-    private String billId;
-    @lombok.NonNull
-    @JsonProperty("vaAccountNumber")
-    private String vaAccountNumber;
+    @JsonProperty("uuid")
+    private String uuid;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiOffVADto(String billId, String vaAccountNumber) {
-        this.billId = billId;
-        this.vaAccountNumber = vaAccountNumber;
+    public OpenApiClearDeviceScreenDto(String uuid) {
+        this.uuid = uuid;
     }
 }

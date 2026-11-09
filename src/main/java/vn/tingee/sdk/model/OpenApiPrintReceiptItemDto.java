@@ -27,9 +27,13 @@ public class OpenApiPrintReceiptItemDto {
     @JsonProperty("unit")
     private String unit;
     @JsonProperty("lineDiscount")
-    private Double lineDiscount;
+    private Long lineDiscount;
     @JsonProperty("promotionLabel")
     private String promotionLabel;
+    @JsonProperty("taxPercent")
+    private Double taxPercent;
+    @JsonProperty("taxValue")
+    private Long taxValue;
 
     /** Use this constructor to set all required fields. */
     public OpenApiPrintReceiptItemDto(String name, Integer quantity, Long unitPrice) {

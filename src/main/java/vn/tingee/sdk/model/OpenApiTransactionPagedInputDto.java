@@ -16,10 +16,8 @@ public class OpenApiTransactionPagedInputDto {
     private String filter;
     @JsonProperty("sorting")
     private String sorting;
-    @lombok.NonNull
     @JsonProperty("skipCount")
     private Integer skipCount;
-    @lombok.NonNull
     @JsonProperty("maxResultCount")
     private Integer maxResultCount;
     @JsonProperty("merchantId")
@@ -33,14 +31,16 @@ public class OpenApiTransactionPagedInputDto {
     private String bankBin;
     @JsonProperty("billId")
     private String billId;
+    @lombok.NonNull
     @JsonProperty("startTime")
     private String startTime;
+    @lombok.NonNull
     @JsonProperty("endTime")
     private String endTime;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiTransactionPagedInputDto(Integer skipCount, Integer maxResultCount) {
-        this.skipCount = skipCount;
-        this.maxResultCount = maxResultCount;
+    public OpenApiTransactionPagedInputDto(String startTime, String endTime) {
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 }

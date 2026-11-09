@@ -10,7 +10,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @lombok.Setter
 @lombok.ToString
 public class OpenApiCreatePaymentLinkInputDto {
-    @lombok.NonNull
     @JsonProperty("merchantId")
     private Integer merchantId;
     @lombok.NonNull
@@ -43,8 +42,7 @@ public class OpenApiCreatePaymentLinkInputDto {
     private String paymentGroup;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiCreatePaymentLinkInputDto(Integer merchantId, String orderId, String requestId, Double amount) {
-        this.merchantId = merchantId;
+    public OpenApiCreatePaymentLinkInputDto(String orderId, String requestId, Double amount) {
         this.orderId = orderId;
         this.requestId = requestId;
         this.amount = amount;

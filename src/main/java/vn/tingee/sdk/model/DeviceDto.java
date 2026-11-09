@@ -60,6 +60,8 @@ public class DeviceDto {
     private LocalDateTime useDate;
     @JsonProperty("securityCode")
     private String securityCode;
+    @JsonProperty("warrantyDate")
+    private LocalDateTime warrantyDate;
     @JsonProperty("selectedBankNames")
     private List<BankNameEnum> selectedBankNames;
     @JsonProperty("serialNumber")

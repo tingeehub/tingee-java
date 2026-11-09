@@ -12,7 +12,6 @@ import java.util.List;
 @lombok.Setter
 @lombok.ToString
 public class CreateOrUpdateEInvoiceAccountDto {
-    @lombok.NonNull
     @JsonProperty("masterMerchantId")
     private Double masterMerchantId;
     @lombok.NonNull
@@ -39,8 +38,7 @@ public class CreateOrUpdateEInvoiceAccountDto {
     private List<String> services;
 
     /** Use this constructor to set all required fields. */
-    public CreateOrUpdateEInvoiceAccountDto(Double masterMerchantId, EInvoiceProviderEnum provider, String taxCode, String username, String password) {
-        this.masterMerchantId = masterMerchantId;
+    public CreateOrUpdateEInvoiceAccountDto(EInvoiceProviderEnum provider, String taxCode, String username, String password) {
         this.provider = provider;
         this.taxCode = taxCode;
         this.username = username;

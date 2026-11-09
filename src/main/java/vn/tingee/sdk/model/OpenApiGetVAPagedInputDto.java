@@ -16,32 +16,26 @@ public class OpenApiGetVAPagedInputDto {
     private String filter;
     @JsonProperty("sorting")
     private String sorting;
-    @lombok.NonNull
     @JsonProperty("skipCount")
     private Integer skipCount;
-    @lombok.NonNull
     @JsonProperty("maxResultCount")
     private Integer maxResultCount;
     @JsonProperty("startTime")
     private LocalDateTime startTime;
     @JsonProperty("endTime")
     private LocalDateTime endTime;
-    @lombok.NonNull
     @JsonProperty("merchantId")
     private Integer merchantId;
     @JsonProperty("shopId")
     private Integer shopId;
-    @lombok.NonNull
     @JsonProperty("accountType")
     private BankAccountTypeEnum accountType;
     @JsonProperty("status")
     private StatusMerchantAccountNumberEnum status;
     @JsonProperty("agentId")
     private Integer agentId;
-    @lombok.NonNull
     @JsonProperty("dataAccess")
     private DataAccessFilterEnum dataAccess;
-    @lombok.NonNull
     @JsonProperty("transactionType")
     private TransactionTypeEnum transactionType;
     /** Bank BIN. Use {@link BankBinEnum} constants. */
@@ -50,13 +44,4 @@ public class OpenApiGetVAPagedInputDto {
     @JsonProperty("bankName")
     private BankNameEnum bankName;
 
-    /** Use this constructor to set all required fields. */
-    public OpenApiGetVAPagedInputDto(Integer skipCount, Integer maxResultCount, Integer merchantId, BankAccountTypeEnum accountType, DataAccessFilterEnum dataAccess, TransactionTypeEnum transactionType) {
-        this.skipCount = skipCount;
-        this.maxResultCount = maxResultCount;
-        this.merchantId = merchantId;
-        this.accountType = accountType;
-        this.dataAccess = dataAccess;
-        this.transactionType = transactionType;
-    }
 }

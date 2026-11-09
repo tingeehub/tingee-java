@@ -14,16 +14,9 @@ public class OpenApiGetPagingMerchantsDto {
     private String filter;
     @JsonProperty("sorting")
     private String sorting;
-    @lombok.NonNull
     @JsonProperty("skipCount")
     private Integer skipCount;
-    @lombok.NonNull
     @JsonProperty("maxResultCount")
     private Integer maxResultCount;
 
-    /** Use this constructor to set all required fields. */
-    public OpenApiGetPagingMerchantsDto(Integer skipCount, Integer maxResultCount) {
-        this.skipCount = skipCount;
-        this.maxResultCount = maxResultCount;
-    }
 }

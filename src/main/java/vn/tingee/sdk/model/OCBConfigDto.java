@@ -27,6 +27,9 @@ public class OCBConfigDto {
     @lombok.NonNull
     @JsonProperty("userName")
     private String userName;
+    @lombok.NonNull
+    @JsonProperty("accountName")
+    private String accountName;
     @JsonProperty("password")
     private String password;
     @JsonProperty("vaPrefix")
@@ -37,8 +40,9 @@ public class OCBConfigDto {
     private List<String> accountNumbers;
 
     /** Use this constructor to set all required fields. */
-    public OCBConfigDto(String clientId, String userName) {
+    public OCBConfigDto(String clientId, String userName, String accountName) {
         this.clientId = clientId;
         this.userName = userName;
+        this.accountName = accountName;
     }
 }

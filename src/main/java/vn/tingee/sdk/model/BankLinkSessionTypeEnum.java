@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum BankLinkSessionTypeEnum {
     BANK_LINK("bank-link"),
-    BANK_CONFIG("bank-config");
+    BANK_CONFIG("bank-config"),
+    ACCOUNT_CONFIG("account-config");
 
     private final String value;
 

@@ -16,7 +16,6 @@ public class OpenApiShopLinkToDeviceDto {
     @lombok.NonNull
     @JsonProperty("shopName")
     private String shopName;
-    @lombok.NonNull
     @JsonProperty("shopId")
     private Integer shopId;
     @lombok.NonNull
@@ -29,9 +28,8 @@ public class OpenApiShopLinkToDeviceDto {
     private String vaAccountNumber;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiShopLinkToDeviceDto(String shopName, Integer shopId, Boolean isLinkToDevice, String fullAddress) {
+    public OpenApiShopLinkToDeviceDto(String shopName, Boolean isLinkToDevice, String fullAddress) {
         this.shopName = shopName;
-        this.shopId = shopId;
         this.isLinkToDevice = isLinkToDevice;
         this.fullAddress = fullAddress;
     }

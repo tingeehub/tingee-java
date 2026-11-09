@@ -8,8 +8,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum DataAccessFilterEnum {
     REFERRAL_ONLY("referral-only"),
-    DISTRIBUTOR_ONLY("distributor-only"),
-    WITH_PACKAGE_ONLY("with-package-only");
+    DISTRIBUTOR_ONLY("distributor-only");
 
     private final String value;
 

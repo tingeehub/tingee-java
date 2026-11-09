@@ -42,20 +42,22 @@ public class OpenApiCreateMerchantDto {
     private String referralCode;
     @JsonProperty("baasType")
     private MerchantBaasTypeEnum baasType;
-    @lombok.NonNull
+    @JsonProperty("bankLinkConfigDto")
+    private BankLinkConfigDto bankLinkConfigDto;
+    @JsonProperty("assignedUserId")
+    private Double assignedUserId;
+    @JsonProperty("creationSource")
+    private MerchantCreationSourceEnum creationSource;
     @JsonProperty("password")
     private String password;
-    @lombok.NonNull
     @JsonProperty("appType")
     private AppTypeEnum appType;
     @JsonProperty("requirePasswordChange")
     private Boolean requirePasswordChange;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiCreateMerchantDto(String name, String phoneNumber, String password, AppTypeEnum appType) {
+    public OpenApiCreateMerchantDto(String name, String phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
-        this.password = password;
-        this.appType = appType;
     }
 }

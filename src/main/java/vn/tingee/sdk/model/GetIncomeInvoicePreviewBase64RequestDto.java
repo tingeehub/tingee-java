@@ -15,11 +15,11 @@ public class GetIncomeInvoicePreviewBase64RequestDto {
     @JsonProperty("accountId")
     private Integer accountId;
     @lombok.NonNull
-    @JsonProperty("maHoaDon")
-    private String maHoaDon;
+    @JsonProperty("invoiceCode")
+    private String invoiceCode;
 
     /** Use this constructor to set all required fields. */
-    public GetIncomeInvoicePreviewBase64RequestDto(String maHoaDon) {
-        this.maHoaDon = maHoaDon;
+    public GetIncomeInvoicePreviewBase64RequestDto(String invoiceCode) {
+        this.invoiceCode = invoiceCode;
     }
 }

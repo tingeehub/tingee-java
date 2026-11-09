@@ -3,6 +3,8 @@ package vn.tingee.sdk.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.LocalDateTime;
+
 /**
  * Auto-generated from OpenAPI spec
  * DO NOT EDIT MANUALLY
@@ -34,17 +36,19 @@ public class OpenApiBillInfoDto {
     private String qrAccount;
     @lombok.NonNull
     @JsonProperty("amount")
-    private Long amount;
+    private Double amount;
+    @lombok.NonNull
     @JsonProperty("purpose")
     private String purpose;
+    @lombok.NonNull
     @JsonProperty("totalAmountPaid")
-    private Long totalAmountPaid;
+    private Double totalAmountPaid;
     @lombok.NonNull
     @JsonProperty("totalPaymentsCount")
-    private Integer totalPaymentsCount;
+    private Double totalPaymentsCount;
     @lombok.NonNull
     @JsonProperty("expiredTime")
-    private String expiredTime;
+    private LocalDateTime expiredTime;
     @JsonProperty("expireInMinute")
     private Double expireInMinute;
     @JsonProperty("extraInfo")
@@ -54,7 +58,7 @@ public class OpenApiBillInfoDto {
     private String status;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiBillInfoDto(String billId, String qrCodeType, String bankBin, String accountNumber, String vaAccountNumber, String qrAccount, Long amount, Integer totalPaymentsCount, String expiredTime, String status) {
+    public OpenApiBillInfoDto(String billId, String qrCodeType, String bankBin, String accountNumber, String vaAccountNumber, String qrAccount, Double amount, String purpose, Double totalAmountPaid, Double totalPaymentsCount, LocalDateTime expiredTime, String status) {
         this.billId = billId;
         this.qrCodeType = qrCodeType;
         this.bankBin = bankBin;
@@ -62,6 +66,8 @@ public class OpenApiBillInfoDto {
         this.vaAccountNumber = vaAccountNumber;
         this.qrAccount = qrAccount;
         this.amount = amount;
+        this.purpose = purpose;
+        this.totalAmountPaid = totalAmountPaid;
         this.totalPaymentsCount = totalPaymentsCount;
         this.expiredTime = expiredTime;
         this.status = status;

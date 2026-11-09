@@ -20,6 +20,9 @@ public final class TingeeSigner {
 
     private static final String HMAC_ALGO = "HmacSHA512";
 
+    /** Value of the {@code event} field (and {@code webhook-type} header) of a URL validation request */
+    public static final String URL_VALIDATION_EVENT = "url-validation";
+
 
     /** Timestamp format: yyyyMMddHHmmssSSS */
     private static final DateTimeFormatter TIMESTAMP_FMT =
@@ -162,6 +165,72 @@ public final class TingeeSigner {
             return verifyWebhookSignature(secretToken, signature, timestamp, parsed);
         } catch (Exception e) {
             return new WebhookVerifyResult("INVALID_BODY", "body string is not valid JSON");
+        }
+    }
+
+    /** Body your endpoint must return (HTTP 200) for a URL validation request */
+    public static final class UrlValidationResponse {
+        private final String plainToken;
+        private final String encryptedToken;
+
+        private UrlValidationResponse(String plainToken, String encryptedToken) {
+            this.plainToken     = plainToken;
+            this.encryptedToken = encryptedToken;
+        }
+
+        public String getPlainToken()     { return plainToken; }
+        /** HMAC-SHA256(secretToken, plainToken), hex */
+        public String getEncryptedToken() { return encryptedToken; }
+    }
+
+    /**
+     * Build the response for Tingee's webhook URL validation request.
+     * <p>
+     * When you save a webhook URL, Tingee sends {@code { "event": "url-validation", "plainToken": "...", "timestamp": ... }}
+     * and expects {@code { "plainToken": "...", "encryptedToken": "..." }} back with HTTP 200.
+     * Returns {@code null} when the body is not a URL validation request -> handle it as a normal webhook.
+     *
+     * <pre>{@code
+     * TingeeSigner.UrlValidationResponse validation = TingeeSigner.createUrlValidationResponse(webhookSecretToken, bodyJson);
+     * if (validation != null) {
+     *     return ResponseEntity.ok(validation);
+     * }
+     * // verify signature & process webhook ...
+     * }</pre>
+     *
+     * @param secretToken Secret token of your active "Webhook verification" API credential
+     * @param body        Parsed request body (Map, POJO...)
+     */
+    public static UrlValidationResponse createUrlValidationResponse(String secretToken, Object body) {
+        if (body == null) return null;
+
+        @SuppressWarnings("unchecked")
+        java.util.Map<String, Object> map = MAPPER.convertValue(body, java.util.Map.class);
+        if (map == null || !URL_VALIDATION_EVENT.equals(map.get("event"))) return null;
+
+        Object plainToken = map.get("plainToken");
+        if (!(plainToken instanceof String) || ((String) plainToken).isEmpty()) return null;
+
+        try {
+            Mac mac = Mac.getInstance("HmacSHA256");
+            mac.init(new SecretKeySpec(secretToken.getBytes(StandardCharsets.UTF_8), "HmacSHA256"));
+            byte[] raw = mac.doFinal(((String) plainToken).getBytes(StandardCharsets.UTF_8));
+
+            StringBuilder sb = new StringBuilder(raw.length * 2);
+            for (byte b : raw) sb.append(String.format("%02x", b));
+            return new UrlValidationResponse((String) plainToken, sb.toString());
+        } catch (Exception e) {
+            throw new IllegalStateException("Cannot compute encryptedToken", e);
+        }
+    }
+
+    /** Same as {@link #createUrlValidationResponse(String, Object)} with a raw JSON string body. */
+    public static UrlValidationResponse createUrlValidationResponse(String secretToken, String bodyJson) {
+        if (bodyJson == null || bodyJson.isBlank()) return null;
+        try {
+            return createUrlValidationResponse(secretToken, MAPPER.readValue(bodyJson, Object.class));
+        } catch (com.fasterxml.jackson.core.JsonProcessingException e) {
+            return null;
         }
     }
 

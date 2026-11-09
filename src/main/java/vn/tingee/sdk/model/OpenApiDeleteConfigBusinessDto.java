@@ -13,7 +13,6 @@ public class OpenApiDeleteConfigBusinessDto {
     @lombok.NonNull
     @JsonProperty("accountType")
     private BankAccountTypeEnum accountType;
-    @lombok.NonNull
     @JsonProperty("configRemove")
     private ACBConfigBusinessDto configRemove;
     @JsonProperty("merchantId")
@@ -25,8 +24,7 @@ public class OpenApiDeleteConfigBusinessDto {
     private BankNameEnum bankName;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiDeleteConfigBusinessDto(BankAccountTypeEnum accountType, ACBConfigBusinessDto configRemove) {
+    public OpenApiDeleteConfigBusinessDto(BankAccountTypeEnum accountType) {
         this.accountType = accountType;
-        this.configRemove = configRemove;
     }
 }

@@ -21,12 +21,9 @@ public class OpenApiReadAmountDto {
     @lombok.NonNull
     @JsonProperty("amount")
     private Long amount;
-    @lombok.NonNull
     /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
-    @JsonProperty("bankName")
-    private BankNameEnum bankName;
     @JsonProperty("firstDisplayText")
     private String firstDisplayText;
     @JsonProperty("secondDisplayText")
@@ -41,10 +38,9 @@ public class OpenApiReadAmountDto {
     private OpenApiPrintDataDto printData;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiReadAmountDto(String uuid, String transactionId, Long amount, String bankBin) {
+    public OpenApiReadAmountDto(String uuid, String transactionId, Long amount) {
         this.uuid = uuid;
         this.transactionId = transactionId;
         this.amount = amount;
-        this.bankBin = bankBin;
     }
 }

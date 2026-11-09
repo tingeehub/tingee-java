@@ -21,6 +21,8 @@ public class MerchantDto {
     private Integer id;
     @JsonProperty("creationTime")
     private LocalDateTime creationTime;
+    @JsonProperty("isPrepaidCollectionOnMerchant")
+    private Boolean isPrepaidCollectionOnMerchant;
     @JsonProperty("code")
     private String code;
     @lombok.NonNull
@@ -77,15 +79,31 @@ public class MerchantDto {
     private Boolean isMasterMerchant;
     @JsonProperty("baasType")
     private MerchantBaasTypeEnum baasType;
+    @JsonProperty("bankLinkConfigDto")
+    private BankLinkConfigDto bankLinkConfigDto;
+    @JsonProperty("assignedUserId")
+    private Double assignedUserId;
+    @lombok.NonNull
+    @JsonProperty("creationSource")
+    private MerchantCreationSourceEnum creationSource;
     @JsonProperty("merchantPackages")
     private List<MerchantPackageInfo> merchantPackages;
     @JsonProperty("masterMerchantNames")
     private String masterMerchantNames;
+    @JsonProperty("isPostpaid")
+    private Boolean isPostpaid;
+    @JsonProperty("overdraftLimit")
+    private Double overdraftLimit;
+    @JsonProperty("isLockoutEnabled")
+    private Boolean isLockoutEnabled;
+    @JsonProperty("assignedUserName")
+    private String assignedUserName;
 
     /** Use this constructor to set all required fields. */
-    public MerchantDto(Integer id, String name, String phoneNumber) {
+    public MerchantDto(Integer id, String name, String phoneNumber, MerchantCreationSourceEnum creationSource) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
+        this.creationSource = creationSource;
     }
 }

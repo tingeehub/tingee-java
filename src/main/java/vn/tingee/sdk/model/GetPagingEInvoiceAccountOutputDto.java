@@ -44,7 +44,11 @@ public class GetPagingEInvoiceAccountOutputDto {
     @JsonProperty("isActive")
     private Boolean isActive;
     @JsonProperty("services")
-    private List<String> services;
+    private List<EInvoiceServiceEnum> services;
+    @JsonProperty("merchantName")
+    private String merchantName;
+    @JsonProperty("masterMerchantName")
+    private String masterMerchantName;
 
     /** Use this constructor to set all required fields. */
     public GetPagingEInvoiceAccountOutputDto(Integer id, Double merchantId, Double masterMerchantId, EInvoiceProviderEnum provider, String taxCode, String username, String password) {

@@ -14,10 +14,8 @@ public class OpenApiGetPagingDeviceInputDto {
     private String filter;
     @JsonProperty("sorting")
     private String sorting;
-    @lombok.NonNull
     @JsonProperty("skipCount")
     private Integer skipCount;
-    @lombok.NonNull
     @JsonProperty("maxResultCount")
     private Integer maxResultCount;
     @lombok.NonNull
@@ -27,9 +25,7 @@ public class OpenApiGetPagingDeviceInputDto {
     private DeviceTypeEnum type;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiGetPagingDeviceInputDto(Integer skipCount, Integer maxResultCount, Integer merchantId) {
-        this.skipCount = skipCount;
-        this.maxResultCount = maxResultCount;
+    public OpenApiGetPagingDeviceInputDto(Integer merchantId) {
         this.merchantId = merchantId;
     }
 }

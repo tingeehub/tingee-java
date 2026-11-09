@@ -1,5 +1,21 @@
 # Changelog — Tingee SDK for Java
 
+## [0.4.0] — 2026-11-09
+
+### Added
+- Method mới: `device.clearScreen`, `device.getFeatures`, `device.notifyOrder`
+- `deepLink.generate`: thêm field `platform` (1 = Android, 2 = iOS)
+
+### Changed (breaking)
+- Field bắt buộc của DTO request được tính lại theo validate thực tế của server. Các field trước đây bị đánh dấu bắt buộc nhầm nay là tuỳ chọn, ví dụ `appType`, `minAmount`, `maxAmount` của `createVa`; `merchantId`, `dataAccess`, `transactionType` của `getVaPaging`; `bankName` của `confirmVa`; `password`, `appType` của `merchant.create`
+- Constructor của DTO request chỉ còn nhận các field bắt buộc thật, cần sửa lời gọi `new XxxDto(...)` theo danh sách tham số mới; field tuỳ chọn set qua setter
+
+## [0.3.1] — 2026-11-06
+
+### Added
+- Gửi header `User-Agent: tingee-sdk-java/<version> (java/<version>; <os>)` trong mọi request
+- `TingeeSigner.createUrlValidationResponse` / `client.createUrlValidationResponse`: tạo response cho request xác thực URL webhook (`event: url-validation`)
+
 ## [0.3.0] — 2026-08-06
 
 ### Added

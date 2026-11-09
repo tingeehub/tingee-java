@@ -14,10 +14,8 @@ public class GetPagingEInvoiceAccountInputDto {
     private String filter;
     @JsonProperty("sorting")
     private String sorting;
-    @lombok.NonNull
     @JsonProperty("skipCount")
     private Integer skipCount;
-    @lombok.NonNull
     @JsonProperty("maxResultCount")
     private Integer maxResultCount;
     @JsonProperty("provider")
@@ -28,10 +26,7 @@ public class GetPagingEInvoiceAccountInputDto {
     private Boolean isActive;
     @JsonProperty("merchantId")
     private Integer merchantId;
+    @JsonProperty("masterMerchantId")
+    private Integer masterMerchantId;
 
-    /** Use this constructor to set all required fields. */
-    public GetPagingEInvoiceAccountInputDto(Integer skipCount, Integer maxResultCount) {
-        this.skipCount = skipCount;
-        this.maxResultCount = maxResultCount;
-    }
 }

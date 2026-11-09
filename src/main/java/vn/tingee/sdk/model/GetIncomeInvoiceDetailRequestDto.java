@@ -15,11 +15,11 @@ public class GetIncomeInvoiceDetailRequestDto {
     @JsonProperty("accountId")
     private Integer accountId;
     @lombok.NonNull
-    @JsonProperty("maHoaDon")
-    private String maHoaDon;
+    @JsonProperty("invoiceCode")
+    private String invoiceCode;
 
     /** Use this constructor to set all required fields. */
-    public GetIncomeInvoiceDetailRequestDto(String maHoaDon) {
-        this.maHoaDon = maHoaDon;
+    public GetIncomeInvoiceDetailRequestDto(String invoiceCode) {
+        this.invoiceCode = invoiceCode;
     }
 }

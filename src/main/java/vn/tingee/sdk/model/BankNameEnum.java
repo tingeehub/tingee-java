@@ -24,7 +24,8 @@ public enum BankNameEnum {
     NEXTPAY("NEXTPAY"),
     PAYOO("PAYOO"),
     BAOKIM("BAOKIM"),
-    TPB("TPB");
+    TPB("TPB"),
+    HDB("HDB");
 
     private final String value;
 

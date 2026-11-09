@@ -18,19 +18,15 @@ public class OpenApiBankConfirmVAInputDto {
     @lombok.NonNull
     @JsonProperty("otpNumber")
     private String otpNumber;
-    @lombok.NonNull
     @JsonProperty("bankName")
     private BankNameEnum bankName;
-    @lombok.NonNull
     /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiBankConfirmVAInputDto(String confirmId, String otpNumber, BankNameEnum bankName, String bankBin) {
+    public OpenApiBankConfirmVAInputDto(String confirmId, String otpNumber) {
         this.confirmId = confirmId;
         this.otpNumber = otpNumber;
-        this.bankName = bankName;
-        this.bankBin = bankBin;
     }
 }

@@ -58,7 +58,6 @@ public class OpenApiCreateDebitAccountInputDto {
     private String sessionLogin;
     @JsonProperty("isNotifyAccountNumber")
     private Boolean isNotifyAccountNumber;
-    @lombok.NonNull
     @JsonProperty("appType")
     private AppTypeEnum appType;
     @JsonProperty("linkType")
@@ -67,10 +66,8 @@ public class OpenApiCreateDebitAccountInputDto {
     private String vaAccountNumber;
     @JsonProperty("acbUserId")
     private String acbUserId;
-    @lombok.NonNull
     @JsonProperty("minAmount")
     private Double minAmount;
-    @lombok.NonNull
     @JsonProperty("maxAmount")
     private Double maxAmount;
     @JsonProperty("isAbleOnOffByBill")
@@ -91,10 +88,4 @@ public class OpenApiCreateDebitAccountInputDto {
     @JsonProperty("webhookUrl")
     private String webhookUrl;
 
-    /** Use this constructor to set all required fields. */
-    public OpenApiCreateDebitAccountInputDto(AppTypeEnum appType, Double minAmount, Double maxAmount) {
-        this.appType = appType;
-        this.minAmount = minAmount;
-        this.maxAmount = maxAmount;
-    }
 }

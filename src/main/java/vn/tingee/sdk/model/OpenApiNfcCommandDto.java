@@ -19,17 +19,13 @@ public class OpenApiNfcCommandDto {
     private Boolean enableNfc;
     @JsonProperty("playSound")
     private Boolean playSound;
-    @lombok.NonNull
     @JsonProperty("nfcUrl")
     private String nfcUrl;
-    @lombok.NonNull
     @JsonProperty("nfcPackageName")
     private String nfcPackageName;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiNfcCommandDto(String uuid, String nfcUrl, String nfcPackageName) {
+    public OpenApiNfcCommandDto(String uuid) {
         this.uuid = uuid;
-        this.nfcUrl = nfcUrl;
-        this.nfcPackageName = nfcPackageName;
     }
 }

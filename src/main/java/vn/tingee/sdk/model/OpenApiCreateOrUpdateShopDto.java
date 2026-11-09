@@ -42,6 +42,12 @@ public class OpenApiCreateOrUpdateShopDto {
     private Integer userReferralLevel;
     @JsonProperty("deviceDistributorAncestorMap")
     private String deviceDistributorAncestorMap;
+    @JsonProperty("creationSource")
+    private ShopCreationSourceEnum creationSource;
+    @JsonProperty("isForceDisableNotify")
+    private Boolean isForceDisableNotify;
+    @JsonProperty("isOpenNotify")
+    private Boolean isOpenNotify;
     @JsonProperty("merchantId")
     private Integer merchantId;
 

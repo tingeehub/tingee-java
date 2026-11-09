@@ -18,12 +18,16 @@ public class OpenApiRegisterDto {
     private String bankBin;
     @JsonProperty("accountName")
     private String accountName;
+    @JsonProperty("email")
+    private String email;
     @lombok.NonNull
     @JsonProperty("phone")
     private String phone;
     @lombok.NonNull
     @JsonProperty("returnUrl")
     private String returnUrl;
+    @JsonProperty("isSandbox")
+    private Boolean isSandbox;
 
     /** Use this constructor to set all required fields. */
     public OpenApiRegisterDto(String requestId, String phone, String returnUrl) {

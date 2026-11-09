@@ -12,6 +12,8 @@ import java.util.List;
 @lombok.Setter
 @lombok.ToString
 public class CreateBankLinkSessionInputDto {
+    @JsonProperty("isSandbox")
+    private Boolean isSandbox;
     @JsonProperty("merchantId")
     private Integer merchantId;
     @JsonProperty("shopId")
@@ -24,11 +26,17 @@ public class CreateBankLinkSessionInputDto {
     private List<BankNameEnum> disallowedBanks;
     @JsonProperty("bankName")
     private BankNameEnum bankName;
+    @JsonProperty("defaultBankName")
+    private BankNameEnum defaultBankName;
+    @JsonProperty("bankAccountType")
+    private BankAccountTypeEnum bankAccountType;
     @JsonProperty("type")
     private BankLinkSessionTypeEnum type;
     @JsonProperty("metadata")
     private String metadata;
     @JsonProperty("redirectUrl")
     private String redirectUrl;
+    @JsonProperty("isEnableQRScan")
+    private Boolean isEnableQRScan;
 
 }

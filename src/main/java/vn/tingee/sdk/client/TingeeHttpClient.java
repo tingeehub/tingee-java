@@ -18,6 +18,9 @@ import java.util.concurrent.TimeUnit;
  * Handles signature generation and request execution
  */
 public class TingeeHttpClient {
+    private static final String USER_AGENT = "tingee-sdk-java/" + SdkVersion.VERSION
+            + " (java/" + System.getProperty("java.version") + "; " + System.getProperty("os.name") + ")";
+
     private static final ObjectMapper objectMapper = new ObjectMapper()
         .registerModule(new JavaTimeModule())
         .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -79,7 +82,8 @@ public class TingeeHttpClient {
                 .addHeader("x-signature", signature)
                 .addHeader("x-request-timestamp", timestamp)
                 .addHeader("x-client-id", clientId)
-                .addHeader("x-sdk-version", "tingee-sdk/java/" + SdkVersion.VERSION);
+                .addHeader("x-sdk-version", "tingee-sdk/java/" + SdkVersion.VERSION)
+                .header("User-Agent", USER_AGENT);
 
             if (requestBody != null) {
                 requestBuilder.method(method.toUpperCase(), requestBody);
@@ -151,7 +155,8 @@ public class TingeeHttpClient {
                 .addHeader("x-signature", signature)
                 .addHeader("x-request-timestamp", timestamp)
                 .addHeader("x-client-id", clientId)
-                .addHeader("x-sdk-source", "tingee-sdk/java/" + SdkVersion.VERSION);
+                .addHeader("x-sdk-source", "tingee-sdk/java/" + SdkVersion.VERSION)
+                .header("User-Agent", USER_AGENT);
 
             if (requestBody != null) {
                 requestBuilder.method(method.toUpperCase(), requestBody);

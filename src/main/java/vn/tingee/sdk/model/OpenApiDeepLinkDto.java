@@ -15,7 +15,6 @@ public class OpenApiDeepLinkDto {
     @lombok.NonNull
     @JsonProperty("type")
     private String type;
-    @lombok.NonNull
     @JsonProperty("qrCode")
     private String qrCode;
     @JsonProperty("redirectUrl")
@@ -26,31 +25,24 @@ public class OpenApiDeepLinkDto {
     /** Bank BIN. Use {@link BankBinEnum} constants. */
     @JsonProperty("bankBin")
     private String bankBin;
-    @lombok.NonNull
     @JsonProperty("destinationBankBin")
     private String destinationBankBin;
-    @lombok.NonNull
     @JsonProperty("accountName")
     private String accountName;
-    @lombok.NonNull
     @JsonProperty("accountNumber")
     private String accountNumber;
     @JsonProperty("amount")
     private Long amount;
     @JsonProperty("content")
     private String content;
-    @lombok.NonNull
+    @JsonProperty("platform")
+    private Double platform;
     @JsonProperty("billNumber")
     private String billNumber;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiDeepLinkDto(String type, String qrCode, String bankBin, String destinationBankBin, String accountName, String accountNumber, String billNumber) {
+    public OpenApiDeepLinkDto(String type, String bankBin) {
         this.type = type;
-        this.qrCode = qrCode;
         this.bankBin = bankBin;
-        this.destinationBankBin = destinationBankBin;
-        this.accountName = accountName;
-        this.accountNumber = accountNumber;
-        this.billNumber = billNumber;
     }
 }

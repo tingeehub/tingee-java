@@ -39,13 +39,17 @@ public class OpenApiGetVAPagedOuputDto {
     private StatusMerchantAccountNumberEnum status;
     @JsonProperty("creationTime")
     private LocalDateTime creationTime;
+    @lombok.NonNull
+    @JsonProperty("transactionType")
+    private TransactionTypeEnum transactionType;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiGetVAPagedOuputDto(BankNameEnum bankName, BankAccountTypeEnum accountType, String accountNumber, Integer shopId, StatusMerchantAccountNumberEnum status) {
+    public OpenApiGetVAPagedOuputDto(BankNameEnum bankName, BankAccountTypeEnum accountType, String accountNumber, Integer shopId, StatusMerchantAccountNumberEnum status, TransactionTypeEnum transactionType) {
         this.bankName = bankName;
         this.accountType = accountType;
         this.accountNumber = accountNumber;
         this.shopId = shopId;
         this.status = status;
+        this.transactionType = transactionType;
     }
 }

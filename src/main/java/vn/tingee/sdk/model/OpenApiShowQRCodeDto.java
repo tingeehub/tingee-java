@@ -12,6 +12,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class OpenApiShowQRCodeDto {
     @JsonProperty("merchantId")
     private Integer merchantId;
+    @JsonProperty("uuid")
+    private String uuid;
     @JsonProperty("vaAccountNumber")
     private String vaAccountNumber;
     @lombok.NonNull
@@ -25,9 +27,6 @@ public class OpenApiShowQRCodeDto {
     private String bankBin;
     @JsonProperty("bankName")
     private BankNameEnum bankName;
-    @lombok.NonNull
-    @JsonProperty("uuid")
-    private String uuid;
     @JsonProperty("deviceType")
     private DeviceTypeEnum deviceType;
     @JsonProperty("firstText")
@@ -44,9 +43,8 @@ public class OpenApiShowQRCodeDto {
     private Boolean playSound;
 
     /** Use this constructor to set all required fields. */
-    public OpenApiShowQRCodeDto(Long amount, String qrCode, String uuid) {
+    public OpenApiShowQRCodeDto(Long amount, String qrCode) {
         this.amount = amount;
         this.qrCode = qrCode;
-        this.uuid = uuid;
     }
 }
